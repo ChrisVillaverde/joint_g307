@@ -23,33 +23,189 @@
                 
             </div>
             
-                <button id="addTask-btn" > <span class="addTask-btn-text">Add task</span>  <img class="addTask-btn-img" src="../joint_g307/assets/img/plus_white.png" alt="">
+            <button id="addTask-btn" > <span class="addTask-btn-text">Add task</span>  <img class="addTask-btn-img" src="../joint_g307/assets/img/plus_white.png" alt="">
 
-                </button>
+            </button>
                 
-            
-            
             
         </div>
     </div>
 
     <div id="category">
-        <div class="category-child">
+        <!-- <div class="category-child">
             <h2 id="todo-text">To do</h2>
             <img class="category-plus" src="../joint_g307/assets/img/plus.png" alt="">
-        </div>
-        <div class="category-child">
+        </div> -->
+        <!-- <div class="category-child">
             <h2 id="progress-text">In Progress</h2>
             <img class="category-plus" src="../joint_g307/assets/img/plus.png" alt="">
-        </div>
-        <div class="category-child">
+        </div> -->
+       <!--  <div class="category-child">
             <h2 id="feedback-text">Await feedback</h2>
             <img class="category-plus" src="../joint_g307/assets/img/plus.png" alt="">
-        </div>
-        <div class="category-child">
+        </div> -->
+        <!-- <div class="category-child">
             <h2 id="done-text">Done</h2>
             <img class="category-plus" src="../joint_g307/assets/img/plus.png" alt="">
+        </div> -->
+
+    </div>
+
+    <div id="board-main">
+        <div id="todosTasks">
+            <div class="category-child">
+                <h2 id="todo-text">To do</h2>
+                <img class="category-plus" src="../joint_g307/assets/img/plus.png" alt="">
+            </div>
+            <div id="todosTask_1">
+                <div id="todosTaskCard">
+                    <div id="todosTaskCard-name"><span id="todosTaskCard-text">Design</span></div>
+                    <div class="taskCard-title">
+                        <div class="taskCard-description">
+                            <span class="taskCard-description-title">Website redesign</span>
+                            <span class="taskCard-description-text">Modify the contents of the main website</span>
+                        </div>
+                        <div id="progressBar">
+                            <img src="../joint_g307/assets/img/progressbar.png" alt="">
+                            <span id="todosdoneNumber">1/2 Done</span>
+            
+                        </div>
+                        <div id="user-priority">
+                            <div id="user-id">
+                                <div class="user-id-child_1"> <span class="userName" >SM</span> </div>
+                                <div class="user-id-child_2"> <span class="userName" >MV</span> </div>
+
+                            </div>
+                            <div id="taskPriority"> <img id="taskPriority-img" src="../joint_g307/assets/img/green_arrow.png" alt=""> </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
         </div>
+        <div id="inProgressTasks">
+            <div class="category-child">
+                <h2 id="progress-text">In Progress</h2>
+                <img class="category-plus" src="../joint_g307/assets/img/plus.png" alt="">
+            </div>
+            <div id="inProgressTask_1">
+                <div id="inProgressTaskCard-child">
+                    <div id="inProgressTaskCard">
+                        <div id="inProgressTaskCard-name"><span id="inProgresstaskCard-text">Sales</span></div>
+                        <div class="taskCard-title">
+                            <div class="taskCard-description">
+                                <span class="taskCard-description-title">Call potencial clients</span>
+                                <span class="taskCard-description-text">Make the product presentation to prospective buyers</span>
+                            </div>
+                            <div id="user-priority">
+                                <div id="user-id">
+                                    <div class="user-id-child_1"> <span class="userName" >SM</span> </div>
+                                    <div class="user-id-child_2"> <span class="userName" >MV</span> </div>
+
+                                </div>
+                                <div id="taskPriority"> <img id="taskPriority-img" src="../joint_g307/assets/img/red_arrow.png" alt=""> </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                </div>
+
+            </div>
+
+        </div>
+        <div id="feedbackTasks">
+            <div class="category-child">
+                <h2 id="feedback-text">Await feedback</h2>
+                <img class="category-plus" src="../joint_g307/assets/img/plus.png" alt="">
+            </div>
+            <div id="feedbackTask_1">
+                <div id="feedbackTaskCard">
+                    <div id="feedbackTaskCard-name"><span id="feedbackTaskCard-text">Backoffice</span></div>
+                    <div class="taskCard-title">
+                        <div class="taskCard-description">
+                            <span class="taskCard-description-title">Accounting invoices</span>
+                            <span class="taskCard-description-text">Write open invoices for customer</span>
+                        </div>
+                        <div id="user-priority">
+                            <div id="user-id">
+                                <div class="user-id-child_1"> <span class="userName" >SM</span> </div>
+                                <div class="user-id-child_2"> <span class="userName" >MV</span> </div>
+
+                            </div>
+                            <div id="taskPriority"> <img id="taskPriority-img" src="../joint_g307/assets/img/medium.png" alt=""> </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div id="feedbackTask_1">
+                <div id="feedbackTaskCard">
+                    <div id="feedbackTaskCard-name"><span id="feedbackTaskCard-text">Backoffice</span></div>
+                    <div class="taskCard-title">
+                        <div class="taskCard-description">
+                            <span class="taskCard-description-title">Accounting invoices</span>
+                            <span class="taskCard-description-text">Write open invoices for customer</span>
+                        </div>
+                        <div id="user-priority">
+                            <div id="user-id">
+                                <div class="user-id-child_1"> <span class="userName" >SM</span> </div>
+                                <div class="user-id-child_2"> <span class="userName" >MV</span> </div>
+
+                            </div>
+                            <div id="taskPriority"> <img id="taskPriority-img" src="../joint_g307/assets/img/medium.png" alt=""> </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+        <div id="doneTasks">
+            <div class="category-child">
+                <h2 id="done-text">Done</h2>
+                <img class="category-plus" src="../joint_g307/assets/img/plus.png" alt="">
+            </div>
+            <div id="doneTask_1">
+                <div id="doneTaskCard-child">
+                    <div id="doneTaskCard">
+                        <div id="doneTaskCard-name"><span id="doneTaskCard-text">Marketing</span></div>
+                        <div class="taskCard-title">
+                            <div class="taskCard-description">
+                                <span class="taskCard-description-title">Social media strategy</span>
+                                <span class="taskCard-description-text">Develop and campaign for brand positioning</span>
+                            </div>
+                            <div id="progressBar">
+                                <img src="../joint_g307/assets/img/progressbar.png" alt="">
+                                <span id="doneNumber">3/3 Done</span>
+                
+                            </div>
+
+                            <div id="user-priority">
+                                <div id="user-id">
+                                    <div class="user-id-child_1"> <span class="userName" >SM</span> </div>
+                                    <div class="user-id-child_2"> <span class="userName" >MV</span> </div>
+
+                                </div>
+                                <div id="taskPriority"> <img id="taskPriority-img" src="../joint_g307/assets/img/green_arrow.png" alt=""> </div>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+                
+                
+
+            </div>
+            
+
+        </div>
+
 
     </div>
     
