@@ -5,8 +5,116 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Task</title>
+    <link rel="stylesheet" href="../assets/stylessheets/addTask.css">
+    
 </head>
 <body>
     
+    <div class="addTask">
+
+        <form onsubmit="">
+
+            <!--Title-->
+            <div class="title" id="title">
+
+                <input type="text" required placeholder="Enter a title">
+
+            </div>
+
+
+            <!--Select Contacts-->
+            <div class="selectContacts">
+                    
+                <select id="selectContacts"> 
+
+                    <option>Russell</option>
+                    <option>Manuel</option>
+                    <option>Christian</option>
+                    <option>Invite new Contact</option>
+
+                </select>
+            
+            </div>
+
+
+            <!--Due Date-->
+            <div class="dueDate">
+
+                <span>Due date</span>
+
+                <div class="dateInput">
+
+                    <input type="text" required>
+
+                </div>
+
+            </div>
+
+
+            <!--Category-->
+            <div class="category">
+
+                <span>Category</span>
+
+                <select id="category">
+
+                    <option>New category</option> 
+                    <option>Sales</option>
+                    <option>Backoffice</option>
+
+                </select>
+
+            </div>
+
+
+            <!--Priority-->
+            <div class="priority">
+
+                <select id="priority">
+
+                    <option>Urgent</option> 
+                    <option>Medium</option>
+                    <option>Low</option>
+
+                </select>
+
+            </div>
+
+
+            <!--Description-->
+            <div class="description">
+                
+                <span>Description</span>
+
+                <textarea required type="text"
+                
+                id="description"  placeholder="Enter a description">
+
+                </textarea>
+
+
+
+            </div>
+            
+
+            <!--Add Task Button Confirm-->
+            <div class="confirmButton">
+
+                <Button>Clear</Button>
+
+                <Button>Create Task</Button>
+
+            </div>
+
+
+        </form>
+
+
+
+
+
+
+    </div>
+
 </body>
 </html>
