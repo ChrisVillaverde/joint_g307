@@ -1,0 +1,41 @@
+.addTask{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+.title {
+}
+
+
+.selectContacts{
+}
+
+
+.dueDate{
+}
+
+
+.category{
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+.priority{
+}
+
+
+.description{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.confirmButton{
+    display: flex;
+    justify-content: flex-end;
+}
+
