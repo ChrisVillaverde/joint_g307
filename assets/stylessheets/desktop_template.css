@@ -67,7 +67,7 @@ body {
 }
 
 .icons-style a{
-    
+    text-decoration: none;
 }
 
 .icons-style:hover{
