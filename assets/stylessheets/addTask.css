@@ -1,41 +1,506 @@
-.addTask{
+.addTask {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+
 }
 
-
-.title {
+span {
+    font-size: 19px;
 }
+form {
+    margin-left: 75px;
+    display: flex;
+}
+.title{
+    /* Enter a title */
 
+
+width: 215px;
+height: 48px;
+
+/* Version 2/t2 */
+
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 40px;
+line-height: 120%;
+/* identical to box height, or 48px */
+
+
+/* Style */
+
+color: #D1D1D1;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+/* Frame 14 */
+
+
+box-sizing: border-box;
+
+/* Auto layout */
+
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 13px 21px;
+gap: 10px;
+
+width: 422px;
+height: 74px;
+
+background: #FFFFFF;
+/* Style */
+
+border-bottom: 1px solid #D1D1D1;
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+
+}
 
 .selectContacts{
+       /* width: 216px; */
+    /* height: 23px; */
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 120%;
+    color: #000000;
+    /* flex: none; */
+    /* order: 0; */
+    /* flex-grow: 0; */
+    z-index: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 18px 21px;
+    gap: 10px;
+    isolation: isolate;
+    width: 422px;
+    /* height: 51px; */
+    background: #FFFFFF;
+    border-radius: 10px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
 }
-
 
 .dueDate{
-}
 
+       /* width: 111px; */
+    /* height: 23px; */
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 120%;
+    color: #D1D1D1;
+    /* flex: none; */
+    /* order: 0; */
+    /* flex-grow: 0; */
+    z-index: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 18px 21px;
+    gap: 10px;
+    isolation: isolate;
+    width: 422px;
+    /* height: 51px; */
+    background: #FFFFFF;
+    border-bottom: 1px solid #D1D1D1;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
 
 .category{
 
+    width: 175px; 
+    /* height: 23px; */
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 120%;
+    color: #000000;
+    /* flex: none; */
+    /* order: 0; */
+    /* flex-grow: 0; */
+    z-index: 0;
+    box-sizing: border-box;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+    padding: 18px 21px;
+    gap: 10px;
+    isolation: isolate;
+    width: 422px;
+    /* height: 51px; */
+    background: #FFFFFF;
+    border-bottom: 1px solid #D1D1D1;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
 }
-
 
 .priority{
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
 }
 
+.b1{
+    width: 74px;
+height: 23px;
+
+/* Version 2/t6 */
+
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 19px;
+line-height: 120%;
+/* identical to box height, or 23px */
+
+
+color: #000000;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+    /* Frame 14 */
+
+
+/* Auto layout */
+
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 18px 10px;
+gap: 10px;
+
+width: 136px;
+height: 51px;
+
+/* white */
+
+background: #FFFFFF;
+/* nuevo */
+
+box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.16);
+border-radius: 10px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+
+.b2{
+    width: 74px;
+height: 23px;
+
+/* Version 2/t6 */
+
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 19px;
+line-height: 120%;
+/* identical to box height, or 23px */
+
+
+color: #000000;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+    /* Frame 25 */
+
+
+/* Auto layout */
+
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 18px 10px;
+gap: 10px;
+
+width: 136px;
+height: 51px;
+
+/* white */
+
+background: #FFFFFF;
+/* nuevo */
+
+box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.16);
+border-radius: 10px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+
+.b3{
+    width: 74px;
+height: 23px;
+
+/* Version 2/t6 */
+
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 19px;
+line-height: 120%;
+/* identical to box height, or 23px */
+
+
+color: #000000;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+    /* Frame 26 */
+
+
+/* Auto layout */
+
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 18px 10px;
+gap: 10px;
+
+width: 136px;
+height: 51px;
+
+/* white */
+
+background: #FFFFFF;
+/* nuevo */
+
+box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.16);
+border-radius: 10px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 2;
+flex-grow: 0;
+}
 
 .description{
+    /* Enter a Description */
+
+
+width: 170px;
+height: 23px;
+
+/* Version 2/t6 */
+
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 19px;
+line-height: 120%;
+/* identical to box height, or 23px */
+
+
+/* Style */
+
+
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+z-index: 0;
+
+    /* Frame 17 */
+
+
+box-sizing: border-box;
+
+/* Auto layout */
+
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 18px 21px;
+gap: 10px;
+isolation: isolate;
+
+width: 422px;
+height: 103px;
+
+background: #FFFFFF;
+/* Style */
+
+border: 1px solid #D1D1D1;
+border-radius: 0px 10px 10px 10px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+
+.buttonConfirm{
     display: flex;
-    flex-direction: column;
+    gap: 10px;
 
 }
 
-.confirmButton{
+.buttonClear{
+
+
+
+box-sizing: border-box;
+
+/* Auto layout */
+
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 18px 10px;
+gap: 10px;
+
+width: 136px;
+height: 61px;
+
+/* white */
+
+background: #FFFFFF;
+border: 1px solid #647188;
+border-radius: 10px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+/* Cancel */
+
+
+width: 56px;
+height: 28px;
+
+/* Version 2/t5 */
+
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 23px;
+line-height: 120%;
+/* identical to box height, or 28px */
+
+
+color: #647188;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+
+}
+.buttonCreateTask{
+    /* Primary check button V1 */
+
+
+/* Auto layout */
+
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 18px 10px;
+gap: 10px;
+
+width: 180px;
+height: 61px;
+
+/* Version 2/main color */
+
+background: #4589FF;
+border-radius: 10px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+/* Create Task */
+
+
+width: 126px;
+height: 28px;
+
+/* Version 2/t5 */
+
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 23px;
+line-height: 120%;
+/* identical to box height, or 28px */
+
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+
+}
+
+.right-box{
+    align-items: flex-end;
     display: flex;
     justify-content: flex-end;
+    width: 100%;
+    padding: 10px;
+
 }
 
+.left-box{
+
+}
