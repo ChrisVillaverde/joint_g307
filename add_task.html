@@ -15,53 +15,40 @@
 
      <div w3-include-html="./assets/templates/desktop_template.html"></div>
     
+    
     <div class="addTask">
-
-        <form onsubmit="">
-
+        <form  onsubmit="">
+        <div class="left-box">
             <!--Title-->
-            <div class="title" id="title">
 
-                <input type="text" required placeholder="Enter a title">
-
-            </div>
+                <input class="title" id="title" type="text" required placeholder="Enter a title">
 
 
             <!--Select Contacts-->
-            <div class="selectContacts">
-                    
-                <select id="selectContacts"> 
+              
+            <select id="selectContacts" class="selectContacts"> 
 
                     <option>Russell</option>
                     <option>Manuel</option>
                     <option>Christian</option>
                     <option>Invite new Contact</option>
 
-                </select>
+            </select>
             
-            </div>
 
 
             <!--Due Date-->
-            <div class="dueDate">
 
                 <span>Due date</span>
 
-                <div class="dateInput">
-
-                    <input type="text" required>
-
-                </div>
-
-            </div>
+                <input  class="dueDate" type="date" required>
 
 
             <!--Category-->
-            <div class="category">
-
+            
                 <span>Category</span>
 
-                <select id="category">
+                <select id="category" class="category">
 
                     <option>New category</option> 
                     <option>Sales</option>
@@ -69,57 +56,43 @@
 
                 </select>
 
-            </div>
-
-
+            
             <!--Priority-->
+
             <div class="priority">
 
-                <select id="priority">
+                <button class="b1">Urgent</button>
 
-                    <option>Urgent</option> 
-                    <option>Medium</option>
-                    <option>Low</option>
+                <button class="b2">Medium</button>
 
-                </select>
+                <button class="b3">Low</button>
 
-            </div>
-
+            </div>    
 
             <!--Description-->
-            <div class="description">
                 
                 <span>Description</span>
 
-                <textarea required type="text"
+                <textarea class="description" required type="text"
                 
                 id="description"  placeholder="Enter a description">
 
                 </textarea>
 
-
-
-            </div>
-            
-
+        </div>
             <!--Add Task Button Confirm-->
-            <div class="confirmButton">
+        <div class="right-box">
+            <div class="buttonConfirm">
 
-                <Button>Clear</Button>
+                <Button class="buttonClear">Clear</Button>
 
-                <Button>Create Task</Button>
+                <Button class="buttonCreateTask">Create Task</Button>
 
-            </div>
+        </div>
 
-
+        </div>
         </form>
 
-
-
-
-
-
     </div>
-
 </body>
 </html>
