@@ -7,9 +7,17 @@
     <link rel="stylesheet" href="./assets/fonts.css">
     <link rel="stylesheet" href="./assets/stylessheets/board.css">
     <title>Board</title>
+    <script src="./js/scripte.js"></script>
+
 </head>
-<body>
+<body onload="includeHTML()">
+
+    <!-- Include Templates  -->
+
+    <div w3-include-html="./assets/templates/desktop_template.html"></div>
+
     <div id="search-content">
+        
         <div id="search-child">
             <div id="findTask">
                 <div id="findTask-child">
@@ -52,6 +60,8 @@
     </div>
 
     <div id="board-main">
+
+
         <div id="todosTasks">
             <div class="category-child">
                 <h2 id="todo-text">To do</h2>

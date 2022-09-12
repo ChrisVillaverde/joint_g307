@@ -66,9 +66,18 @@ body {
     padding: 10px;
 }
 
+.icons-style:hover{
+    background-color: #d2e3ff;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
 .legal-notice img {
     margin-right: 10px;
 }
 .legal-notice{
     margin-bottom: 80px;
+}
+.legal-notice:hover{
+    background-color: #4589FF;
 }

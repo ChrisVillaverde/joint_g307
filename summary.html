@@ -7,8 +7,13 @@
     <title>Summary</title>
     <link rel="stylesheet" href="./assets/stylessheets/summary.css">
     <link rel="stylesheet" href="./assets/fonts.css">
+    <script src="./js/scripte.js"></script>
 </head>
-<body>
+<body onload="includeHTML()">
+    <!-- include Templates  -->
+    <div w3-include-html="./assets/templates/desktop_template.html"></div>
+
+
     <div id="greeting">
         <span><b id="summary-greeting" > Good morning </b> </span>
     </div>
