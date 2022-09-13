@@ -27,7 +27,7 @@
             <!--Select Contacts-->
               
             <select id="selectContacts" class="selectContacts"> 
-                <option value="" disabled selected>Select contacts to assign</option>
+                <option value="" disabled selected hidden>Select contacts to assign</option>
                     <option>Russell</option>
                     <option>Manuel</option>
                     <option>Christian</option>
@@ -49,7 +49,7 @@
                 <span>Category</span>
 
                 <select id="category" class="category" >
-                    <option value="" disabled selected>Select Task category</option>
+                    <option value="" disabled selected hidden>Select Task category</option>
                     <option>New category</option> 
                     <option>Sales</option>
                     <option>Backoffice</option>
@@ -61,11 +61,11 @@
 
             <div class="priority">
 
-                <button class="b1">Urgent</button>
+                <button class="b1">Urgent <img src="assets/img/red_arrow.png"></button> 
 
-                <button class="b2">Medium</button>
+                <button class="b2">Medium <img src="assets/img/medium.png"></button>
 
-                <button class="b3">Low</button>
+                <button class="b3">Low <img src="assets/img/green_arrow.png"></button>
 
             </div>    
 
@@ -75,7 +75,7 @@
 
                 <textarea class="description" required type="text"
                 
-                id="description"  placeholder="Enter a description">
+                id="description"  placeholder="Enter a description..">
 
                 </textarea>
 
