@@ -7,6 +7,7 @@
     <title>Add Task</title>
     <link rel="stylesheet" href="./assets/stylessheets/addTask.css">
     <script src="./js/scripte.js"></script>
+    <script src="js/addTask.js"></script>
     
 </head>
 <body onload="includeHTML()">
@@ -26,7 +27,7 @@
 
             <!--Select Contacts-->
               
-            <select id="selectContacts" class="selectContacts"> 
+            <select required id="selectContacts" class="selectContacts"> 
                 <option value="" disabled selected hidden>Select contacts to assign</option>
                     <option>Russell</option>
                     <option>Manuel</option>
@@ -48,12 +49,12 @@
             
                 <span>Category</span>
 
-                <select id="category" class="category" >
+                <select required id="category" class="category" >
                     <option value="" disabled selected hidden>Select Task category</option>
-                    <option>New category</option> 
-                    <option>Sales</option>
-                    <option>Backoffice</option>
-
+                    <option value="">New category</option> 
+                    <option value="1">Sales</option>
+                    <option value="2">Backoffice</option>
+                    <option value="3">Design</option>
                 </select>
 
             
@@ -61,19 +62,20 @@
 
             <div class="priority">
 
-                <button class="b1">Urgent <img src="assets/img/red_arrow.png"></button> 
+                <button id="button_prio_high" onclick="clickPriority ('high')" type="button"  class="b1">Urgent <img src="assets/img/red_arrow.png"></button> 
 
-                <button class="b2">Medium <img src="assets/img/medium.png"></button>
+                <button id="button_prio_middle" onclick="clickPriority ('middle') " type="button" class="b2">Medium <img src="assets/img/medium.png"></button>
 
-                <button class="b3">Low <img src="assets/img/green_arrow.png"></button>
+                <button id="button_prio_low" onclick="clickPriority ('low') " type="button"  class="b3">Low <img src="assets/img/green_arrow.png"></button>
 
-            </div>    
+            </div>   
+             
 
             <!--Description-->
                 
                 <span>Description</span>
 
-                <textarea class="description" required type="text"
+                <textarea required class="description"  type="text"
                 
                 id="description"  placeholder="Enter a description..">
 
