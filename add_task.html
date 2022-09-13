@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Task</title>
     <link rel="stylesheet" href="./assets/stylessheets/addTask.css">
-    <script src="./js/scripte.js"></script>
+    <script src="js/scripte.js"></script>
     <script src="js/addTask.js"></script>
     
 </head>
@@ -18,7 +18,7 @@
     
     
     <div class="addTask">
-        <form  onsubmit="">
+        <form  onsubmit="addTask(); return false;">
         <div class="left-box">
             <!--Title-->
 
@@ -32,7 +32,7 @@
                     <option>Russell</option>
                     <option>Manuel</option>
                     <option>Christian</option>
-                    <option>Invite new Contact</option>
+                  <!--  <option>Invite new Contact</option>-->
 
             </select>
             
@@ -51,10 +51,10 @@
 
                 <select required id="category" class="category" >
                     <option value="" disabled selected hidden>Select Task category</option>
-                    <option value="">New category</option> 
-                    <option value="1">Sales</option>
-                    <option value="2">Backoffice</option>
-                    <option value="3">Design</option>
+                 <!--   <option value="">New category</option> -->
+                    <option value="Sales">Sales</option>
+                    <option value="Backoffice">Backoffice</option>
+                    <option value="Design">Design</option>
                 </select>
 
             
@@ -62,11 +62,11 @@
 
             <div class="priority">
 
-                <button id="button_prio_high" onclick="clickPriority ('high')" type="button"  class="b1">Urgent <img src="assets/img/red_arrow.png"></button> 
+                <button id="button_prio_high" onclick="clickPriority ('high')" value="high" type="button"  class="b1">Urgent <img src="assets/img/red_arrow.png"></button> 
 
-                <button id="button_prio_middle" onclick="clickPriority ('middle') " type="button" class="b2">Medium <img src="assets/img/medium.png"></button>
+                <button id="button_prio_middle" onclick="clickPriority ('middle')" value="middle" type="button" class="b2">Medium <img src="assets/img/medium.png"></button>
 
-                <button id="button_prio_low" onclick="clickPriority ('low') " type="button"  class="b3">Low <img src="assets/img/green_arrow.png"></button>
+                <button id="button_prio_low" onclick="clickPriority ('low') " value="low" type="button"  class="b3">Low <img src="assets/img/green_arrow.png"></button>
 
             </div>   
              
@@ -88,7 +88,7 @@
 
                 <Button type="reset" value="Reset" class="buttonClear">Clear</Button>
 
-                <Button type="submit" value="Submit" class="buttonCreateTask">Create Task</Button>
+                <Button onclick="taskAddedToBord()" type="submit" value="Submit" class="buttonCreateTask">Create Task</Button>
 
         </div>
 
