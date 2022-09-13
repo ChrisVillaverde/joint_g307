@@ -41,9 +41,10 @@
             <!--Due Date-->
 
                 <span>Due date</span>
-
-                <input  class="dueDate" type="date" required>
-
+                <div class="dueDate" onclick="showDate()"  >
+                <input id="dueDate"  type="text" required placeholder="dd/mm/yyyy">
+                <img src="assets/img/calendar-event.png">
+            </div>
 
             <!--Category-->
             
@@ -94,6 +95,13 @@
 
         </div>
         </form>
+
+
+        <div>
+
+                <input id="checker" type="text" required onclick="checker()">
+
+        </div>
 
     </div>
 </body>
