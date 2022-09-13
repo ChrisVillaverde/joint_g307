@@ -1,5 +1,26 @@
 let priority_button;
+let tasks=[];
 
+function taskAddedToBord(){
+
+    alert('Animation Task Added To Bord');
+}
+
+function addTask() {
+
+    let title = document.getElementById('title');
+    let selectContacts=document.getElementById('selectContacts');
+    let category = document.getElementById('category');
+    let description =document.getElementById('description');
+    tasks.push(
+        {   'title':title.value,
+            'selectContacts':selectContacts.value,
+            'date': new Date().getTime(),
+            'category': category.value,
+            'priority': priority_button,
+            'description': description.value
+        }      );
+    }
 
 function clickPriority (priority) {
 
