@@ -3,6 +3,7 @@ let tasks = [];
 let openContact;
 
 
+
 function showDate() {
 
     let today = new Date();
@@ -28,18 +29,43 @@ function taskAddedToBord() {
 function addTask() {
 
     let title = document.getElementById('title');
-   // let selectContacts = document.getElementById('selectContacts');
+    let selectContacts=[];
+     if(document.getElementById('christian').checked){
+
+            selectContacts.push(document.getElementById('christian').value);
+     }
+
+     if(document.getElementById('russell').checked){
+
+        selectContacts.push(document.getElementById('russell').value);
+     }
+
+     if(document.getElementById('manuel').checked){
+
+        selectContacts.push(document.getElementById('manuel').value);
+     }  
+
+
+ 
+
+
+
+
     let category = document.getElementById('category');
     let description = document.getElementById('description');
     tasks.push(
         {
             'title': title.value,
-           //'selectContacts': selectContacts.value,
+           'selectContacts': selectContacts,
             'date': new Date().getTime(),
             'category': category.value,
             'priority': priority_button,
             'description': description.value
         });
+
+
+     
+
 }
 
 function clickPriority(priority) {
@@ -83,21 +109,21 @@ function showContact() {
     <a href="#" class="selectName">
         <label for="Russell">Russell</label>
         <div>
-        <input   type="checkbox" id="Russell" name="Russell" value="Russell">
+        <input   type="checkbox" id="russell" name="Russell" value="Russell">
         </div>
     </a>
 
     <a href="#" class="selectName">
         <label for="Christian">Christian</label>
         <div>
-        <input  type="checkbox" id="Christian" name="Christian" value="Christian">
+        <input  type="checkbox" id="christian" name="Christian" value="Christian">
         </div>
     </a>
 
     <a href="#" class="selectName">
         <label for="Manuel">Manuel</label>
         <div>
-        <input  type="checkbox" id="Manuel" name="Manuel" value="Manuel">
+        <input  type="checkbox" id="manuel" name="Manuel" value="Manuel">
         </div>
     </a>    
     `;
