@@ -27,14 +27,16 @@
 
             <!--Select Contacts-->
               
-            <select required id="selectContacts" class="selectContacts"> 
-                <option value="" disabled selected hidden>Select contacts to assign</option>
-                    <option>Russell</option>
-                    <option>Manuel</option>
-                    <option>Christian</option>
-                  <!--  <option>Invite new Contact</option>-->
-
-            </select>
+            <div class="selectContacts"   >
+                <div class="input_select_contacts">
+                    <input id="selectContacts"  type="text" required placeholder="Select contacts to assign" >
+                    <img src="assets/img/dropdown_arrow.png" onclick="showContact()">
+                </div>
+        
+                <div id="selectAll" class="selectAll"> </div> 
+        
+                   
+            </div>
             
 
 
@@ -53,7 +55,7 @@
                 <select required id="category" class="category" >
                     <option value="" disabled selected hidden>Select Task category</option>
                  <!--   <option value="">New category</option> -->
-                    <option value="Sales">Sales</option>
+                    <option value="Sales">Sales <img src="" alt=""></option>
                     <option value="Backoffice">Backoffice</option>
                     <option value="Design">Design</option>
                 </select>
