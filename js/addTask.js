@@ -28,13 +28,13 @@ function taskAddedToBord() {
 function addTask() {
 
     let title = document.getElementById('title');
-    let selectContacts = document.getElementById('selectContacts');
+   // let selectContacts = document.getElementById('selectContacts');
     let category = document.getElementById('category');
     let description = document.getElementById('description');
     tasks.push(
         {
             'title': title.value,
-            'selectContacts': selectContacts.value,
+           //'selectContacts': selectContacts.value,
             'date': new Date().getTime(),
             'category': category.value,
             'priority': priority_button,
