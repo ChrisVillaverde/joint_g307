@@ -1,5 +1,6 @@
 let priority_button;
 let tasks = [];
+let openContact;
 
 
 function showDate() {
@@ -71,4 +72,43 @@ function clickPriority(priority) {
         priority_button = "low";
     }
     console.log(priority_button);
+}
+
+
+function showContact() {
+
+    if(!openContact){
+    document.getElementById('selectAll').innerHTML=`
+    
+    <a href="#" class="selectName">
+        <label for="Russell">Russell</label>
+        <div>
+        <input   type="checkbox" id="Russell" name="Russell" value="Russell">
+        </div>
+    </a>
+
+    <a href="#" class="selectName">
+        <label for="Christian">Christian</label>
+        <div>
+        <input  type="checkbox" id="Christian" name="Christian" value="Christian">
+        </div>
+    </a>
+
+    <a href="#" class="selectName">
+        <label for="Manuel">Manuel</label>
+        <div>
+        <input  type="checkbox" id="Manuel" name="Manuel" value="Manuel">
+        </div>
+    </a>    
+    `;
+    openContact=true;
+}
+
+
+    else if (openContact) {
+
+        document.getElementById('selectAll').innerHTML='';
+        openContact=false;
+
+    }
 }
