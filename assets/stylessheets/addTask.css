@@ -88,33 +88,7 @@ form {
 
 }
 
-.selectContacts {
-    /* width: 216px; */
-    /* height: 23px; */
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 19px;
-    line-height: 120%;
-    color: #000000;
-    /* flex: none; */
-    /* order: 0; */
-    /* flex-grow: 0; */
-    z-index: 0;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 18px 21px;
-    gap: 10px;
-    isolation: isolate;
-    width: 422px;
-    /* height: 51px; */
-    background: #FFFFFF;
-    border-radius: 10px;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-}
+
 
 .dueDate {
 
@@ -140,7 +114,7 @@ form {
     width: 422px;
     /* height: 51px; */
     background: #FFFFFF;
-    border-bottom: 1px solid #D1D1D1;
+    
     flex: none;
     order: 1;
     flex-grow: 0;
@@ -455,13 +429,13 @@ form {
 
 }
 
-.left-box {}
+
 
 
 input {
     width: 100%;
     padding: 12px 20px;
-    margin: 8px 0;
+    /*margin: 8px 0;*/
     box-sizing: border-box;
     border: none;
     font-size: 19px;
@@ -504,5 +478,52 @@ select{
 select:active:focus {
     border-color: transparent;
 
+}
+
+.selectAll{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 422px;
+    padding: 0 21px 0 0;
+    font-size: 19px;
+}
+
+.selectName{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 21px 18px 21px;
+    width: 400px;
+
+}
+
+.input_select_contacts{
+    display: flex;
+    align-items: center;
+    width: 422px;
+    padding: 18px 0 0px;
+    border-bottom: 1px solid #D1D1D1;
+}
+
+.selectContacts{
+    margin-bottom: 18px;
+}
+
+.input_select_contacts input::placeholder{
+
+    color: black;
+    opacity: 1;
+}
+.selectAll a {
+    color: black;
+    text-decoration: none !important;
+    
+}
+.selectAll a:hover {
+    text-decoration: none !important;
+    color: black;
+    background-color: #D2E3FF;
+   
 }
 
