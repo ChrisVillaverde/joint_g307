@@ -8,24 +8,17 @@ span {
 
     width: 86px;
     height: 23px;
-
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 700;
     font-size: 19px;
     line-height: 120%;
-    /* identical to box height, or 23px */
-
-
     color: #42526E;
-
-
-    /* Inside auto layout */
-
     flex: none;
     order: 0;
     flex-grow: 0;
 }
+
 
 form {
     margin-left: 75px;
@@ -33,55 +26,27 @@ form {
 }
 
 .title {
-    /* Enter a title */
-
-
     width: 215px;
     height: 48px;
-
-    /* Version 2/t2 */
-
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 400;
     font-size: 40px;
     line-height: 120%;
-    /* identical to box height, or 48px */
-
-
-    /* Style */
-
-
-
-
-    /* Inside auto layout */
-
     flex: none;
     order: 0;
     flex-grow: 0;
-    /* Frame 14 */
-
-
+    margin-top: 20px;
     box-sizing: border-box;
-
-    /* Auto layout */
-
     display: flex;
     flex-direction: row;
     align-items: center;
     padding: 13px 21px;
     gap: 10px;
-
     width: 422px;
     height: 74px;
-
     background: #FFFFFF;
-    /* Style */
-
     border-bottom: 1px solid #D1D1D1;
-
-    /* Inside auto layout */
-
     flex: none;
     order: 0;
     flex-grow: 0;
@@ -91,30 +56,19 @@ form {
 
 
 .dueDate {
-
-    /* width: 111px; */
-    /* height: 23px; */
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 400;
     font-size: 19px;
     line-height: 120%;
-    
-    /* flex: none; */
-    /* order: 0; */
-    /* flex-grow: 0; */
     z-index: 0;
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 18px 21px;
-    gap: 10px;
     isolation: isolate;
     width: 422px;
-    /* height: 51px; */
     background: #FFFFFF;
-    
     flex: none;
     order: 1;
     flex-grow: 0;
@@ -123,26 +77,20 @@ form {
 .category {
 
     width: 175px;
-    /* height: 23px; */
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 400;
     font-size: 19px;
     line-height: 120%;
     color: #000000;
-    /* flex: none; */
-    /* order: 0; */
-    /* flex-grow: 0; */
     z-index: 0;
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 18px 21px;
     gap: 10px;
     isolation: isolate;
     width: 422px;
-    /* height: 51px; */
     background: #FFFFFF;
     border-bottom: 1px solid #D1D1D1;
     flex: none;
@@ -153,8 +101,8 @@ form {
 .priority {
     display: flex;
     gap: 10px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 40px;
+    margin-bottom: 22px;
 
 }
 
@@ -385,6 +333,7 @@ form {
 input {
     width: 100%;
     padding: 12px 20px;
+    padding-bottom: 18px!important;
     box-sizing: border-box;
     border: none;
     font-size: 19px;
