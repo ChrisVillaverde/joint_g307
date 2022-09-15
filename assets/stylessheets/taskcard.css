@@ -1,6 +1,15 @@
 body{
     font-family: 'Inter';
 }
+
+#content{
+    background: #FFFFFF;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #task-content{
     display: flex;
     flex-direction: column;
@@ -150,7 +159,7 @@ body{
     z-index: 4;
 }
 
-#taskPriorityText{
+/* #taskPriorityText{
     width: 134px;
     height: 25px;
     font-family: 'Inter';
@@ -159,14 +168,15 @@ body{
     font-size: 21px;
     line-height: 120%;
     /* or 25px */
-    /* black */
+    /* black 
     color: #000000;
-    /* Inside auto layout */
+    /* Inside auto layout 
     flex: none;
     order: 5;
     flex-grow: 0;
     z-index: 5;
-}
+    
+} */
 
 .taskAssignedText{
     width: 134px;
