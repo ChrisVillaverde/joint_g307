@@ -1,3 +1,10 @@
+body{
+    background: #FFFFFF;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    margin: 0;   
+}
 
 #login-content{
     position: relative;
@@ -5,6 +12,94 @@
     height: 1024px;
     /* white */
     background: #FFFFFF;
+    padding: 40px;
+}
+
+#signUp{
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 35px;
+    position: absolute;
+    width: 315px;
+    height: 48px;
+    left: 1039px;
+    top: 67px;  
+    z-index: 1; 
+}
+
+#signUp-text{
+    width: 168px;
+    height: 28px;   
+    /* Version 2/t5 */  
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 120%;
+    /* identical to box height, or 28px */  
+    color: #000000;   
+    /* Inside auto layout */   
+    flex: none;
+    order: 0;
+    flex-grow: 0; 
+    
+}
+
+#signUp-btn{
+
+    /* Auto layout */
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 16px;
+    gap: 10px;
+    width: 112px;
+    height: 48px;
+    /* Version 2/main color */
+    background: #4589FF;
+    border-radius: 8px;
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    
+
+}
+
+#signUp-btn-text{
+
+    width: 80px;
+    height: 28px;   
+    /* Version 2/t5 */   
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 120%;
+    /* identical to box height, or 28px */   
+    color: #FFFFFF;
+    /* Inside auto layout */  
+    flex: none;
+    order: 0;
+    flex-grow: 0;   
+}
+
+#join-logo{
+
+    position: absolute;
+    width: 100.03px;
+    height: 121.97px;
+    left: 5.35%;
+    right: 87.71%;
+    top: 7.81%;
+    bottom: 80.28%;
+    z-index: 1;
+    animation: Smart 100ms ease-in-out;
 }
 
 /* #login-body{
@@ -67,7 +162,8 @@
     width: 0px;
     height: 150px;
     border: 3px solid #4589FF;
-    transform: rotate(90deg);
+    transform: translate(-2px) rotate(90deg) translate( -75.5px);
+    /* transform: rotate(90deg); */
     /* Inside auto layout */
     flex: none;
     order: 1;

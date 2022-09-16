@@ -1,0 +1,241 @@
+body{
+    background: #4589FF;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    margin: 0;   
+}
+
+#login-content-fo{
+    position: relative;
+    width: 1440px;
+    height: 1024px;
+    /* white */
+    background: #4589FF;
+    padding: 40px;
+    
+    
+}
+
+#join-logo-fo{
+
+    position: absolute;
+    width: 100.03px;
+    height: 121.97px;
+    left: 5.35%;
+    right: 87.71%;
+    top: 7.81%;
+    bottom: 80.28%;
+    z-index: 1;
+    animation: Smart 100ms ease-in-out;
+}
+
+#login-form-fo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 55px 86px;
+    gap: 35px;
+    position: absolute;
+    width: 761px;
+    height: 450px;
+    left: 340px;
+    top: 277px;
+    /* white */
+    background: #FFFFFF;
+    /* shadoe backlog box */
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.08);
+    border-radius: 30px;
+}
+
+#retour{
+    cursor: pointer;
+    position: absolute;
+    width: 37px;
+    height: 37px;
+    left: 37px;
+    top: 66px;  
+    /* Inside auto layout */   
+    flex: none;
+    order: 4;
+    flex-grow: 0;
+    z-index: 4;   
+}
+
+#login-title-fo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 24px;
+    width: 315px;
+    height: 82px;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+}
+
+#login-title-text-fo{
+    width: 506px;
+    height: 58px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 120%;
+    /* identical to box height, or 58px */
+    text-align: center;
+    color: #000000;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+#login-title-img-fo{
+    width: 0px;
+    height: 150px;
+    border: 3px solid #4589FF;
+    transform: translate(-2px) rotate(90deg) translate( -75.5px);
+    /* transform: rotate(90deg); */
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+#forgot-text{
+    width: 589px;
+    height: 56px;  
+    /* Version 2/t5 */   
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 120%;
+    /* or 28px */   
+    text-align: center;  
+    color: #000000;  
+    /* Inside auto layout */  
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    z-index: 1;    
+}
+
+#input-content-su{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 29px;
+    width: 422px;
+    height: 208px;
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+
+ #inputEmail-su{
+    box-sizing: border-box;
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 21px;
+    gap: 10px;
+    width: 422px;
+    height: 49px;
+    background: #FFFFFF;
+    /* Style */
+    border-bottom: 1px solid #D1D1D1;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+} 
+
+#inputEmail-child-su{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    gap: 10px;
+    width: 380px;
+    height: 23px;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    border: none;
+    outline: none;
+}
+
+#inputEmail-img{
+    width: 20px;
+    height: 18px;   
+    /* icon */   
+    background: #A8A8A8;  
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+#fo-content3{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 35px;
+    width: 270px;
+    height: 48px;
+    /* Inside auto layout */ 
+    flex: none;
+    order: 3;
+    flex-grow: 0;
+    z-index: 3;
+}
+
+#fo-btn{
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 35px;
+    gap: 10px;
+    width: 270px;
+    height: 48px;
+    /* Version 2/main color */
+    background: #4589FF;
+    border-radius: 8px;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+#fo-btn-text{
+    width: 200px;
+    height: 28px;   
+    /* Version 2/t5 */
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 120%;
+    /* identical to box height, or 28px */   
+    color: #FFFFFF; 
+    /* Inside auto layout */ 
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
