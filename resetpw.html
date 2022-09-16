@@ -21,25 +21,24 @@
                     <img id="login-title-img-re" src="./assets/img/underline.png" alt=""> 
                 </div>
                 <span id="reset-text">Change your account password here</span>
-                <div id="input-content-re">
-                    
-                    <div id="inputPassword-re-1">
-                        <div class="inputPassword-child">
-                            <input placeholder="New Password" class="inputPassword-child-re" type="text" required name="userPassword" autocomplete="on">
-                        </div>                                   
+                <form class="input-content-re" action="">
+                    <div class="input-content-re">                       
+                        <div id="inputPassword-re-1">
+                            <div class="inputPassword-child">
+                                <input placeholder="New Password" class="inputPassword-child-re" type="password" required name="userPassword" autocomplete="on">
+                            </div>                                   
+                        </div>
+                        <div id="inputPassword-re-2">
+                            <div class="inputPassword-child">
+                                <input placeholder="Confirm password" class="inputPassword-child-re" type="password" required name="userPassword" autocomplete="on">
+                            </div>                                   
+                        </div>
                     </div>
-                    <div id="inputPassword-re-2">
-                        <div class="inputPassword-child">
-                            <input placeholder="Confirm password" class="inputPassword-child-re" type="text" required name="userPassword" autocomplete="on">
-                        </div>                                   
+            
+                    <div id="re-content3">
+                        <button onclick="resetpw()" id="re-btn" > <span id="re-btn-text">Continue</span> </button>
                     </div>
-
-                </div>
-           
-                <div id="re-content3">
-                    <button onclick="resetpw()" id="re-btn" > <span id="re-btn-text">Continue</span> </button>
-
-                </div>
+                </form>
 
         
             </div>

@@ -22,39 +22,40 @@
                 <span id="login-title-text"> Log in</span>
                 <img id="login-title-img" src="./assets/img/underline.png" alt=""> 
             </div>
-            <div id="input-content">
-                <div id="inputEmail">
-                    <!-- <div id="inputEmail-child"> -->
-                        <input placeholder="Email" id="inputEmail-child" type="email" required name="userMail" autocomplete="on">
-                        <img  src="./assets/img/umschlag.png" alt="">
-                   <!--  </div> -->
-                    
+            <form class="input-content" action="">
+                <div class="input-content">
+                    <div id="inputEmail">
+                        <!-- <div id="inputEmail-child"> -->
+                            <input placeholder="Email" id="inputEmail-child" type="email" required name="userMail" autocomplete="on">
+                            <img  src="./assets/img/umschlag.png" alt="">
+                    <!--  </div> -->
+                        
+
+                    </div>
+                    <div id="inputPassword">
+                        <!-- <div id="inputPassword-child"> -->
+                            <input placeholder="Password" id="inputPassword-child" type="password" required name="userPassword" autocomplete="off">
+                            <img src="./assets/img/sloss.png" alt="">
+                        <!-- </div> -->
+                    </div>
 
                 </div>
-                <div id="inputPassword">
-                    <!-- <div id="inputPassword-child"> -->
-                        <input placeholder="Password" id="inputPassword-child" type="text" required name="userPassword" autocomplete="off">
-                        <img src="./assets/img/sloss.png" alt="">
-                    <!-- </div> -->
+                <div id="login-content2">
+                    <div id="remember-btn">
+                        <input type="radio" id="remember" value="">
+                        <label id="remember-text" for="remember">Remember me</label>
+                        <a id="passwordForgotten" href="forgotpw.html">Forgot my password</a>
+                        
+                    </div>
+
                 </div>
 
-            </div>
-            <div id="login-content2">
-                <div id="remember-btn">
-                    <input type="radio" id="remember" value="">
-                    <label id="remember-text" for="remember">Remember me</label>
-                    <a id="passwordForgotten" href="forgotpw.html">Forgot my password</a>
-                    
+                <div id="login-content3">
+                    <button id="login-btn" > <span id="login-btn-text">Log in</span> </button>
+                    <button id="login-guest" > <span id="login-guest-text">Guest log in</span> </button>
+
                 </div>
-
-            </div>
-
-            <div id="login-content3">
-                <button id="login-btn" > <span id="login-btn-text">Log in</span> </button>
-                <button id="login-guest" > <span id="login-guest-text">Guest log in</span> </button>
-
-            </div>
-
+            </form>
         </div>
         </div>
         
