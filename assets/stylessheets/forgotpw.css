@@ -4,6 +4,15 @@ body{
     justify-content: center;
     align-items: center;
     margin: 0;   
+    animation: 2s ease-in-out 0s 1 FadeIn;
+}
+@keyframes FadeIn {
+    0% {
+      opacity:0.5;
+    }
+    100% {
+      opacity:1;
+    }
 }
 
 #login-content-fo{
