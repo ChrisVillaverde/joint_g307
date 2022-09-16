@@ -7,8 +7,11 @@
     <link rel="stylesheet" href="./assets/fonts.css">
     <link rel="stylesheet" href="./assets/stylessheets/login.css">
     <title>Log in</title>
+    <!-- <script src="js/login.js"></script> -->
+    <script src="js/mini_backend.js"> </script>
+    <script> setURL(' http://russell-tchamba.developerakademie.net/smallest_backend_ever') </script>
 </head>
-<body>
+<body onload="init()">
     <div id="signUp">
         <span id="signUp-text">Not a Join user?</span>
         <button onclick= "location.href='signup.html'"  id="signUp-btn"><span id="signUp-btn-text">sign up</span> </button>
@@ -22,7 +25,7 @@
                 <span id="login-title-text"> Log in</span>
                 <img id="login-title-img" src="./assets/img/underline.png" alt=""> 
             </div>
-            <form class="input-content" action="">
+            <form onsubmit="loginUser(); return false;" class="input-content" action="">
                 <div class="input-content">
                     <div id="inputEmail">
                         <!-- <div id="inputEmail-child"> -->
@@ -49,13 +52,14 @@
                     </div>
 
                 </div>
-
+            
                 <div id="login-content3">
-                    <button id="login-btn" > <span id="login-btn-text">Log in</span> </button>
-                    <button id="login-guest" > <span id="login-guest-text">Guest log in</span> </button>
+                    <button  id="login-btn" > <span id="login-btn-text">Log in</span> </button>
+                    <button onclick="guest(); return false;" id="login-guest" > <span class="login-guest-text">Guest log in</span> </button>
 
                 </div>
             </form>
+            
         </div>
         </div>
         

@@ -6,9 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/fonts.css">
     <link rel="stylesheet" href="./assets/stylessheets/signup.css">
+    <!-- <script src="js/login.js"></script> -->
+    <script src="js/mini_backend.js"></script>
+    <script> setURL(' http://russell-tchamba.developerakademie.net/smallest_backend_ever') </script>
     <title>sign up</title>
 </head>
-<body>
+<body onload= "init()">
    
     
     <div id="login-content-su">
@@ -20,7 +23,7 @@
                     <span id="login-title-text-su"> Sign up</span>
                     <img id="login-title-img-su" src="./assets/img/underline.png" alt=""> 
                 </div>
-                <form class="input-content-su" action="">
+                <form onsubmit="addUser(); return false;" class="input-content-su" action="">
                     <div class="input-content-su">
                         <div id="inputName-su">
                             
@@ -36,7 +39,7 @@
                         </div>
                         <div id="inputPassword">
                             <!-- <div id="inputPassword-child"> -->
-                                <input placeholder="Password" id="inputPassword-child" type="password" required name="userPassword" autocomplete="off">
+                                <input placeholder="Password" id="inputPassword-child-su" type="password" required name="userPassword" autocomplete="off">
                                 <img src="./assets/img/sloss.png" alt="">
                             <!-- </div> -->
                         </div>
@@ -47,8 +50,9 @@
                         <button id="signUp-btn" > <span id="signUp-btn-text">Sign up</span> </button>
 
                     </div>
+                   
                 </form>
-
+                <div class="hidden" id="msgBox"> </div>
         
             </div>
         

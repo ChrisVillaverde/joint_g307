@@ -459,7 +459,7 @@ body{
     flex-grow: 0;  
 }
 
-#login-guest-text{
+.login-guest-text{
     
     width: 127px;
     height: 28px;  

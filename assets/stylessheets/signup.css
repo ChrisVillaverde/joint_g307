@@ -240,7 +240,7 @@ body{
     
 }
 
-#inputPassword-child{
+#inputPassword-child-su{
     /* Auto layout */
     display: flex;
     flex-direction: row;
@@ -318,5 +318,22 @@ body{
     /* Inside auto layout */ 
     flex: none;
     order: 0;
+    flex-grow: 0;
+}
+
+.hidden{
+    display: flex;
+    width: 315px;
+    height: 58px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    padding-top: 66px;
+    line-height: 120%;
+    text-align: center;
+    color: #000000;
+    flex: none;
+    order: 5;
     flex-grow: 0;
 }
