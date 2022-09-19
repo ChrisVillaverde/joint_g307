@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="./assets/fonts.css">
     <link rel="stylesheet" href="./assets/stylessheets/login.css">
     <title>Log in</title>
-    <!-- <script src="js/login.js"></script> -->
+    <script src="js/login.js"></script>
     <script src="js/mini_backend.js"> </script>
-    <script> setURL(' http://russell-tchamba.developerakademie.net/smallest_backend_ever') </script>
+    <!-- <script> setURL(' https://russell-tchamba.developerakademie.net/smallest_backend_ever') </script> -->
 </head>
 <body onload="init()">
     <div id="signUp">
@@ -58,7 +58,9 @@
                     <button onclick="guest(); return false;" id="login-guest" > <span class="login-guest-text">Guest log in</span> </button>
 
                 </div>
+                <div class="hidden" id="msgBoxLogIn"> </div>
             </form>
+            
             
         </div>
         </div>

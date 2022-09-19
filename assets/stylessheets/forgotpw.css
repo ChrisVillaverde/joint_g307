@@ -248,3 +248,15 @@ body{
     order: 0;
     flex-grow: 0;
 }
+
+.main_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23px;
+    /* height: calc(100vh - 251px - 115px); */
+}

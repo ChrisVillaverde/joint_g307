@@ -323,6 +323,7 @@ body{
 
 .hidden{
     display: flex;
+    justify-content: center;
     width: 315px;
     height: 58px;
     font-family: 'Open Sans';

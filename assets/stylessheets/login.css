@@ -477,21 +477,20 @@ body{
     flex-grow: 0;   
 }
 
-/* #inputEmail-child::placeholder{
-    width: 49px;
-    height: 23px;   
-    /* Version 2/t6    
+.hidden{
+    display: flex;
+    justify-content: center;
+    width: 315px;
+    height: 58px;
     font-family: 'Open Sans';
     font-style: normal;
-    font-weight: 400;
-    font-size: 19px;
+    font-weight: 700;
+    font-size: 22px;
+    padding-top: 0;
     line-height: 120%;
-    /* identical to box height, or 23px    
-    /* Style   
-    color: red !important; 
-    /* color: #D1D1D1;  
-    /* Inside auto layout 
+    text-align: center;
+    color: #000000;
     flex: none;
-    order: 0;
+    order: 5;
     flex-grow: 0;
-} */
+}
