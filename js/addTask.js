@@ -1,8 +1,20 @@
 let priority_button;
 let tasks = [];
 let openContact;
+let users = [];
 
+async function init() {
+    setURL('https://gruppe-307.developerakademie.net/smallest_backend_ever') ;
+    await downloadFromServer();
+    await loadTask();
+   
+}
 
+async function loadTask(){
+    
+    tasks = await backend.getItem('tasks') || [];
+     
+}
 
 function showDate() {
 
@@ -21,38 +33,54 @@ function showDate() {
 
 function taskAddedToBord() {
 
-    alert('Animation Task Added To Bord');
-    //Taskpaper delete content HTML
+    
+    document.getElementById('showCreateTask').classList.remove('d-none');
+    setTimeout(() => {
+        document.getElementById('showCreateTask').classList.add('d-none');
+      }, 2000)
+
+      resetForm();
+    
+    
 
 }
 
-function addTask() {
+function resetForm(){
+
+    let form = document.getElementById('form');
+
+    form.addEventListener('submit', function handleSubmit(event) {
+      event.preventDefault();
+    
+      form.reset();
+    });
+
+
+
+}
+
+async function addTask() {
 
     let title = document.getElementById('title');
     let selectContacts=[];
-     if(document.getElementById('christian').checked){
+    if(document.getElementById('christian').checked){
 
-            selectContacts.push(document.getElementById('christian').value);
-     }
+        selectContacts.push(document.getElementById('christian').value);
+        }
 
-     if(document.getElementById('russell').checked){
+    if(document.getElementById('russell').checked){
 
         selectContacts.push(document.getElementById('russell').value);
-     }
+        }
 
-     if(document.getElementById('manuel').checked){
+    if(document.getElementById('manuel').checked){
 
         selectContacts.push(document.getElementById('manuel').value);
-     }  
-
-
- 
-
-
-
-
+        } 
+     
     let category = document.getElementById('category');
     let description = document.getElementById('description');
+
     tasks.push(
         {
             'title': title.value,
@@ -63,9 +91,14 @@ function addTask() {
             'description': description.value
         });
 
+        await saveTask();  
 
-     
+}
 
+
+async function saveTask(){
+    await backend.setItem('tasks', tasks);
+ 
 }
 
 function clickPriority(priority) {
@@ -75,31 +108,46 @@ function clickPriority(priority) {
     let button_prio_low = document.getElementById('button_prio_low');
 
     if (priority == "high") {
+         
+        settingsPriorityHigh();    
+    }
 
+        if (priority == "middle") {
+
+            settingsPriorityMiddle();
+        }
+
+            if (priority == "low") {
+
+            settingsPriorityLow();  
+            }
+    
+}
+
+
+function settingsPriorityHigh(){
+    
         button_prio_high.style.background = '#FF3D00';
         button_prio_middle.style.background = 'white';
         button_prio_low.style.background = 'white';
         priority_button = "high";
     }
 
-    if (priority == "middle") {
-
+function settingsPriorityMiddle(){
         button_prio_high.style.background = 'white';
         button_prio_middle.style.background = '#FFA800';
         button_prio_low.style.background = 'white';
         priority_button = "middle";
+
     }
 
-    if (priority == "low") {
+function settingsPriorityLow(){
+    button_prio_high.style.background = 'white';
+    button_prio_middle.style.background = 'white';
+    button_prio_low.style.background = '#7AE229';
+    priority_button = "low";
 
-        button_prio_high.style.background = 'white';
-        button_prio_middle.style.background = 'white';
-        button_prio_low.style.background = '#7AE229';
-        priority_button = "low";
     }
-    console.log(priority_button);
-}
-
 
 function showContact() {
 
