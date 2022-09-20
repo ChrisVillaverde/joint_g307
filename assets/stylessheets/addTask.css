@@ -435,18 +435,35 @@ select:active:focus {
     text-align: center;
     width: 350px;
     display: flex;
-    left: 50vw;
+    left:  calc(50% - 55px);
     align-items: center;
     justify-content: center;
-    position: absolute;
-    bottom: 50vh;
+    position: fixed;
+    bottom: 50vh; 
+    animation: mymoveUp 330ms ease-in-out; 
     
-   
-    
-    
-    
-   
 }
+
+
+  @keyframes mymoveUp {
+    from {bottom: 0vh;}
+    to {bottom: 50vh;}
+  }
+
+
+  .downShowCreateTask {
+    bottom: 0vh; 
+    animation: mymoveDown 330ms ease-in-out; 
+    
+    
+
+  }
+
+  @keyframes mymoveDown {
+    from {bottom: 50vh;}
+    to {bottom: 0vh;}
+  }
+  
 
 .d-none{
     

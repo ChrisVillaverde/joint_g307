@@ -35,10 +35,20 @@ function taskAddedToBord() {
 
     
     document.getElementById('showCreateTask').classList.remove('d-none');
-    setTimeout(() => {
-        document.getElementById('showCreateTask').classList.add('d-none');
+   
+   
+
+      setTimeout(() => {
+        document.getElementById('showCreateTask').classList.add('downShowCreateTask');
       }, 2000)
 
+      setTimeout(() => {
+        document.getElementById('showCreateTask').classList.add('d-none'); 
+        document.getElementById('showCreateTask').classList.remove('downShowCreateTask');
+      }, 2300)
+
+
+      
       resetForm();
     
     
