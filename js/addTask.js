@@ -44,6 +44,7 @@ function taskAddedToBord() {
 
       setTimeout(() => {
         document.getElementById('showCreateTask').classList.add('d-none'); 
+        document.getElementById('showCreateTask').classList.remove('downShowCreateTask');
       }, 2300)
 
 
