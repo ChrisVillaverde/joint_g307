@@ -1,5 +1,6 @@
 let users = [];
 let guests = [];
+let mailOfForgottenPw =[]; 
 let signUpDone = false;
 let userNoFound = true;
 /**
@@ -115,13 +116,35 @@ function generateMessageLogIn(actionDone){
 }
 
 async function resetpw(){
+    loadEmail();
     let newPW = document.getElementById('newPassword');
     let confirmPW = document.getElementById('confirmPassword');
     if (newPW.value == confirmPW.value) {
-        users[0].Password = newPW.value;
-        await safeUser();
+        for (let i = 0; i < users.length; i++) {
+            const element = users[i];
+            if(element.Mail == mailOfForgottenPw[0]){
+                users[i].Password = newPW.value;
+                await safeUser();
+                break;
+            }     
+        }   
+        
         window.open('./confirmation.html', "_self");
     }else{
         document.getElementById('msgBoxReset').innerHTML  = `<span> Password confirmation failed </span>`;
     }
+}
+
+function saveMail(){
+    let eMail = document.getElementById('inputEmail-child-su').value;
+    mailOfForgottenPw[0]=eMail;
+    let mailOfForgottenPwAsText = JSON.stringify(mailOfForgottenPw);
+    localStorage.setItem('Mail', mailOfForgottenPwAsText);
+    console.log('after save Mail:', mailOfForgottenPwAsText);
+}
+
+function loadEmail(){
+    let mailOfForgottenPwAsText = localStorage.getItem('mailOfForgottenPw');
+    mailOfForgottenPw = JSON.parse(mailOfForgottenPwAsText);
+
 }
