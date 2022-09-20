@@ -425,3 +425,32 @@ select:active:focus {
    
 }
 
+.showCreateTask{
+    background-color: #4589FF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 22px;
+    text-align: center;
+    width: 350px;
+    display: flex;
+    left: 50vw;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 50vh;
+    
+   
+    
+    
+    
+   
+}
+
+.d-none{
+    
+    display: none;
+    
+}
+
