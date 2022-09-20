@@ -13,6 +13,9 @@ async function init() {
    
 }
 
+/**
+ * This function load the users from the server
+ */
 async function loadUser(){
     users = await JSON.parse(backend.getItem('users')) || [];
     guests = await JSON.parse(backend.getItem('guests')) || [];    
@@ -85,6 +88,9 @@ async function deleteUser(name) {
     }   
 }
 
+/**
+ * This function save the user at the server
+ */
 async function safeUser(){
     await backend.setItem('users', JSON.stringify(users));
     await backend.setItem('guests', JSON.stringify(guests));
@@ -115,6 +121,9 @@ function generateMessageLogIn(actionDone){
     }
 }
 
+/**
+ * This function check if the passwords are correct and reset them 
+ */
 async function resetpw(){
     loadEmail();
     let newPW = document.getElementById('newPassword');
@@ -135,6 +144,9 @@ async function resetpw(){
     }
 }
 
+/**
+ * This function save the mail-adresse in the local storage
+ */
 function saveMail(){
     let eMail = document.getElementById('inputEmail-child-su').value;
     mailOfForgottenPw[0]=eMail;
@@ -143,6 +155,9 @@ function saveMail(){
     console.log('after save Mail:', mailOfForgottenPwAsText);
 }
 
+/**
+ * This function load the mail-adresse from the local storage
+ */
 function loadEmail(){
     let mailOfForgottenPwAsText = localStorage.getItem('Mail');
     /* let test=localStorage.getItem('Mail'); */
