@@ -435,13 +435,13 @@ select:active:focus {
     text-align: center;
     width: 350px;
     display: flex;
-    left: 50vw;
+    left:  calc(50% - 55px);
     align-items: center;
     justify-content: center;
-    position: absolute;
+    position: fixed;
     bottom: 50vh; 
     animation: mymoveUp 330ms ease-in-out; 
-    position: relative;
+    
 }
 
 
@@ -454,7 +454,7 @@ select:active:focus {
   .downShowCreateTask {
     bottom: 0vh; 
     animation: mymoveDown 330ms ease-in-out; 
-    position: relative;
+    
     
 
   }
