@@ -76,6 +76,7 @@ async function deleteUser(name) {
     for (let i = 0; i < users.length; i++) {
         const element = users[i];
         if(element.Name == 'name'){
+            users.splice(i,1);
             await backend.deleteItem('users[i]');
             safeUser();
             break;
@@ -84,8 +85,8 @@ async function deleteUser(name) {
 }
 
 async function safeUser(){
-    await backend.setItem('user', JSON.stringify(users));
-    await backend.setItem('guest', JSON.stringify(guests));
+    await backend.setItem('users', JSON.stringify(users));
+    await backend.setItem('guests', JSON.stringify(guests));
     await loadUser();
 }
 
@@ -110,5 +111,17 @@ function generateMessageLogIn(actionDone){
         document.getElementById('msgBoxLogIn').innerHTML = `<span>Log In not successfull: Mail or Password not correct!</span>`;
     }else{
         document.getElementById('msgBoxLogIn').innerHTML  = `<span>Log In successfull</span>`;
+    }
+}
+
+async function resetpw(){
+    let newPW = document.getElementById('newPassword');
+    let confirmPW = document.getElementById('confirmPassword');
+    if (newPW.value == confirmPW.value) {
+        users[0].Password = newPW.value;
+        await safeUser();
+        window.open('./confirmation.html', "_self");
+    }else{
+        document.getElementById('msgBoxReset').innerHTML  = `<span> Password confirmation failed </span>`;
     }
 }
