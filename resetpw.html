@@ -6,9 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/fonts.css">
     <link rel="stylesheet" href="./assets/stylessheets/resetpw.css">
+    <link rel="stylesheet" href="./assets/stylessheets/login.css">
+    <script src="js/login.js"></script>
+    <script src="js/mini_backend.js"></script>
     <title>Reset PW</title>
 </head>
-<body>
+<body onload="init()">
    
     
     <div id="login-content-re">
@@ -21,26 +24,25 @@
                     <img id="login-title-img-re" src="./assets/img/underline.png" alt=""> 
                 </div>
                 <span id="reset-text">Change your account password here</span>
-                <form class="input-content-re" action="">
+                <form onsubmit="resetpw(); return false;" class="input-content-re" action="">
                     <div class="input-content-re">                       
                         <div id="inputPassword-re-1">
                             <div class="inputPassword-child">
-                                <input placeholder="New Password" class="inputPassword-child-re" type="password" required name="userPassword" autocomplete="on">
+                                <input placeholder="New Password" id="newPassword" class="inputPassword-child-re" type="password" required name="userPassword" autocomplete="on">
                             </div>                                   
                         </div>
                         <div id="inputPassword-re-2">
                             <div class="inputPassword-child">
-                                <input placeholder="Confirm password" class="inputPassword-child-re" type="password" required name="userPassword" autocomplete="on">
+                                <input placeholder="Confirm password" id="confirmPassword" class="inputPassword-child-re" type="password" required name="userPassword" autocomplete="on">
                             </div>                                   
                         </div>
                     </div>
             
                     <div id="re-content3">
-                        <button onclick="resetpw()" id="re-btn" > <span id="re-btn-text">Continue</span> </button>
+                        <button id="re-btn" > <span id="re-btn-text">Continue</span> </button>
                     </div>
-                </form>
-
-        
+                    <div class="hidden" id="msgBoxReset"> </div>
+                </form>       
             </div>
         
     </div>
