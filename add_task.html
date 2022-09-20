@@ -8,17 +8,18 @@
     <link rel="stylesheet" href="./assets/stylessheets/addTask.css">
     <script src="js/scripte.js"></script>
     <script src="js/addTask.js"></script>
+    <script src="js/mini_backend.js"> </script>
     
 </head>
-<body onload="includeHTML()">
+<body onload="includeHTML(); init();">
 
      <!-- Include Templates  -->
 
-     <div w3-include-html="./assets/templates/desktop_template.html"></div>
+     <div w3-include-html="assets/templates/desktop_template.html"></div>
     
     
     <div class="addTask">
-        <form  onsubmit="addTask(); return false;">
+        <form id="form"  onsubmit="addTask(); return false;">
         <div class="left-box">
             <!--Title-->
 
@@ -98,7 +99,7 @@
         </div>
         </form>
 
-
+        <div class="showCreateTask d-none" id="showCreateTask">Task added to board</div>
       
 
     </div>

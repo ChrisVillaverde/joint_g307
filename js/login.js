@@ -144,7 +144,8 @@ function saveMail(){
 }
 
 function loadEmail(){
-    let mailOfForgottenPwAsText = localStorage.getItem('mailOfForgottenPw');
+    let mailOfForgottenPwAsText = localStorage.getItem('Mail');
+    /* let test=localStorage.getItem('Mail'); */
     mailOfForgottenPw = JSON.parse(mailOfForgottenPwAsText);
 
 }
