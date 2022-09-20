@@ -258,5 +258,8 @@ body{
     font-style: normal;
     font-weight: 400;
     font-size: 23px;
+    background-color: #FFFFFF;
+    min-height: 100vh;
+    min-width: 100%;
     /* height: calc(100vh - 251px - 115px); */
 }

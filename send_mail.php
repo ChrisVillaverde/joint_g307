@@ -4,7 +4,7 @@
 
 /* $recipient = 'russell.tchamba@gmail.com'; */
 $redirect = 'success.html';
-$message = 'please click here to reset your password: forgotpw.html ';
+$message = 'please click here to reset your password: https://gruppe-307.developerakademie.net/joint_g307/resetpw.html';
 
 ########### CONFIG END ###########
 
@@ -39,7 +39,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
         exit;
     case ("POST"): //Send the email;
         header("Access-Control-Allow-Origin: *");
-        $recipient = "Contact To " . $_POST['userEmail'];
+        $recipient = $_POST['userMail'];
         /* $recipient = 'russell.tchamba@gmail.com'; */
         $subject = "Contact From JOIN-TEAM: reset your password";
         $headers = "From:  noreply@developerakademie.com";

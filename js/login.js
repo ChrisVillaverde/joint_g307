@@ -77,9 +77,16 @@ async function deleteUser(name) {
         const element = users[i];
         if(element.Name == 'name'){
             await backend.deleteItem('users[i]');
-            /* break; */
+            safeUser();
+            break;
         }     
     }   
+}
+
+async function safeUser(){
+    await backend.setItem('user', JSON.stringify(users));
+    await backend.setItem('guest', JSON.stringify(guests));
+    await loadUser();
 }
 
 /**
