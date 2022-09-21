@@ -274,6 +274,8 @@ body{
     flex-grow: 0;
 }
 
+
+
 #todosTask_1{
     display: flex;
     flex-direction: column;
@@ -622,8 +624,66 @@ body{
 
 }
 
-#doneTask_1{
+#alltasks_todo{
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 20px;
+    width: 250px;
+    height: 661px;
+    /* Inside auto layout */
+    flex: none;
+    order: 3;
+    flex-grow: 0;
+
+}
+#alltasks_progress{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 20px;
+    width: 250px;
+    height: 661px;
+    /* Inside auto layout */
+    flex: none;
+    order: 3;
+    flex-grow: 0;
+
+}
+#alltasks_feedback{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 20px;
+    width: 250px;
+    height: 661px;
+    /* Inside auto layout */
+    flex: none;
+    order: 3;
+    flex-grow: 0;
+
+}
+#alltasks_done{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 20px;
+    width: 250px;
+    height: 661px;
+    /* Inside auto layout */
+    flex: none;
+    order: 3;
+    flex-grow: 0;
+
+}
+
+.doneTask_1{
+    display: flex;
+    cursor: pointer;
     flex-direction: column;
     align-items: flex-start;
     padding: 0px;
@@ -851,4 +911,13 @@ body{
     flex: none;
     order: 0;
     flex-grow: 0;
+}
+
+.allTasks_design{
+    cursor: pointer;
+}
+
+.hightlight-drag-area{
+    background-color: rgba(0, 0, 0, 0.05);
+
 }
