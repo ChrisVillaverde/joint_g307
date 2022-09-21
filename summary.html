@@ -8,18 +8,19 @@
     <link rel="stylesheet" href="./assets/stylessheets/summary.css">
     <link rel="stylesheet" href="./assets/fonts.css">
     <script src="./js/scripte.js"></script>
+    <script src="js/board.js"></script>
 </head>
-<body onload="includeHTML()">
+<body onload="includeHTML();dashboard()">
     
     <!-- include Templates  -->
     <div w3-include-html="./assets/templates/desktop_template.html"></div>
 
 
     <div id="greeting">
-        <span><b id="summary-greeting" > Good morning </b> </span>
+        <span id="greet"> </span>
     </div>
     <div id="dashboard">
-        <div id="dashboard-child1">
+       <!--  <div id="dashboard-child1">
             <div id="dashboard-child11">
                 <div id="urgent-dashboard">
                    <div id="urgent-dashboard-child">
@@ -104,7 +105,7 @@
 
             </div>
 
-        </div>
+        </div> -->
     </div>
     
     

@@ -540,8 +540,9 @@ body{
 
 }
 
-#feedbackTask_1{
+.feedbackTask_1{
     display: flex;
+    cursor: pointer;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -913,9 +914,9 @@ body{
     flex-grow: 0;
 }
 
-.allTasks_design{
+/* .allTasks_design{
     cursor: pointer;
-}
+} */
 
 .hightlight-drag-area{
     background-color: rgba(0, 0, 0, 0.05);
