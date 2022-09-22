@@ -2,18 +2,21 @@ let priority_button;
 let tasks = [];
 let openContact;
 let users = [];
+let ids = [];
+
+
 
 async function init() {
-    setURL('https://gruppe-307.developerakademie.net/smallest_backend_ever') ;
+    setURL('https://gruppe-307.developerakademie.net/smallest_backend_ever');
     await downloadFromServer();
     await loadTask();
-   
+
 }
 
-async function loadTask(){
-    
+async function loadTask() {
+
     tasks = await backend.getItem('tasks') || [];
-     
+
 }
 
 function showDate() {
@@ -23,7 +26,7 @@ function showDate() {
     let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
     let yyyy = today.getFullYear();
 
-  
+
     today = dd + '/' + mm + '/' + yyyy;
     document.getElementById("dueDate").value = today;
 
@@ -33,36 +36,36 @@ function showDate() {
 
 function taskAddedToBord() {
 
-    
+
     document.getElementById('showCreateTask').classList.remove('d-none');
-   
-   
 
-      setTimeout(() => {
+
+
+    setTimeout(() => {
         document.getElementById('showCreateTask').classList.add('downShowCreateTask');
-      }, 2000)
+    }, 2000)
 
-      setTimeout(() => {
-        document.getElementById('showCreateTask').classList.add('d-none'); 
+    setTimeout(() => {
+        document.getElementById('showCreateTask').classList.add('d-none');
         document.getElementById('showCreateTask').classList.remove('downShowCreateTask');
-      }, 2300)
+    }, 2300)
 
 
-      
-      resetForm();
-    
-    
+
+    resetForm();
+
+
 
 }
 
-function resetForm(){
+function resetForm() {
 
     let form = document.getElementById('form');
 
     form.addEventListener('submit', function handleSubmit(event) {
-      event.preventDefault();
-    
-      form.reset();
+        event.preventDefault();
+
+        form.reset();
     });
 
 
@@ -71,44 +74,60 @@ function resetForm(){
 
 async function addTask() {
 
+    ids = tasks.map((number) => {
+        return number.id
+    })
+
+    let onlyNumbers = ids.filter(
+        element => typeof element === 'number'
+    );
+
+
+    let id = Math.max(...onlyNumbers) + 1;
+    if (!id) {
+        id = 1;
+    }
+
     let title = document.getElementById('title');
-    let selectContacts=[];
-    if(document.getElementById('christian').checked){
+    let selectContacts = [];
+    if (document.getElementById('christian').checked) {
 
         selectContacts.push(document.getElementById('christian').value);
-        }
+    }
 
-    if(document.getElementById('russell').checked){
+    if (document.getElementById('russell').checked) {
 
         selectContacts.push(document.getElementById('russell').value);
-        }
+    }
 
-    if(document.getElementById('manuel').checked){
+    if (document.getElementById('manuel').checked) {
 
         selectContacts.push(document.getElementById('manuel').value);
-        } 
-     
+    }
+
     let category = document.getElementById('category');
     let description = document.getElementById('description');
 
     tasks.push(
         {
             'title': title.value,
-           'selectContacts': selectContacts,
+            'selectContacts': selectContacts,
             'date': new Date().getTime(),
             'category': category.value,
             'priority': priority_button,
-            'description': description.value
+            'description': description.value,
+            'id': id
+
         });
 
-        await saveTask();  
+    await saveTask();
 
 }
 
 
-async function saveTask(){
+async function saveTask() {
     await backend.setItem('tasks', tasks);
- 
+
 }
 
 function clickPriority(priority) {
@@ -118,51 +137,51 @@ function clickPriority(priority) {
     let button_prio_low = document.getElementById('button_prio_low');
 
     if (priority == "high") {
-         
-        settingsPriorityHigh();    
+
+        settingsPriorityHigh();
     }
 
-        if (priority == "middle") {
+    if (priority == "middle") {
 
-            settingsPriorityMiddle();
-        }
+        settingsPriorityMiddle();
+    }
 
-            if (priority == "low") {
+    if (priority == "low") {
 
-            settingsPriorityLow();  
-            }
-    
+        settingsPriorityLow();
+    }
+
 }
 
 
-function settingsPriorityHigh(){
-    
-        button_prio_high.style.background = '#FF3D00';
-        button_prio_middle.style.background = 'white';
-        button_prio_low.style.background = 'white';
-        priority_button = "high";
-    }
+function settingsPriorityHigh() {
 
-function settingsPriorityMiddle(){
-        button_prio_high.style.background = 'white';
-        button_prio_middle.style.background = '#FFA800';
-        button_prio_low.style.background = 'white';
-        priority_button = "middle";
+    button_prio_high.style.background = '#FF3D00';
+    button_prio_middle.style.background = 'white';
+    button_prio_low.style.background = 'white';
+    priority_button = "high";
+}
 
-    }
+function settingsPriorityMiddle() {
+    button_prio_high.style.background = 'white';
+    button_prio_middle.style.background = '#FFA800';
+    button_prio_low.style.background = 'white';
+    priority_button = "middle";
 
-function settingsPriorityLow(){
+}
+
+function settingsPriorityLow() {
     button_prio_high.style.background = 'white';
     button_prio_middle.style.background = 'white';
     button_prio_low.style.background = '#7AE229';
     priority_button = "low";
 
-    }
+}
 
 function showContact() {
 
-    if(!openContact){
-    document.getElementById('selectAll').innerHTML=`
+    if (!openContact) {
+        document.getElementById('selectAll').innerHTML = `
     
     <a href="#" class="selectName">
         <label for="Russell">Russell</label>
@@ -185,14 +204,14 @@ function showContact() {
         </div>
     </a>    
     `;
-    openContact=true;
-}
+        openContact = true;
+    }
 
 
     else if (openContact) {
 
-        document.getElementById('selectAll').innerHTML='';
-        openContact=false;
+        document.getElementById('selectAll').innerHTML = '';
+        openContact = false;
 
     }
 }
