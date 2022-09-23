@@ -12,19 +12,25 @@ body{
     padding: 0px;
     gap: 22px;
     position: absolute;
-    width: 455px;
+    width: 650px;
     height: 77px;
-    left: 600px;
+    left: 500px;
     top: 257px;
     /* justify-content: space-around; */
 }
 
 #greeting span{
     
-    font-weight: 700;
-    font-size: 64px;
+    font-weight:300;
+    font-size: 42px;
     line-height: 76.8px;
     
+}
+#greet{
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 76.8px;
+    color: #4589FF;;
 }
 
 #dashboard{
@@ -42,6 +48,7 @@ body{
 }
 
 #dashboard-child1{
+    
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -56,6 +63,7 @@ body{
 }
 
 #dashboard-child11{
+    cursor: pointer;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -72,9 +80,44 @@ body{
     flex: none;
     order: 0;
     flex-grow: 0;
+    transition: transform .2s; /* Animation */
 }
 
+#dashboard-child11:hover .urgent-text {  
+    color: #4589FF;
+}
+
+#dashboard-child11:hover #urgentTasksNumber {
+    color: #4589FF;
+}
+
+#dashboard-child11:hover #urgent-date {
+    color: #4589FF;
+}
+
+#dashboard-child11:hover #date-text {
+    color: #4589FF;
+}
+
+#dashboard-child11:hover #strich_summary {
+    background-color: #4589FF;
+    
+}
+
+#dashboard-child11:hover {
+    transform: scale(1.06);  
+    background: #FFFFFF;
+    border-radius: 0px 20px 20px  20px;
+}
+
+/* #dashboard-child1:hover #dashboard-child12{
+    transform: scale(0.9);  
+      
+} */
+
+
 #dashboard-child12{
+    cursor: pointer;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -91,10 +134,26 @@ body{
     border-radius: 30px;
 
     /* Inside auto layout */
-
+    transition: transform .2s; /* Animation */
     flex: none;
     order: 1;
     flex-grow: 0;
+}
+
+#dashboard-child12:hover{
+    transform: scale(1.1) !important;  
+    background: #FFFFFF;
+    border-radius: 0px 20px 20px  20px;
+}
+
+#dashboard-child12:hover #todosTasksNumber {
+    color: #4589FF;
+}
+
+#dashboard-child12:hover ~ #dashboard-child11{
+    width: 108px;
+    height: 91px; 
+      
 }
 
 #dashboard-child2{
@@ -113,6 +172,7 @@ body{
 
 #dashboard-child21{
     display: flex;
+    cursor: pointer;
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -128,11 +188,33 @@ body{
     flex: none;
     order: 0;
     flex-grow: 0;
+    transition: transform .2s; /* Animation */
   
+}
+
+#dashboard-child21:hover{
+    transform: scale(1.1);  
+    background: #4589FF;
+    border-radius: 0px 20px 20px  20px;
+}
+
+#dashboard-child21:hover #board-text {
+    color: #FFFFFF;
+}
+
+#dashboard-child21:hover #boardTasksNumber {
+    color: #FFFFFF;
+}
+
+#dashboard-child21:hover #board-img {
+    background-color: #FFFFFF;;
+    border-radius: 100%;
+    
 }
 
 #dashboard-child22{
     display: flex;
+    cursor: pointer;
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -148,11 +230,32 @@ body{
     flex: none;
     order: 1;
     flex-grow: 0;
+    transition: transform .2s; /* Animation */
   
+}
+
+#dashboard-child22:hover{
+    transform: scale(1.1);  
+    background: #4589FF;
+    border-radius: 0px 20px 20px  20px;
+}
+
+#dashboard-child22:hover #progress-text {
+    color: #FFFFFF;
+}
+
+#dashboard-child22:hover #progressTasksNumber {
+    color: #FFFFFF;
+}
+
+#dashboard-child22:hover #progress-img {
+    background-color: #FFFFFF;
+    border-radius: 100%;
 }
 
 #dashboard-child23{
     display: flex;
+    cursor: pointer;
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -168,10 +271,31 @@ body{
     flex: none;
     order: 1;
     flex-grow: 0;
+    transition: transform .2s; /* Animation */
+}
+
+#dashboard-child23:hover{
+    transform: scale(1.1);  
+    background: #4589FF;
+    border-radius: 0px 20px 20px  20px;
+}
+
+#dashboard-child23:hover #feedback-text {
+    color: #FFFFFF;
+}
+
+#dashboard-child23:hover #feedbackTasksNumber {
+    color: #FFFFFF;
+}
+
+#dashboard-child23:hover #feedback-img {
+    background-color: #FFFFFF;
+    border-radius: 100%;
 }
 
 #dashboard-child24{
     display: flex;
+    cursor: pointer;
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -187,7 +311,29 @@ body{
     flex: none;
     order: 3;
     flex-grow: 0; 
+    transition: transform .2s; /* Animation */
 }
+
+#dashboard-child24:hover{
+    transform: scale(1.1);  
+    background: #4589FF;
+    border-radius: 0px 20px 20px  20px;
+}
+
+#dashboard-child24:hover #done-text {
+    color: #FFFFFF;
+}
+
+#dashboard-child24:hover #doneTasksNumber {
+    color: #FFFFFF;
+}
+
+
+#dashboard-child24:hover #done-img {
+    background-color: #FFFFFF;
+    border-radius: 100%;
+}
+
 
 #urgent-dashboard{
     display: flex;
@@ -239,7 +385,7 @@ body{
     flex-grow: 0;
 }
 
-#urgent-text{
+.urgent-text{
     width: 140px;
     height: 28px;
     /* Version 2/t5 */

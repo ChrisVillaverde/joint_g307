@@ -3,6 +3,7 @@ let guests = [];
 let mailOfForgottenPw =[]; 
 let signUpDone = false;
 let userNoFound = true;
+let loggedUserName =[] ;
 /**
  * This function load the users from the server at the beginning and save it in the users-array
  */
@@ -33,8 +34,12 @@ function loginUser(){
     for (let i = 0; i < users.length; i++) {
         const element = users[i];
         if(element.Mail == userMail.value && element.Password == userPassword.value){
+            //save logged user name for greeting later 
+            loggedUserName[0]=element.Name;
+            let loggedUserNameAsText = JSON.stringify(loggedUserName);
+            localStorage.setItem('Name', loggedUserNameAsText);
             userNoFound = false;
-            window.open('./assets/templates/desktop_template.html', "_self");
+            window.open('summary.html', "_self");
             generateMessageLogIn(userNoFound); 
         }     
     }
@@ -46,7 +51,7 @@ function loginUser(){
 }
 
 function guest(){
-    window.open('./assets/templates/desktop_template.html');
+    window.open('summary.html');
 }
 
 /**
@@ -164,3 +169,4 @@ function loadEmail(){
     mailOfForgottenPw = JSON.parse(mailOfForgottenPwAsText);
 
 }
+

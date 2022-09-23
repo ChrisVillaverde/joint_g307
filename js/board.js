@@ -39,6 +39,7 @@ let todosTasksNumber =0;
 let doneTasksNumber =0;
 let feedbackTasksNumber =0;
 let progressTasksNumber =0;
+let loggedUserName = [];
 
 function allowDrop(ev) {
     ev.preventDefault();
@@ -185,8 +186,16 @@ function generateTasksStatusHTML(element){
 }
 
 function dashboard(){
-    document.getElementById('greet').innerHTML =`<b id="summary-greeting" > Good morning </b>`; ;
+    
+    if(loggedUserName[0]){
+        document.getElementById('greeting-child').innerHTML =`Good morning <b id="greet"> ${loggedUserName[0]} </b> `;
+    }
+    
     document.getElementById('dashboard').innerHTML =generateDashboardHTML() ;
+}
+
+function openBoard(){
+    window.open('board.html', "_self");
 }
 
 function generateDashboardHTML(){
@@ -197,18 +206,18 @@ function generateDashboardHTML(){
 
     return /*html*/ `
      <div id="dashboard-child1">
-            <div id="dashboard-child11">
+            <div id="dashboard-child11" onclick="openBoard()">
                 <div id="urgent-dashboard">
                    <div id="urgent-dashboard-child">
                         <img id="urgent-img" src="./assets/img/urgent.png" alt="">
                         <span id="urgentTasksNumber">1</span>
                    </div> 
                     
-                    <span id="urgent-text">Tasks Urgent</span>
+                    <span class="urgent-text">Tasks Urgent</span>
 
                 </div>
 
-                <img src="./assets/img/strich_summary.png" alt="">
+                <img id="strich_summary" src="./assets/img/strich_summary.png" alt="">
 
                 <div id="urgent-dashboard-child2">
                     <span id="urgent-date">October 16, 2022</span>
@@ -217,7 +226,7 @@ function generateDashboardHTML(){
                 </div>
 
             </div>
-            <div id="dashboard-child12">
+            <div id="dashboard-child12" onclick="openBoard()">
                 <div id="todos-dashboard">
                     <div id="todos-dashboard-child">
                          <img id="todos-img" src="./assets/img/board.png" alt="">
@@ -233,7 +242,7 @@ function generateDashboardHTML(){
         </div>
 
         <div id="dashboard-child2">
-            <div id="dashboard-child21" >
+            <div id="dashboard-child21" onclick="openBoard()">
                 <div class="dashboard-child2-all">
                      <div id="board-dashboard-child" class="dashboard-child2x">
                         <img id="board-img" src="./assets/img/board.png" alt="">
@@ -245,7 +254,7 @@ function generateDashboardHTML(){
                
 
             </div>
-            <div id="dashboard-child22">
+            <div id="dashboard-child22" onclick="openBoard()">
                 <div class="dashboard-child2-all">
                     <div id="progress-dashboard-child" class="dashboard-child2x">
                         <img id="progress-img" src="./assets/img/progress.png" alt="">
@@ -257,7 +266,7 @@ function generateDashboardHTML(){
 
             </div>
 
-            <div id="dashboard-child23">
+            <div id="dashboard-child23" onclick="openBoard()">
                 <div class="dashboard-child2-all">
                     <div id="feedback-dashboard-child" class="dashboard-child2x">
                         <img id="feedback-img" src="./assets/img/feedback.png" alt="">
@@ -268,7 +277,7 @@ function generateDashboardHTML(){
                 </div>
 
             </div>
-            <div id="dashboard-child24">
+            <div id="dashboard-child24" onclick="openBoard()">
                 <div class="dashboard-child2-all">
                     <div id="done-dashboard-child" class="dashboard-child2x">
                         
@@ -285,4 +294,14 @@ function generateDashboardHTML(){
 
 
     `;
+}
+
+/**
+ * This function load the user name from the local storage
+ */
+ function loadUserName(){
+    let loggedUserNameAsText = localStorage.getItem('Name');
+    /* let test=localStorage.getItem('Mail'); */
+     loggedUserName = JSON.parse(loggedUserNameAsText);
+
 }

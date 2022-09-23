@@ -5,19 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Summary</title>
-    <link rel="stylesheet" href="./assets/stylessheets/summary.css">
-    <link rel="stylesheet" href="./assets/fonts.css">
-    <script src="./js/scripte.js"></script>
+    <link rel="stylesheet" href="assets/stylessheets/summary.css">
+    <link rel="stylesheet" href="assets/fonts.css">
+    <script src="js/scripte.js"></script>
     <script src="js/board.js"></script>
+   <!--  <script src="js/login.js"></script> -->
 </head>
-<body onload="includeHTML();dashboard()">
+<body onload="includeHTML();loadUserName();dashboard()">
     
     <!-- include Templates  -->
     <div w3-include-html="./assets/templates/desktop_template.html"></div>
 
 
     <div id="greeting">
-        <span id="greet"> </span>
+        <span id="greeting-child"> Good morning </span>
     </div>
     <div id="dashboard">
        <!--  <div id="dashboard-child1">
