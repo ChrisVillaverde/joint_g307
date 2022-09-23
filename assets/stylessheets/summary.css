@@ -105,7 +105,7 @@ body{
 }
 
 #dashboard-child11:hover {
-    transform: scale(1.06);  
+    transform: scale(1.04) !important;  
     background: #FFFFFF;
     border-radius: 0px 20px 20px  20px;
 }
@@ -146,15 +146,51 @@ body{
     border-radius: 0px 20px 20px  20px;
 }
 
+/* #dashboard-child11:hover #dashboard{ 
+    transform: scale(0.87);  
+    
+} */
+    
+
+#dashboard:hover #dashboard-child12{ 
+    transform: scale(0.87);  
+    
+}
+
+#dashboard:hover #dashboard-child11{ 
+    transform: scale(0.87);  
+    
+}
+
+#dashboard:hover #dashboard-child21{ 
+    transform: scale(0.87);  
+    
+}
+
+#dashboard:hover #dashboard-child22{ 
+    transform: scale(0.87);  
+    
+}
+
+#dashboard:hover #dashboard-child23{ 
+    transform: scale(0.87);  
+    
+}
+
+#dashboard:hover #dashboard-child24{ 
+    transform: scale(0.87);  
+    
+}
+
 #dashboard-child12:hover #todosTasksNumber {
     color: #4589FF;
 }
 
-#dashboard-child12:hover ~ #dashboard-child11{
+/* #dashboard-child12:hover ~ #dashboard-child11{
     width: 108px;
     height: 91px; 
       
-}
+} */
 
 #dashboard-child2{
     display: flex;
@@ -193,7 +229,7 @@ body{
 }
 
 #dashboard-child21:hover{
-    transform: scale(1.1);  
+    transform: scale(1.1) !important;  
     background: #4589FF;
     border-radius: 0px 20px 20px  20px;
 }
@@ -235,7 +271,7 @@ body{
 }
 
 #dashboard-child22:hover{
-    transform: scale(1.1);  
+    transform: scale(1.1)  !important;  
     background: #4589FF;
     border-radius: 0px 20px 20px  20px;
 }
@@ -275,7 +311,7 @@ body{
 }
 
 #dashboard-child23:hover{
-    transform: scale(1.1);  
+    transform: scale(1.1)  !important;  
     background: #4589FF;
     border-radius: 0px 20px 20px  20px;
 }
@@ -315,7 +351,7 @@ body{
 }
 
 #dashboard-child24:hover{
-    transform: scale(1.1);  
+    transform: scale(1.1)  !important;  
     background: #4589FF;
     border-radius: 0px 20px 20px  20px;
 }
