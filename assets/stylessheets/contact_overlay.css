@@ -39,20 +39,63 @@ h1 {
     gap: 10px;
 }
 
-.contacts img {
+.contacts-img {
     border-radius: 100%;
     width: 18%;
     margin-top: 20px;
 }
 
-input {
-    width: 200px;
-    border: unset;
-    border-bottom: 1px solid lightgray;
-    width: 270px;
-    height: 26px;
-}
-
+ 
+.input-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 29px;
+    width: 292px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+  }
+  
+  .input-name,
+  .input-email,
+  .input-phone {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 21px;
+    gap: 10px;
+    width: 295px;
+    height: 49px;
+    background: #ffffff;
+    border-bottom: 1px solid #d1d1d1;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
+  
+  .input-name-child,
+  .input-email-child,
+  .input-phone-child {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    gap: 10px;
+    width: 265px;
+    height: 23px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  
 span {
     font-family: 'inter';
     color: white;
@@ -70,10 +113,14 @@ span {
     background: #FFFFFF;
     border: 1px solid #647188;
     border-radius: 10px;
-    width: 110px;
+    width: 100px;
     height: 42px;
     font-family: 'open-sans';
-    font-size: 16px;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
 }
 
 .btn-two {
@@ -81,8 +128,14 @@ span {
     background-color: var(--primary);
     color: white;
     border: unset;
-    width: 140px;
+    width: 143px;
     font-family: 'open-sans';
-    font-size: 16px;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+
 }
+
     

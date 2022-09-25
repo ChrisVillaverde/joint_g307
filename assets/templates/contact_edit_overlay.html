@@ -19,11 +19,28 @@
             </div>
 
             <div class="contacts">
-                <img src="/assets/img/profile-dummy.png" alt="">
+                <img class="contacts-img" src="/assets/img/profile-dummy.png" alt="">
 
-                <input placeholder="Name" type="text">
-                <input placeholder="E-mail" type="text">
-                <input placeholder="Phone" type="text">
+                <form action="">
+                    <div class="input-content">
+
+                        <div class="input-name">
+                            <input placeholder="Name" class="input-name-child" type="name" required autocomplete="on">
+                            <img  src="/assets/img/name.png" alt="">
+                        </div>
+
+                        <div class="input-email">
+                            <input placeholder="E-mail" class="input-email-child" type="email" required autocomplete="off">
+                            <img src="/assets/img/umschlag.png" alt="">
+                        </div>
+
+                        <div class="input-phone">
+                            <input placeholder="Phone" class="input-phone-child" type="tel" name="phone" required autocomplete="off">
+                            <img src="/assets/img/phone.png" alt="">
+                        </div>
+
+                    </div>
+                </form>
 
             </div>
 
