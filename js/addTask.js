@@ -72,7 +72,7 @@ function resetForm() {
 
 }
 
-async function addTask() {
+async function addTask(status) {
 
     ids = tasks.map((number) => {
         return number.id
@@ -116,17 +116,21 @@ async function addTask() {
             'category': category.value,
             'priority': priority_button,
             'description': description.value,
-            'id': id
+            'id': id,
+            'state': status
 
         });
 
     await saveTask();
+    
 
 }
 
 
 async function saveTask() {
     await backend.setItem('tasks', tasks);
+    let taskAsText = JSON.stringify(tasks);
+    localStorage.setItem('Task', taskAsText);
 
 }
 

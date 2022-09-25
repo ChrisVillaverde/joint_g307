@@ -1,38 +1,65 @@
-let Alltasks_keys = [{
-    'id': 0,
-    'name': 'Design',
-    'title': 'Social media strategy',
-    'description':'Develop and campaign for brand positioning',
-    'category': 'todo'
-},
-{
-    'id': 1,
-    'name': 'Design',
-    'title': 'Social media strategy',
-    'description':'Develop and campaign for brand positioning',
-    'category': 'done'
-},
-{
-    'id': 2,
-    'name': 'Marketing',
-    'title': 'Social media strategy',
-    'description':'Develop and campaign for brand positioning',
-    'category': 'done'
-},
-{
-    'id': 3,
-    'name': 'Sales',
-    'title': 'Social media strategy',
-    'description':'Develop and campaign for brand positioning',
-    'category': 'progress'
-},
-{
-    'id': 4,
-    'name': 'Backoffice',
+/* let tasks = [{
     'title': 'Accounting invoices',
-    'description':'Write open invoices for customer',
-    'category': 'feedback'
-}];
+            'selectContacts': selectContacts,
+            'date': new Date().getTime(),
+            'category':  'Backoffice',
+            'priority': 'high',
+            'description': 'Write open invoices for customer',
+            'id': 0,
+            'state': 'todo'
+},
+{
+    'title': 'Accounting invoices',
+            'selectContacts': selectContacts,
+            'date': new Date().getTime(),
+            'category':  'Backoffice',
+            'priority': 'high',
+            'description': 'Write open invoices for customer',
+            'id': 1,
+            'state': 'done'
+},
+{
+    'title': 'Accounting invoices',
+            'selectContacts': selectContacts,
+            'date': new Date().getTime(),
+            'category':  'Backoffice',
+            'priority': "high",
+            'description': 'Write open invoices for customer',
+            'id': 2,
+            'state': 'done'
+},
+{
+    'title': 'Accounting invoices',
+            'selectContacts': selectContacts,
+            'date': new Date().getTime(),
+            'category':  'Backoffice',
+            'priority': 'high',
+            'description': 'Write open invoices for customer',
+            'id': 3,
+            'state': 'progress'
+},
+{
+    'title': 'Accounting invoices',
+            'selectContacts': selectContacts,
+            'date': new Date().getTime(),
+            'category':  'Backoffice',
+            'priority': 'high',
+            'description': 'Write open invoices for customer',
+            'id': 4,
+            'state': 'feedback'
+}];  */
+            
+
+/* 'title': 'Accounting invoices',
+            'selectContacts': selectContacts,
+            'date': new Date().getTime(),
+            'category':  'Backoffice',
+            'priority': priority_button,
+            'description': 'Write open invoices for customer',
+            'id': id,
+            'state': 'feedback'
+
+ */
 
 let currentDraggedElement ;
 let todosTasksNumber =0;
@@ -41,13 +68,36 @@ let feedbackTasksNumber =0;
 let progressTasksNumber =0;
 let loggedUserName = [];
 
+/* let tasks=[]; */
+
+/* async function init_board() {
+    setURL('https://gruppe-307.developerakademie.net/smallest_backend_ever');
+    await downloadFromServer();
+    await loadUser();
+    await loadTask(); 
+} */
+
+function openNav() {
+    document.getElementById("myNav").style.width = "28%";
+}
+  
+function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+}
+
+async function loadTask() {
+
+    tasks = await backend.getItem('tasks') || [];
+
+}
+
 function allowDrop(ev) {
     ev.preventDefault();
     
   }
 
-  function moveTo(category){
-    Alltasks_keys[currentDraggedElement]['category'] = category;
+  function moveTo(state){
+    task[currentDraggedElement]['state'] = state;
     updateHTML();
 
   }
@@ -74,7 +124,7 @@ function allowDrop(ev) {
 
 
   function updateTodoHTML(){
-    let todos = Alltasks_keys.filter(t => t['category'] == 'todo');
+    let todos = task.filter(t => t['state'] == 'todo');
     document.getElementById('alltasks_todo').innerHTML = '';
     for (let index = 0; index < todos.length; index++) {
         const element = todos[index];
@@ -84,7 +134,7 @@ function allowDrop(ev) {
     
 }
   function updateProgressHTML(){
-    let progresses = Alltasks_keys.filter(t => t['category'] == 'progress');
+    let progresses = task.filter(t => t['state'] == 'progress');
     document.getElementById('alltasks_progress').innerHTML = '';
     for (let index = 0; index < progresses.length; index++) {
         const element = progresses[index];
@@ -95,7 +145,7 @@ function allowDrop(ev) {
 }
 
 function updateFeedbackHTML(){
-    let feedbacks = Alltasks_keys.filter(t => t['category'] == 'feedback');
+    let feedbacks = task.filter(t => t['state'] == 'feedback');
     document.getElementById('alltasks_feedback').innerHTML = '';
     for (let index = 0; index < feedbacks.length; index++) {
         const element = feedbacks[index];
@@ -106,7 +156,7 @@ function updateFeedbackHTML(){
 }
 
 function updateDoneHTML(){
-    let dones = Alltasks_keys.filter(t => t['category'] == 'done');
+    let dones = task.filter(t => t['state'] == 'done');
     document.getElementById('alltasks_done').innerHTML = '';
     for (let index = 0; index < dones.length; index++) {
         const element = dones[index];
@@ -127,7 +177,7 @@ function generateTasksHTML(element){
     <div class="doneTask_1" draggable="true" ondragstart="startDragging(${element['id']})">
                 <div id="doneTaskCard-child">
                     <div id="doneTaskCard">
-                        <div id="doneTaskCard-name"><span id="doneTaskCard-text">${element['name']}</span></div>
+                        <div id="doneTaskCard-name"><span id="doneTaskCard-text">${element['category']}</span></div>
                         <div class="taskCard-title">
                             <div class="taskCard-description">
                                 <span class="taskCard-description-title">${element['title']}</span>
@@ -163,7 +213,7 @@ function generateTasksStatusHTML(element){
     return /*html*/ `
     <div class="feedbackTask_1" draggable="true" ondragstart="startDragging(${element['id']})">
         <div id="feedbackTaskCard">
-        <div id="feedbackTaskCard-name"><span id="feedbackTaskCard-text">${element['name']}</span></div>
+        <div id="feedbackTaskCard-name"><span id="feedbackTaskCard-text">${element['category']}</span></div>
         <div class="taskCard-title">
             <div class="taskCard-description">
                 <span class="taskCard-description-title">${element['title']}</span>
@@ -199,10 +249,10 @@ function openBoard(){
 }
 
 function generateDashboardHTML(){
-    progressTasksNumber=Alltasks_keys.filter(t => t['category'] == 'progress');
-    todosTasksNumber=Alltasks_keys.filter(t => t['category'] == 'todo');
-    feedbackTasksNumber=Alltasks_keys.filter(t => t['category'] == 'feedback');
-    doneTasksNumber=Alltasks_keys.filter(t => t['category'] == 'done');
+    progressTasksNumber=task.filter(t => t['state'] == 'progress');
+    todosTasksNumber=task.filter(t => t['state'] == 'todo');
+    feedbackTasksNumber=task.filter(t => t['state'] == 'feedback');
+    doneTasksNumber=task.filter(t => t['state'] == 'done');
 
     return /*html*/ `
      <div id="dashboard-child1">
@@ -246,7 +296,7 @@ function generateDashboardHTML(){
                 <div class="dashboard-child2-all">
                      <div id="board-dashboard-child" class="dashboard-child2x">
                         <img id="board-img" src="./assets/img/board.png" alt="">
-                        <span id="boardTasksNumber" class="tasksNumber">${Alltasks_keys.length}</span>
+                        <span id="boardTasksNumber" class="tasksNumber">${task.length}</span>
                     </div> 
                 
                     <span id="board-text">Tasks in Board</span>
@@ -303,5 +353,113 @@ function generateDashboardHTML(){
     let loggedUserNameAsText = localStorage.getItem('Name');
     /* let test=localStorage.getItem('Mail'); */
      loggedUserName = JSON.parse(loggedUserNameAsText);
+
+}
+
+function generateOverlay(state){
+    document.getElementById("myNav").innerHTML =/*html*/ `
+    <img class="closebtn" onclick="closeNav()" src="./assets/img/closeX.png" alt="">
+    <div id="createTask-overlay">
+       <span class="addTask-text-overlay">Add Task</span>
+        
+        
+        <!-- <Button onclick="taskAddedToBord()" type="submit" value="Submit" class="buttonCreateTask">Create Task</Button> -->
+            
+        
+    </div>
+    <div class="overlay-content">
+        <div class="addTask-board">
+        <form id="form_board"  onsubmit="addTask(${state}); return false;">
+            <div class="left-box">
+                <!--Title-->
+    
+                    <input class="title-board" id="title" type="text" required placeholder="Enter a title">
+    
+    
+                <!--Select Contacts-->
+                  
+                <div class="selectContacts"   >
+                    <div class="input_select_contacts">
+                        <input id="selectContacts"  type="text" readonly="readonly" required placeholder="Select contacts to assign" >
+                        <img src="assets/img/dropdown_arrow.png" onclick="showContact()">
+                    </div>
+            
+                    <div id="selectAll" class="selectAll"> </div> 
+                                      
+                </div>
+                
+    
+    
+                <!--Due Date-->
+    
+                    <span>Due date</span>
+                    <div class="dueDate" onclick="showDate()"  >
+                    <input id="dueDate"  type="text" required placeholder="dd/mm/yyyy">
+                    <img src="assets/img/calendar-event.png">
+                </div>
+    
+                <!--Category-->
+                
+                    <span>Category</span>
+    
+                    <select required id="category" class="category" >
+                        <option value="" disabled selected hidden>Select Task category</option>
+                     <!--   <option value="">New category</option> -->
+                        <option value="Sales">Sales <img src="" alt=""></option>
+                        <option value="Backoffice">Backoffice</option>
+                        <option value="Design">Design</option>
+                    </select>
+    
+                
+                <!--Priority-->
+    
+                <div class="priority">
+    
+                    <button id="button_prio_high" onclick="clickPriority ('high')" value="high" type="button"  class="b1">Urgent <img src="assets/img/red_arrow.png"></button> 
+    
+                    <button id="button_prio_middle" onclick="clickPriority ('middle')" value="middle" type="button" class="b2">Medium <img src="assets/img/medium.png"></button>
+    
+                    <button id="button_prio_low" onclick="clickPriority ('low') " value="low" type="button"  class="b3">Low <img src="assets/img/green_arrow.png"></button>
+    
+                </div>   
+                 
+    
+                <!--Description-->
+                    
+                    <span>Description</span>
+    
+                    <textarea required class="description"  type="text"
+                    
+                    id="description"  placeholder="Enter a description..">
+    
+                    </textarea>
+
+                    <button class="createTask-btn" onclick="taskAddedToBord()" type="submit" value="Submit"> <span class="createTask-btn-text">Create task</span>  <img class="createTask-btn-img" src="./assets/img/checkOK.png" alt="">
+
+        </button>
+    
+            </div>
+                <!--Add Task Button Confirm-->
+            
+    
+            </div>
+            
+            
+            </form>
+    
+            <div class="showCreateTask d-none" id="showCreateTask">Task added to board</div>
+    </div>
+  </div>
+    
+    `;
+    loadTasks();
+    updateHTML();
+
+}
+
+function loadTasks(){
+    let taskAsText = localStorage.getItem('Task');
+    /* let test=localStorage.getItem('Mail'); */
+    task = JSON.parse(taskAsText);
 
 }

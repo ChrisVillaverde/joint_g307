@@ -6,12 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/fonts.css">
     <link rel="stylesheet" href="./assets/stylessheets/board.css">
+    <link rel="stylesheet" href="./assets/stylessheets/addTask.css">
     <title>Board</title>
     <script src="js/scripte.js"></script>
+    <script src="js/addTask.js"></script>
     <script src="js/board.js"></script>
+    
 
 </head>
-<body onload="includeHTML(); updateHTML()">
+<body onload="includeHTML(); loadTasks(); updateHTML();">
 
     <!-- Include Templates  -->
 
@@ -32,7 +35,7 @@
                 
             </div>
             
-            <button id="addTask-btn" > <span class="addTask-btn-text">Add task</span>  <img class="addTask-btn-img" src="./assets/img/plus_white.png" alt="">
+            <button id="addTask-btn" onclick="openNav(); generateOverlay('todo')" > <span class="addTask-btn-text">Add task</span>  <img class="addTask-btn-img" src="./assets/img/plus_white.png" alt="">
 
             </button>
                 
@@ -66,7 +69,7 @@
         <div id="todosTasks" >
             <div class="category-child">
                 <h2 id="todo-text">To do</h2>
-                <img class="category-plus" src="./assets/img/plus.png" alt="">
+                <img  onclick="openNav(); generateOverlay('todo')" class="category-plus" src="./assets/img/plus.png" alt="">
             </div>
             <div id="alltasks_todo"  ondrop="moveTo('todo');removehighlight()"  ondragover="allowDrop(event); highlight('alltasks_todo')"></div>
             <!-- <div id="todosTask_1" class="allTasks_design" draggable="true" ondragstart="drag(event)">
@@ -99,7 +102,7 @@
         <div id="inProgressTasks">
             <div class="category-child">
                 <h2 id="progress-text">In Progress</h2>
-                <img class="category-plus" src="./assets/img/plus.png" alt="">
+                <img  onclick="openNav(); generateOverlay('progress')" class="category-plus" src="./assets/img/plus.png" alt="">
             </div>
             <div id="alltasks_progress" ondrop="moveTo('progress');removehighlight()"  ondragover="allowDrop(event);highlight('alltasks_progress')"></div>
            <!--  <div id="inProgressTask_1" class="allTasks_design" draggable="true" ondragstart="drag(event)">
@@ -131,7 +134,7 @@
         <div id="feedbackTasks" >
             <div class="category-child">
                 <h2 id="feedback-text">Await feedback</h2>
-                <img class="category-plus" src="./assets/img/plus.png" alt="">
+                <img  onclick="openNav(); generateOverlay('feedback')" class="category-plus" src="./assets/img/plus.png" alt="">
             </div>
             <div id="alltasks_feedback" ondrop="moveTo('feedback');removehighlight()"  ondragover="allowDrop(event);highlight('alltasks_feedback')"></div>
            <!--  <div id="feedbackTask_1" class="allTasks_design" draggable="true" ondragstart="drag(event)">
@@ -183,7 +186,7 @@
         <div id="doneTasks">
             <div class="category-child">
                 <h2 id="done-text">Done</h2>
-                <img class="category-plus" src="./assets/img/plus.png" alt="">
+                <img  onclick="openNav(); generateOverlay('done')" class="category-plus" src="./assets/img/plus.png" alt="">
             </div>
             <div id="alltasks_done" ondrop="moveTo('done');removehighlight()" ondragover="allowDrop(event);highlight('alltasks_done')"></div>
             
@@ -191,6 +194,10 @@
         </div>
 
 
+    </div>
+
+    <div id="myNav" class="overlay">
+        
     </div>
     
     

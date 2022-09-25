@@ -25,6 +25,11 @@ form {
     display: flex;
 }
 
+#form_board{
+    margin-left: 0px;
+    display: flex;
+}
+
 .title {
     width: 215px;
     height: 48px;
@@ -97,6 +102,7 @@ form {
     order: 0;
     flex-grow: 0;
 }
+
 
 .priority {
     display: flex;
@@ -328,16 +334,13 @@ form {
 }
 
 
-
-
 input {
     width: 100%;
     padding: 12px 20px;
-    padding-bottom: 18px!important;
+    padding-bottom: 15px!important;
     box-sizing: border-box;
     border: none;
     font-size: 19px;
-
     outline: none;
 }
 
