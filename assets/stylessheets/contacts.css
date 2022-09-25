@@ -1,0 +1,63 @@
+:root {
+  --primary: #4589ff;
+}
+
+body {
+  margin: 0;
+  font-family: inter;
+}
+
+.main-content {
+  display: flex;
+}
+
+.btn {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+button {
+  border-radius: 10px;
+  background-color: var(--primary);
+  color: white;
+  border: unset;
+  width: 140px;
+  height: 42px;
+  font-family: "open-sans";
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.capa {
+  height: 20px;
+}
+
+.content-left {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+}
+
+.contact-book {
+  height: 100vh;
+  padding: 40px;
+  width: 360px;
+  overflow-y: scroll;
+  background: #ffffff;
+  box-shadow: 4px 0px 6px rgba(0, 0, 0, 0.08);
+}
+
+.contact-box {
+  display: flex;
+  padding: 20px;
+}
+
+.contact-img {
+    border-radius: 100%;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
