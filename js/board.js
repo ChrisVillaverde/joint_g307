@@ -116,6 +116,7 @@ function allowDrop(ev) {
 
   function moveTo(state){
     tasks[currentDraggedElement]['state'] = state;
+    saveTask();
     updateHTML();
 
   }
@@ -375,15 +376,18 @@ function generateDashboardHTML(){
 
 }
 
+async function saveTask() {
+    await backend.setItem('tasks', tasks);
+    
+
+}
+
 async function generateOverlay(state){
     document.getElementById("myNav").innerHTML =/*html*/ `
     <img class="closebtn" onclick="closeNav()" src="./assets/img/closeX.png" alt="">
     <div id="createTask-overlay">
        <span class="addTask-text-overlay">Add Task</span>
-        
-        
-        <!-- <Button onclick="taskAddedToBord()" type="submit" value="Submit" class="buttonCreateTask">Create Task</Button> -->
-            
+         
         
     </div>
     <div class="overlay-content">
@@ -447,7 +451,7 @@ async function generateOverlay(state){
                     
                     <span>Description</span>
     
-                    <textarea required class="description"  type="text"
+                    <textarea required class="description-overlay"  type="text"
                     
                     id="description"  placeholder="Enter a description..">
     

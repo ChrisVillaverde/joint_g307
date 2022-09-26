@@ -130,7 +130,6 @@ async function addTask(status) {
 async function saveTask() {
     await backend.setItem('tasks', tasks);
     let taskAsText = JSON.stringify(tasks);
-    localStorage.setItem('Task', taskAsText);
 
 }
 
