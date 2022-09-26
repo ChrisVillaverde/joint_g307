@@ -197,6 +197,16 @@ function startDragging(id){
 }
 
 function generateTasksHTML(element){
+    let urlImg;
+    if(element['priority']=='low'){
+        urlImg = "./assets/img/green_arrow.png";
+    }
+    if(element['priority']=='high'){
+        urlImg = "./assets/img/red_arrow.png";
+    }
+    if(element['priority']=='middle'){
+        urlImg = "./assets/img/medium.png";
+    }
 
     return /*html*/ `
     <div class="doneTask_1" draggable="true" ondragstart="startDragging(${element['id']})">
@@ -220,7 +230,10 @@ function generateTasksHTML(element){
                                     <div class="user-id-child_2"> <span class="userName" >MV</span> </div>
 
                                 </div>
-                                <div id="taskPriority"> <img id="taskPriority-img" src="./assets/img/green_arrow.png" alt=""> </div>
+                                <div id="taskPriority">
+                                    
+                                     <img id="taskPriority-img" src=${urlImg} alt=""> 
+                                </div>
                             </div>
                         </div>
     
@@ -234,6 +247,16 @@ function generateTasksHTML(element){
 }
 
 function generateTasksStatusHTML(element){
+    let urlImg;
+    if(element['priority']=='low'){
+        urlImg = "./assets/img/green_arrow.png";
+    }
+    if(element['priority']=='high'){
+        urlImg = "./assets/img/red_arrow.png";
+    }
+    if(element['priority']=='middle'){
+        urlImg = "./assets/img/medium.png";
+    }
 
     return /*html*/ `
     <div class="feedbackTask_1" draggable="true" ondragstart="startDragging(${element['id']})">
@@ -250,7 +273,7 @@ function generateTasksStatusHTML(element){
                     <div class="user-id-child_2"> <span class="userName" >MV</span> </div>
 
                 </div>
-                <div id="taskPriority"> <img id="taskPriority-img" src="./assets/img/medium.png" alt=""> </div>
+                <div id="taskPriority"> <img id="taskPriority-img" src= ${urlImg} alt=""> </div>
             </div>
         </div>
                 
