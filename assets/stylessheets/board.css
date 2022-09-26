@@ -276,8 +276,6 @@ body{
     flex-grow: 0;
 }
 
-
-
 #todosTask_1{
     display: flex;
     flex-direction: column;

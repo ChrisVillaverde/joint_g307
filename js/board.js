@@ -457,7 +457,7 @@ async function generateOverlay(state){
                     
                     <span>Description</span>
     
-                    <textarea required class="description-overlay"  type="text"
+                    <textarea required class="description"  type="text"
                     
                     id="description"  placeholder="Enter a description..">
     

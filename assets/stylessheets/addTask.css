@@ -273,30 +273,6 @@ form {
     flex-grow: 0;
 }
 
-.description-overlay{
-    display: flex;
-flex-direction: row;
-align-items: flex-start;
-padding: 18px 21px;
-gap: 10px;
-isolation: isolate;
-
-width: 422px;
-height: 103px;
-
-background: #FFFFFF;
-/* Style */
-
-border: 1px solid #D1D1D1;
-border-radius: 0px 10px 10px 10px;
-
-/* Inside auto layout */
-
-flex: none;
-order: 1;
-flex-grow: 0;
-}
-
 .buttonConfirm {
     display: flex;
     gap: 10px;
