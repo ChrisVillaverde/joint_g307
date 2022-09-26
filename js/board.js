@@ -114,11 +114,10 @@ function allowDrop(ev) {
     
   }
 
-  function moveTo(state){
+function moveTo(state){
     tasks[currentDraggedElement]['state'] = state;
     saveTask();
     updateHTML();
-
   }
 
   function highlight(id){
@@ -186,7 +185,14 @@ function updateDoneHTML(){
 }
 
 function startDragging(id){
-    currentDraggedElement = id;
+    for (let i = 0; i < tasks.length; i++) {
+        const element = tasks[i];
+        if(element['id'] == id){
+            currentDraggedElement = i;
+            break;
+        }     
+    }  
+    
 
 }
 
@@ -257,7 +263,7 @@ function generateTasksStatusHTML(element){
 function dashboard(){
     
     if(loggedUserName[0]){
-        document.getElementById('greeting-child').innerHTML =`Good morning <b id="greet"> ${loggedUserName[0]} </b> `;
+        document.getElementById('greeting-child').innerHTML =`Good morning <b id="greet"> ${loggedUserName} </b> `;
     }
     
     document.getElementById('dashboard').innerHTML =generateDashboardHTML() ;
@@ -530,7 +536,7 @@ async function addTask_board(status) {
 
 
     let id = Math.max(...onlyNumbers) + 1;
-    if (!id) {
+    if (!id || id==-Infinity) {
         id = 1;
     }
 
