@@ -84,7 +84,7 @@ async function addTask(status) {
 
 
     let id = Math.max(...onlyNumbers) + 1;
-    if (!id) {
+    if (!id || id==-Infinity) {
         id = 1;
     }
 
