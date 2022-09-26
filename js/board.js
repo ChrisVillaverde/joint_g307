@@ -68,21 +68,38 @@ let feedbackTasksNumber =0;
 let progressTasksNumber =0;
 let loggedUserName = [];
 
-/* let tasks=[]; */
+/* let tasks=[];  */
 
-/* async function init_board() {
+async function init_board() {
     setURL('https://gruppe-307.developerakademie.net/smallest_backend_ever');
     await downloadFromServer();
     await loadUser();
     await loadTask(); 
-} */
+    updateHTML();
+}
+
+async function init_summary() {
+    setURL('https://gruppe-307.developerakademie.net/smallest_backend_ever');
+    await downloadFromServer();
+    await loadUser();
+    await loadTask(); 
+    loadUserName();
+    dashboard();
+}
+
+async function loadUser(){
+    users = await JSON.parse(backend.getItem('users')) || [];
+    guests = await JSON.parse(backend.getItem('guests')) || [];    
+}
 
 function openNav() {
     document.getElementById("myNav").style.width = "28%";
+    document.getElementById("board-body").style.opacity = "0.5";
 }
   
 function closeNav() {
     document.getElementById("myNav").style.width = "0%";
+    document.getElementById("board-body").style.opacity = "1";
 }
 
 async function loadTask() {
@@ -97,7 +114,7 @@ function allowDrop(ev) {
   }
 
   function moveTo(state){
-    task[currentDraggedElement]['state'] = state;
+    tasks[currentDraggedElement]['state'] = state;
     updateHTML();
 
   }
@@ -124,7 +141,7 @@ function allowDrop(ev) {
 
 
   function updateTodoHTML(){
-    let todos = task.filter(t => t['state'] == 'todo');
+    let todos = tasks.filter(t => t['state'] == 'todo');
     document.getElementById('alltasks_todo').innerHTML = '';
     for (let index = 0; index < todos.length; index++) {
         const element = todos[index];
@@ -134,7 +151,7 @@ function allowDrop(ev) {
     
 }
   function updateProgressHTML(){
-    let progresses = task.filter(t => t['state'] == 'progress');
+    let progresses = tasks.filter(t => t['state'] == 'progress');
     document.getElementById('alltasks_progress').innerHTML = '';
     for (let index = 0; index < progresses.length; index++) {
         const element = progresses[index];
@@ -145,7 +162,7 @@ function allowDrop(ev) {
 }
 
 function updateFeedbackHTML(){
-    let feedbacks = task.filter(t => t['state'] == 'feedback');
+    let feedbacks = tasks.filter(t => t['state'] == 'feedback');
     document.getElementById('alltasks_feedback').innerHTML = '';
     for (let index = 0; index < feedbacks.length; index++) {
         const element = feedbacks[index];
@@ -156,7 +173,7 @@ function updateFeedbackHTML(){
 }
 
 function updateDoneHTML(){
-    let dones = task.filter(t => t['state'] == 'done');
+    let dones = tasks.filter(t => t['state'] == 'done');
     document.getElementById('alltasks_done').innerHTML = '';
     for (let index = 0; index < dones.length; index++) {
         const element = dones[index];
@@ -249,10 +266,10 @@ function openBoard(){
 }
 
 function generateDashboardHTML(){
-    progressTasksNumber=task.filter(t => t['state'] == 'progress');
-    todosTasksNumber=task.filter(t => t['state'] == 'todo');
-    feedbackTasksNumber=task.filter(t => t['state'] == 'feedback');
-    doneTasksNumber=task.filter(t => t['state'] == 'done');
+    progressTasksNumber=tasks.filter(t => t['state'] == 'progress');
+    todosTasksNumber=tasks.filter(t => t['state'] == 'todo');
+    feedbackTasksNumber=tasks.filter(t => t['state'] == 'feedback');
+    doneTasksNumber=tasks.filter(t => t['state'] == 'done');
 
     return /*html*/ `
      <div id="dashboard-child1">
@@ -296,7 +313,7 @@ function generateDashboardHTML(){
                 <div class="dashboard-child2-all">
                      <div id="board-dashboard-child" class="dashboard-child2x">
                         <img id="board-img" src="./assets/img/board.png" alt="">
-                        <span id="boardTasksNumber" class="tasksNumber">${task.length}</span>
+                        <span id="boardTasksNumber" class="tasksNumber">${tasks.length}</span>
                     </div> 
                 
                     <span id="board-text">Tasks in Board</span>
@@ -356,7 +373,7 @@ function generateDashboardHTML(){
 
 }
 
-function generateOverlay(state){
+async function generateOverlay(state){
     document.getElementById("myNav").innerHTML =/*html*/ `
     <img class="closebtn" onclick="closeNav()" src="./assets/img/closeX.png" alt="">
     <div id="createTask-overlay">
@@ -434,7 +451,7 @@ function generateOverlay(state){
     
                     </textarea>
 
-                    <button class="createTask-btn" onclick="taskAddedToBord()" type="submit" value="Submit"> <span class="createTask-btn-text">Create task</span>  <img class="createTask-btn-img" src="./assets/img/checkOK.png" alt="">
+                    <button class="createTask-btn" onclick="taskAddedToBord(); return false;" type="submit" value="Submit"> <span class="createTask-btn-text">Create task</span>  <img class="createTask-btn-img" src="./assets/img/checkOK.png" alt="">
 
         </button>
     
@@ -459,7 +476,7 @@ function generateOverlay(state){
 
 function loadTasks(){
     let taskAsText = localStorage.getItem('Task');
-    /* let test=localStorage.getItem('Mail'); */
     task = JSON.parse(taskAsText);
 
 }
+
