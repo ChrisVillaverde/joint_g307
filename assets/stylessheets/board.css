@@ -961,6 +961,12 @@ body{
     /* white */
     background: #FFFFFF;
   }
+
+  .scroll-class{
+    max-height: calc(100vh - 0px);
+    overflow-y: scroll;
+
+}
   
 /*   .overlay a {
     padding: 8px;

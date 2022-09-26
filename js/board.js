@@ -66,6 +66,7 @@ let todosTasksNumber =0;
 let doneTasksNumber =0;
 let feedbackTasksNumber =0;
 let progressTasksNumber =0;
+let urgentTasksNumber =0;
 let loggedUserName = [];
 
 /* let tasks=[];  */
@@ -270,6 +271,7 @@ function generateDashboardHTML(){
     todosTasksNumber=tasks.filter(t => t['state'] == 'todo');
     feedbackTasksNumber=tasks.filter(t => t['state'] == 'feedback');
     doneTasksNumber=tasks.filter(t => t['state'] == 'done');
+    urgentTasksNumber=tasks.filter(t => t['priority'] == 'high');
 
     return /*html*/ `
      <div id="dashboard-child1">
@@ -277,7 +279,7 @@ function generateDashboardHTML(){
                 <div id="urgent-dashboard">
                    <div id="urgent-dashboard-child">
                         <img id="urgent-img" src="./assets/img/urgent.png" alt="">
-                        <span id="urgentTasksNumber">1</span>
+                        <span id="urgentTasksNumber">${urgentTasksNumber.length}</span>
                    </div> 
                     
                     <span class="urgent-text">Tasks Urgent</span>
@@ -451,9 +453,9 @@ async function generateOverlay(state){
     
                     </textarea>
 
-                    <button class="createTask-btn" onclick="taskAddedToBord(); return false;" type="submit" value="Submit"> <span class="createTask-btn-text">Create task</span>  <img class="createTask-btn-img" src="./assets/img/checkOK.png" alt="">
+                    <button class="createTask-btn" onclick="taskAddedToBord()" type="submit" value="Submit"> <span class="createTask-btn-text">Create task</span>  <img class="createTask-btn-img" src="./assets/img/checkOK.png" alt="">
 
-        </button>
+                    </button>
     
             </div>
                 <!--Add Task Button Confirm-->
@@ -469,14 +471,23 @@ async function generateOverlay(state){
   </div>
     
     `;
-    loadTasks();
     updateHTML();
 
 }
 
-function loadTasks(){
-    let taskAsText = localStorage.getItem('Task');
-    task = JSON.parse(taskAsText);
+window.onscroll = function() {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        document.getElementById('alltasks_todo').classList.add('scroll-class');
+        document.getElementById('alltasks_progress').classList.add('scroll-class');
+        document.getElementById('alltasks_feedback').classList.add('scroll-class');
+        document.getElementById('alltasks_done').classList.add('scroll-class');
+    
+    }else{
+        document.getElementById('alltasks_todo').classList.remove('scroll-class');
+        document.getElementById('alltasks_progress').classList.remove('scroll-class');
+        document.getElementById('alltasks_feedback').classList.remove('scroll-class');
+        document.getElementById('alltasks_done').classList.remove('scroll-class');
+    }
+};
 
-}
 
