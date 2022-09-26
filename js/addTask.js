@@ -52,7 +52,7 @@ function taskAddedToBord() {
 
 
 
-    resetForm();
+   resetForm();
 
 
 

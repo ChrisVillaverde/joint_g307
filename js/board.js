@@ -94,7 +94,7 @@ async function loadUser(){
 }
 
 function openNav() {
-    document.getElementById("myNav").style.width = "28%";
+    document.getElementById("myNav").style.width = "30%";
     document.getElementById("board-body").style.opacity = "0.5";
 }
   
@@ -392,7 +392,7 @@ async function generateOverlay(state){
     </div>
     <div class="overlay-content">
         <div class="addTask-board">
-        <form id="form_board"  onsubmit="addTask(${state}); return false;">
+        <form id="form_board"  onsubmit="addTask_board('${state}'); return false;">
             <div class="left-box">
                 <!--Title-->
     
@@ -457,7 +457,7 @@ async function generateOverlay(state){
     
                     </textarea>
 
-                    <button class="createTask-btn" onclick="taskAddedToBord()" type="submit" value="Submit"> <span class="createTask-btn-text">Create task</span>  <img class="createTask-btn-img" src="./assets/img/checkOK.png" alt="">
+                    <button class="createTask-btn" onclick="taskAddedToBord_board()" type="submit" value="Submit"> <span class="createTask-btn-text">Create task</span>  <img class="createTask-btn-img" src="./assets/img/checkOK.png" alt="">
 
                     </button>
     
@@ -493,5 +493,84 @@ window.onscroll = function() {
         document.getElementById('alltasks_done').classList.remove('scroll-class');
     }
 };
+
+
+
+function taskAddedToBord_board() {
+
+    closeNav();
+    document.getElementById('showCreateTask').classList.remove('d-none');
+
+
+
+    setTimeout(() => {
+        document.getElementById('showCreateTask').classList.add('downShowCreateTask');
+    }, 2000)
+
+    setTimeout(() => {
+        document.getElementById('showCreateTask').classList.add('d-none');
+        document.getElementById('showCreateTask').classList.remove('downShowCreateTask');
+    }, 2300)
+
+
+
+}
+
+
+
+async function addTask_board(status) {
+
+    ids = tasks.map((number) => {
+        return number.id
+    })
+
+    let onlyNumbers = ids.filter(
+        element => typeof element === 'number'
+    );
+
+
+    let id = Math.max(...onlyNumbers) + 1;
+    if (!id) {
+        id = 1;
+    }
+
+    let title = document.getElementById('title');
+    let selectContacts = [];
+    if (document.getElementById('christian').checked) {
+
+        selectContacts.push(document.getElementById('christian').value);
+    }
+
+    if (document.getElementById('russell').checked) {
+
+        selectContacts.push(document.getElementById('russell').value);
+    }
+
+    if (document.getElementById('manuel').checked) {
+
+        selectContacts.push(document.getElementById('manuel').value);
+    }
+
+    let category = document.getElementById('category');
+    let description = document.getElementById('description');
+
+    tasks.push(
+        {
+            'title': title.value,
+            'selectContacts': selectContacts,
+            'date': new Date().getTime(),
+            'category': category.value,
+            'priority': priority_button,
+            'description': description.value,
+            'id': id,
+            'state': status
+
+        });
+
+    await saveTask();
+    updateHTML();
+    
+
+}
 
 
