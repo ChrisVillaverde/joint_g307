@@ -1,0 +1,18 @@
+:root {
+    --primary: #4589ff;
+}
+
+h1 {
+    color: var(--primary);
+}
+
+.legal-notice-headline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px;
+}
+
+.legal-notice-headline img {
+    height: 20px;
+}

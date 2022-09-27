@@ -64,5 +64,9 @@ function showContacts() {
   }
 }
 
+function openNewContact() { 
+    document.getElementById('contact-overlay').classList.remove('d-none');
+}
+
 
 
