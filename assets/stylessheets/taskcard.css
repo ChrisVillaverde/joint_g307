@@ -134,29 +134,21 @@ body{
 }
 
 #taskDatecontent-child{
-    width: 122px;
-height: 25px;
-
-/* Version 2/t6 */
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 21px;
-line-height: 120%;
-/* or 25px */
-
-
-/* black */
-
-color: #000000;
-
-
-/* Inside auto layout */
-
-flex: none;
-order: 1;
-flex-grow: 0;
+    width: 200px;
+    height: 25px;
+    /* Version 2/t6 */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 120%;
+    /* or 25px */
+    /* black */
+    color: #000000;
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
 }
 
 .taskFixText{
@@ -301,7 +293,19 @@ flex-grow: 0;
     flex-grow: 0;
 }
 
-#taskPrioritycontent-child{
+.high-color{
+    background-color: rgb(247, 78, 78);
+}
+
+.middle-color{
+    background-color: rgb(246, 189, 83);
+}
+
+.low-color{
+    background-color: rgb(145, 246, 145);
+}
+
+/* #taskPrioritycontent-child{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -311,14 +315,14 @@ flex-grow: 0;
     width: 125px;
     height: 31px;
     background: #FFD2D2;
-    /* nuevo */
+    /* nuevo 
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.16);
     border-radius: 10px;
-    /* Inside auto layout */
+    /* Inside auto layout 
     flex: none;
     order: 1;
     flex-grow: 0;
-}
+} */
 
 .taskPrioritytext{
     width: 62px;
@@ -426,8 +430,8 @@ gap: 6px;
 position: absolute;
 width: 57px;
 height: 57px;
-left: 525px;
-top: 737px;
+left: 637.31px;
+top: 800px;
 
 /* Version 2/main color */
 

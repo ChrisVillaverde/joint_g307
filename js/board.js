@@ -156,10 +156,10 @@ function generateTasksHTML(element){
     }
 
     return /*html*/ `
-    <div class="doneTask_1" onclick="popCardOver()" draggable="true" ondragstart="startDragging(${element['id']})">
-                <div id="doneTaskCard-child">
-                    <div id="doneTaskCard">
-                        <div id="doneTaskCard-name"><span id="doneTaskCard-text">${element['category']}</span></div>
+    <div class="doneTask_1" onclick="popCardOver(${element['id']})" draggable="true" ondragstart="startDragging(${element['id']})">
+                <div class="doneTaskCard-child">
+                    <div class="doneTaskCard">
+                        <div class="doneTaskCard-name"><span class="doneTaskCard-text">${element['category']}</span></div>
                         <div class="taskCard-title">
                             <div class="taskCard-description">
                                 <span class="taskCard-description-title">${element['title']}</span>
@@ -171,7 +171,7 @@ function generateTasksHTML(element){
                 
                             </div>
 
-                            <div id="user-priority">
+                            <div class="user-priority">
                                 <div id="user-id_${element['id']}" class="abbreviations">                               
 
                                 </div>
@@ -577,26 +577,79 @@ async function addTask_board(status) {
 
 }
 
-function popCardOver(){
+function popCardOver(id){
+    let names 
+    for (let index = 0; index < tasks.length; index++) {
+        const element = tasks[index]['id'];
+        if (id == element) {
+            selectedTaskCard = tasks[index];
+            names = tasks[index]['selectContacts'];
+            break;           
+        }
+        
+    }
     var modal = document.getElementById("task-content");
-    modal.style.display = "flex";
+    let dateString = new Date(selectedTaskCard['date']);
+   
+    document.getElementById('taskCardName-child').innerHTML = `${selectedTaskCard['category']}`;
+    document.getElementById('taskCardDescription').innerHTML = `${selectedTaskCard['title']}`;
+    document.getElementById('taskCardText').innerHTML = `${selectedTaskCard['description']}`;
+    if (selectedTaskCard['priority']=='low') {
+        document.getElementById('taskPrioritycontent-child').innerHTML = `
+        <button id="button_prio_low" type="button"  class="b3 low-color">Low <img src="assets/img/green_arrow.png"></button>
+        `;
+    }
+    if (selectedTaskCard['priority']=='middle') {
+        document.getElementById('taskPrioritycontent-child').innerHTML = `
+        <button id="button_prio_middle" type="button" class="b2 middle-color">Medium <img src="assets/img/medium.png"></button>
+        `;
+    }
+    if (selectedTaskCard['priority']=='high') {
+        document.getElementById('taskPrioritycontent-child').innerHTML = `
+        <button id="button_prio_high" type="button"  class="b1 high-color">Urgent <img src="assets/img/red_arrow.png"></button>
+        `;
+    }
+    /* document.getElementById('taskPrioritycontent-child').innerHTML = `${selectedTaskCard['priority']}`; */
+    document.getElementById('taskDatecontent-child').innerHTML = `${dateString.toDateString()}`;
+    /* document.getElementById('').innerHTML = `${selectedTaskCard['selectContacts']}`; */
     
+    assignedUserPopUpCard(names);
+    modal.style.display = "flex";   
     document.getElementById("board-body").style.opacity = "0.5";
 
 }
 
+function assignedUserPopUpCard(names){
+    let assignedUser = names;
+    for (let i = 0; i < assignedUser.length; i++) {
+        document.getElementById('assignedUser').innerHTML +=`
+        <div id="assignedUser_${i}" class="assignedUser-child"></div>
+        `;
+        
+    }
+         
+         for (let j = 0; j < assignedUser.length; j++) {
+             const userFullName = assignedUser[j];
+             //const indexSpace = userFullName.indexOf(' ') ; 
+             /* const ShortName = userFullName.charAt(0) + userFullName.charAt(indexSpace+1); */
+             const ShortName = userFullName.charAt(0) + userFullName.slice(-1);                    
+             document.getElementById('assignedUser_'+ j).innerHTML += /*html*/`
+             <div class="assignedUserName"> 
+                <span class="assignedUserName-child" >${ShortName.toUpperCase()}</span>
+             </div>
+              <span class="assignedUserNameText"> ${userFullName}<br><br></span>               
+                        
+         
+             `;
+            
+         }       
+}
+
+
 function popCardOverClose(){
     var modal = document.getElementById("task-content");
+    document.getElementById('assignedUser').innerHTML=``;
     modal.style.display = "none";
     document.getElementById("board-body").style.opacity = "1";
 
 }
-
-// When the user clicks anywhere outside of the modal, close it
-/* window.onclick = function(event) {
-    var modal = document.getElementById("task-content");
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-    /* document.getElementById("board-body").style.opacity = "1"; 
-  } */
