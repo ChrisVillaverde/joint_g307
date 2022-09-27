@@ -767,7 +767,7 @@ body{
     flex-grow: 0;
 }
 
-#progressBar{
+.progressBar{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -814,7 +814,35 @@ body{
     flex-grow: 0;
 }
 
+.abbreviations{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    width: 93px;
+    height: 35px;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+
 #user-id{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    width: 93px;
+    height: 35px;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+}
+
+#user-id-pf{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -887,7 +915,7 @@ body{
     flex-grow: 0;
 }
 
-#taskPriority{
+.taskPriority{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -905,7 +933,7 @@ body{
     flex-grow: 0;
 }
 
-#taskPriority-img{
+.taskPriority-img{
     width: 17px;
     height: 12px;
     /* Inside auto layout */

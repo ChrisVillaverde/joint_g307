@@ -137,7 +137,7 @@ function moveTo(state){
     updateProgressHTML();
     updateFeedbackHTML();
     updateDoneHTML();
-    /* dashboard(); */
+    
   }
 
 
@@ -147,18 +147,26 @@ function moveTo(state){
     for (let index = 0; index < todos.length; index++) {
         const element = todos[index];
         document.getElementById('alltasks_todo').innerHTML += generateTasksHTML(element);
-        
+        progressBarHTML(element);
+           
     }
+    assignedUserHTML(todos);
     
+   
+       
 }
+
   function updateProgressHTML(){
     let progresses = tasks.filter(t => t['state'] == 'progress');
     document.getElementById('alltasks_progress').innerHTML = '';
     for (let index = 0; index < progresses.length; index++) {
         const element = progresses[index];
-        document.getElementById('alltasks_progress').innerHTML += generateTasksStatusHTML(element);
+        document.getElementById('alltasks_progress').innerHTML += generateTasksHTML(element);
+       
         
     }
+    assignedUserHTML(progresses);
+  
     
 }
 
@@ -167,9 +175,11 @@ function updateFeedbackHTML(){
     document.getElementById('alltasks_feedback').innerHTML = '';
     for (let index = 0; index < feedbacks.length; index++) {
         const element = feedbacks[index];
-        document.getElementById('alltasks_feedback').innerHTML += generateTasksStatusHTML(element);
+        document.getElementById('alltasks_feedback').innerHTML += generateTasksHTML(element);
+        
         
     }
+    assignedUserHTML(feedbacks);
     
 }
 
@@ -179,9 +189,11 @@ function updateDoneHTML(){
     for (let index = 0; index < dones.length; index++) {
         const element = dones[index];
         document.getElementById('alltasks_done').innerHTML += generateTasksHTML(element);
+        progressBarHTML(element);
         
     }
-    
+    assignedUserHTML(dones);
+   
 }
 
 function startDragging(id){
@@ -193,7 +205,6 @@ function startDragging(id){
         }     
     }  
     
-
 }
 
 function generateTasksHTML(element){
@@ -218,20 +229,17 @@ function generateTasksHTML(element){
                                 <span class="taskCard-description-title">${element['title']}</span>
                                 <span class="taskCard-description-text">${element['description']}</span>
                             </div>
-                            <div id="progressBar">
-                                <img src="./assets/img/progressbar.png" alt="">
-                                <span id="doneNumber">3/3 Done</span>
+                            <div id="progressBar_${element['id']}" class= "progressBar">
+                                <!-- <img src="./assets/img/progressbar.png" alt="">
+                                <span id="doneNumber">3/3 Done</span> -->
                 
                             </div>
 
                             <div id="user-priority">
-                                <div id="user-id">
-                                    <div class="user-id-child_1"> <span class="userName" >SM</span> </div>
-                                    <div class="user-id-child_2"> <span class="userName" >MV</span> </div>
+                                <div id="user-id_${element['id']}" class="abbreviations">                               
 
                                 </div>
-                                <div id="taskPriority">
-                                    
+                                <div class="taskPriority">                                   
                                      <img id="taskPriority-img" src=${urlImg} alt=""> 
                                 </div>
                             </div>
@@ -243,6 +251,37 @@ function generateTasksHTML(element){
             </div>
 
 
+    `;
+}
+
+function assignedUserHTML(element){
+   
+   for (let index = 0; index < element.length; index++) {
+    const names = element[index]['selectContacts'];
+    const id = element[index]['id'];
+      
+        let assignedUser = names;
+        for (let j = 0; j < assignedUser.length; j++) {
+            const userFullName = assignedUser[j];
+            //const indexSpace = userFullName.indexOf(' ') ; 
+            /* const ShortName = userFullName.charAt(0) + userFullName.charAt(indexSpace+1); */
+            const ShortName = userFullName.charAt(0) + userFullName.slice(-1);       
+            document.getElementById('user-id_'+ id).innerHTML += /*html*/`
+            <div class="user-id-child_1" > <span class="userName" >${ShortName.toUpperCase()}</span> </div>
+        
+            `;
+           
+        }       
+    }
+
+}
+
+function progressBarHTML(element){
+    const id = element['id'];
+    document.getElementById('progressBar_'+ id).innerHTML = /*html*/`
+    <img src="./assets/img/progressbar.png" alt="">
+    <span id="doneNumber">3/3 Done</span>
+        
     `;
 }
 
@@ -268,12 +307,12 @@ function generateTasksStatusHTML(element){
                 <span class="taskCard-description-text">${element['description']}</span>
             </div>
             <div id="user-priority">
-                <div id="user-id">
-                    <div class="user-id-child_1"> <span class="userName" >SM</span> </div>
-                    <div class="user-id-child_2"> <span class="userName" >MV</span> </div>
+                <div id="user-id-pf__${element['id']}">
+                    <!-- <div class="user-id-child_1"> <span class="userName" >SM</span> </div>
+                    <div class="user-id-child_2"> <span class="userName" >MV</span> </div> -->
 
                 </div>
-                <div id="taskPriority"> <img id="taskPriority-img" src= ${urlImg} alt=""> </div>
+                <div class="taskPriority"> <img id="taskPriority-img" src= ${urlImg} alt=""> </div>
             </div>
         </div>
                 
