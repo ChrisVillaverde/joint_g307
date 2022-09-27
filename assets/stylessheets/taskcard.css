@@ -11,7 +11,7 @@ body{
 }
 
 #task-content{
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: flex-start;
     padding: 50px;
@@ -24,6 +24,12 @@ body{
     /* nuevo */
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.16);
     border-radius: 30px;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+   
 }
 
 #taskCardName{
@@ -76,7 +82,7 @@ body{
 }
 
 #taskCardDescription{
-    width: 523px;
+    width: 523px !important;
     height: 146px;
     /* Version 2/t1 */
     font-family: 'Inter';
@@ -113,18 +119,44 @@ body{
 }
 
 #taskDatecontent{
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
     padding: 0px;
     gap: 25px;
-    width: 246px;
-    height: 25px;
+    width: 246px !important;
+    height: 25px !important;
     /* Inside auto layout */
     flex: none;
     order: 3;
     flex-grow: 0;
     z-index: 3;
+}
+
+#taskDatecontent-child{
+    width: 122px;
+height: 25px;
+
+/* Version 2/t6 */
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 21px;
+line-height: 120%;
+/* or 25px */
+
+
+/* black */
+
+color: #000000;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
 }
 
 .taskFixText{
@@ -318,3 +350,108 @@ flex: none;
 order: 1;
 flex-grow: 0;
 }
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+  }
+  
+  /* Add Animation */
+  @-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+  }
+  
+  @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+  }
+  
+  /* The Close Button */
+  .closebtn-modal {
+    position: absolute;
+    width: 21.65px;
+    height: 21.65px;
+    left: 637.31px;
+    top: 60px;
+  }
+  
+  .closebtn-modal:hover,
+  .closebtn-modal:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  #edit-btn{
+    cursor: pointer;
+/* edit button v1 */
+
+
+/* Auto layout */
+
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 6px;
+
+position: absolute;
+width: 57px;
+height: 57px;
+left: 525px;
+top: 737px;
+
+/* Version 2/main color */
+
+background: #4589FF;
+border-radius: 10px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 10;
+flex-grow: 0;
+z-index: 10;
+  }
+  
+/*   .modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+  }
+  
+  .modal-body {padding: 2px 16px;}
+  
+  .modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+  } */

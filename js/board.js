@@ -1,65 +1,3 @@
-/* let tasks = [{
-    'title': 'Accounting invoices',
-            'selectContacts': selectContacts,
-            'date': new Date().getTime(),
-            'category':  'Backoffice',
-            'priority': 'high',
-            'description': 'Write open invoices for customer',
-            'id': 0,
-            'state': 'todo'
-},
-{
-    'title': 'Accounting invoices',
-            'selectContacts': selectContacts,
-            'date': new Date().getTime(),
-            'category':  'Backoffice',
-            'priority': 'high',
-            'description': 'Write open invoices for customer',
-            'id': 1,
-            'state': 'done'
-},
-{
-    'title': 'Accounting invoices',
-            'selectContacts': selectContacts,
-            'date': new Date().getTime(),
-            'category':  'Backoffice',
-            'priority': "high",
-            'description': 'Write open invoices for customer',
-            'id': 2,
-            'state': 'done'
-},
-{
-    'title': 'Accounting invoices',
-            'selectContacts': selectContacts,
-            'date': new Date().getTime(),
-            'category':  'Backoffice',
-            'priority': 'high',
-            'description': 'Write open invoices for customer',
-            'id': 3,
-            'state': 'progress'
-},
-{
-    'title': 'Accounting invoices',
-            'selectContacts': selectContacts,
-            'date': new Date().getTime(),
-            'category':  'Backoffice',
-            'priority': 'high',
-            'description': 'Write open invoices for customer',
-            'id': 4,
-            'state': 'feedback'
-}];  */
-            
-
-/* 'title': 'Accounting invoices',
-            'selectContacts': selectContacts,
-            'date': new Date().getTime(),
-            'category':  'Backoffice',
-            'priority': priority_button,
-            'description': 'Write open invoices for customer',
-            'id': id,
-            'state': 'feedback'
-
- */
 
 let currentDraggedElement ;
 let todosTasksNumber =0;
@@ -68,8 +6,6 @@ let feedbackTasksNumber =0;
 let progressTasksNumber =0;
 let urgentTasksNumber =0;
 let loggedUserName = [];
-
-/* let tasks=[];  */
 
 async function init_board() {
     setURL('https://gruppe-307.developerakademie.net/smallest_backend_ever');
@@ -220,7 +156,7 @@ function generateTasksHTML(element){
     }
 
     return /*html*/ `
-    <div class="doneTask_1" draggable="true" ondragstart="startDragging(${element['id']})">
+    <div class="doneTask_1" onclick="popCardOver()" draggable="true" ondragstart="startDragging(${element['id']})">
                 <div id="doneTaskCard-child">
                     <div id="doneTaskCard">
                         <div id="doneTaskCard-name"><span id="doneTaskCard-text">${element['category']}</span></div>
@@ -641,4 +577,26 @@ async function addTask_board(status) {
 
 }
 
+function popCardOver(){
+    var modal = document.getElementById("task-content");
+    modal.style.display = "flex";
+    
+    document.getElementById("board-body").style.opacity = "0.5";
 
+}
+
+function popCardOverClose(){
+    var modal = document.getElementById("task-content");
+    modal.style.display = "none";
+    document.getElementById("board-body").style.opacity = "1";
+
+}
+
+// When the user clicks anywhere outside of the modal, close it
+/* window.onclick = function(event) {
+    var modal = document.getElementById("task-content");
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+    /* document.getElementById("board-body").style.opacity = "1"; 
+  } */

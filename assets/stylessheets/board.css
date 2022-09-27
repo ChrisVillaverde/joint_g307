@@ -81,6 +81,7 @@ body{
 
 #inputTask{
     border: none;
+    padding: 10px!important;
 }
 
 #addTask-btn{
