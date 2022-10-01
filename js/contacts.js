@@ -1,4 +1,5 @@
 let contacts = [{
+    
     'name': 'Anton Mayer',
     'Email': 'anton@gmail.com'
 },
@@ -33,6 +34,21 @@ let contacts = [{
     'name': 'Tatjana Wolf',
     'Email': 'wolf@gmail.com'
 },];
+
+
+
+
+async function init() {
+    setURL('https://gruppe-307.developerakademie.net/smallest_backend_ever');
+    await downloadFromServer();
+    contacts = JSON.parse(backend.getItem('contacts')) || [];
+}
+
+
+
+
+
+
 
 
 

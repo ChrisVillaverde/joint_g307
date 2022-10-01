@@ -7,27 +7,56 @@
     <title>Contacts</title>
     <script src="js/scripte.js"></script>
     <script src="js/contacts.js"></script>
+    <script src="js/mini_backend.js"> </script>
     <link rel="stylesheet" href="./assets/fonts.css">
     <link rel="stylesheet" href="./assets/stylessheets/contacts.css">
 </head>
 
 
-<body onload="includeHTML(), showContacts()">
+<body onload="init(), includeHTML(), showContacts()">
 
 
     <!-- inclue Templates  -->
     <div w3-include-html="./assets/templates/desktop_template.html"></div>
 
+
+
     <div class="main-content">
         
         <div id="contact-book" class="contact-book">
                 
-
         </div>
 
-        <div class="btn">
-            <button onclick="openNewContact()" >New contact <img  class="capa" src="/assets/img/Capa.png" alt=""></button>
-        </div>
+
+        <div class="contact-overview">
+
+            <div class="contact-information">
+                <div>
+                    <img src="./assets/img/profile-dummy.png" alt="">
+                    <h2>Anton Mayer</h2>
+                    <div> <img src="./assets/img/plus.png" alt=""> Add Task</div>
+                </div>
+                <div>
+                    <div>Contact Information</div>
+                    <img src="./assets/img/edit_stift.png" alt="">
+                </div>
+
+                <div>
+                    <div>Email</div>
+                    <div>antonm@gmail.com</div>
+                    <div>Mobil</div>
+                    <div>+49 1111 1111</div>
+                </div>
+
+
+
+            </div>
+
+
+            <div class="btn">
+                <button onclick="openNewContact()" >New contact <img  class="capa" src="/assets/img/Capa.png" alt=""></button>
+            </div>
+        </div>            
 
     </div>
 

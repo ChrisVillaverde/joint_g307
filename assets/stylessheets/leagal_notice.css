@@ -16,3 +16,13 @@ h1 {
 .legal-notice-headline img {
     height: 20px;
 }
+
+.legal-notice {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 100px;
+    padding-right: 100px; 
+}

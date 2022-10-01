@@ -22,6 +22,7 @@ h1 {
     top: 100px;
     left: 0;
     right: 0;
+    background-color: white;
 }
 
 
@@ -115,6 +116,7 @@ span {
 
 .btn-one {
     background: #FFFFFF;
+    color: black;
     border: 1px solid #647188;
     border-radius: 10px;
     width: 100px;
