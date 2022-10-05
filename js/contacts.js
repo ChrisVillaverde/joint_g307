@@ -42,26 +42,26 @@ async function showContacts() {
 
   document.getElementById('contact-book').innerHTML = ``;
 
-  for (let i = 0; i < contacts.length; i++) {
-    document.getElementById('contact-book').innerHTML += `
+  for (let i = 0; i < contacts.length; i++) document.getElementById('contact-book').innerHTML += renderContactTemplate(i);
+
+}
 
 
-        <div class="content-left"
-            <div class="contact-box">
+function renderContactTemplate(i){
+    return `   <div class="content-left"
+                    <div class="contact-box">
             
-                <div>
-                    <img class="contact-img" src="/assets/img/profile-dummy.png" alt="">
-                </div>
+                    <div>
+                        <img class="contact-img" src="/assets/img/profile-dummy.png" alt="">
+                    </div>
                 
-                <div class="contact-info">
-                    <span>${contacts[i].fullname}</span>
-                    <a href="email">${contacts[i].phone}</a>
-                </div>         
-            </div> 
-        </div>    
+                        <div class="contact-info">
+                            <span>${contacts[i].fullname}</span>
+                            <a href="email">${contacts[i].phone}</a>
+                        </div>         
+                    </div> 
+                </div>    
     `;
-    
-  }
 
 }
 
