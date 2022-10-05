@@ -1,12 +1,10 @@
-
 let contacts = []; 
-
-
 
 async function init() {
     setURL('https://gruppe-307.developerakademie.net/smallest_backend_ever');
     await downloadFromServer();
     await loadContacts();
+    await showContacts();
     // contacts = JSON.parse(backend.getItem('contacts')) || [];
 }
 
@@ -21,19 +19,6 @@ async function newContact() {
     let email = document.getElementById('newContact-email');
     let phone = document.getElementById('newContact-phone');
     addNewContactToArray(name, email, phone)
-
-
-    // let contact =
-    //     {
-    //         'name': name.value,
-    //         'email': email.value,
-    //         'phone': phone.value,
-    //     };
-    //     contact.push(contacts)
-    //     console.log(contacts);
-
-
-    //    saveContacts();
 }
 
 
@@ -51,16 +36,10 @@ function clearNewContactInputfields(name, email, phone) {
 }
 
 
-// function saveContacts() {
-//     backend.setItem('contacts', JSON.stringify(contacts));
-    
-// }
-
-
-
 // Function shows Contact Book with Contacts //
 
-function showContacts() {
+async function showContacts() {
+
   document.getElementById('contact-book').innerHTML = ``;
 
   for (let i = 0; i < contacts.length; i++) {
@@ -75,8 +54,8 @@ function showContacts() {
                 </div>
                 
                 <div class="contact-info">
-                    <span>${contacts['name']}</span>
-                    <a href="email">${contacts['phone']}</a>
+                    <span>${contacts[i].fullname}</span>
+                    <a href="email">${contacts[i].phone}</a>
                 </div>         
             </div> 
         </div>    
