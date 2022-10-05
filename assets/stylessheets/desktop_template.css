@@ -68,9 +68,10 @@ body {
 
 .icons-style a{
     text-decoration: none;
+    color: black;
 }
 
-.icons-style:hover{
+.icons-style:hover, .flex-items:hover{
     background-color: #d2e3ff;
     border-radius: 8px;
     cursor: pointer;
@@ -86,14 +87,22 @@ body {
     flex-direction: column;
     align-items: baseline;
 }
-.legal-notice:hover{
-    background-color: #4589FF;
-}
-
 
 .flex-items{
     display: flex;
     align-items: center;
     text-align: center;
     padding: 20px;
+    width: 125px;
+}
+
+/* .flex-items:hover{
+    background-color: #d2e3ff;
+    border-radius: 8px;
+    cursor: pointer;
+} */
+
+.flex-items a {
+    text-decoration: none;
+    color: black;
 }

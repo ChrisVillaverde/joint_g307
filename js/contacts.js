@@ -12,7 +12,7 @@ async function init() {
 
 
 async function loadContacts() {
-   contacts = await backend.getItem('contacts')  || [];
+    contacts = await JSON.parse(backend.getItem('contacts')) || [];
 
 }
 
