@@ -1,16 +1,17 @@
 let contacts = []; 
 
+
 async function init() {
     setURL('https://gruppe-307.developerakademie.net/smallest_backend_ever');
     await downloadFromServer();
     await loadContacts();
     await showContacts();
-    // contacts = JSON.parse(backend.getItem('contacts')) || [];
 }
 
 
 async function loadContacts() {
     contacts = await JSON.parse(backend.getItem('contacts')) || [];
+
 
 }
 
@@ -18,7 +19,9 @@ async function newContact() {
     let name = document.getElementById('newContact-name');
     let email = document.getElementById('newContact-email');
     let phone = document.getElementById('newContact-phone');
-    addNewContactToArray(name, email, phone)
+    addNewContactToArray(name, email, phone);
+    showContacts();
+
 }
 
 
@@ -27,6 +30,7 @@ async function addNewContactToArray(name, email, phone) {
     contacts.push(contact);
     await backend.setItem('contacts', JSON.stringify(contacts));
     clearNewContactInputfields(name, email, phone);
+    
 }
 
 function clearNewContactInputfields(name, email, phone) {
@@ -36,41 +40,68 @@ function clearNewContactInputfields(name, email, phone) {
 }
 
 
+
+
 // Function shows Contact Book with Contacts //
 
 async function showContacts() {
 
   document.getElementById('contact-book').innerHTML = ``;
 
-  for (let i = 0; i < contacts.length; i++) document.getElementById('contact-book').innerHTML += renderContactTemplate(i);
+  contacts.sort(function (a, b) {
+    if (a.fullname < b.fullname){
+        return -1;
+    }
 
+    if (a.fullname > b.fullname) {
+        return 1;
+    }
+
+    return 0;
+});
+
+for (let i = 0; i < contacts.length; i++) document.getElementById('contact-book').innerHTML += renderContactTemplate(i);
 }
 
 
+
+
+// async function deleteUser(contacts) {
+//     await backend.deleteItem('contacts');
+//   }
+
 function renderContactTemplate(i){
+ const indexSpace = contacts[i].fullname.indexOf(' ') ; 
+ const ShortName = contacts[i].fullname.charAt(0) + contacts[i].fullname.charAt(indexSpace+1); 
+
     return `   <div class="content-left"
-                    <div class="contact-box">
+    <div class="contact-box">
+
+    <div class="short-name">
+    ${ShortName.toUpperCase()}
+    </div>
+
+        <div class="contact-info">
+            <span>${contacts[i].fullname}</span>
+            <a href="email">${contacts[i].phone}</a>
             
-                    <div>
-                        <img class="contact-img" src="/assets/img/profile-dummy.png" alt="">
-                    </div>
-                
-                        <div class="contact-info">
-                            <span>${contacts[i].fullname}</span>
-                            <a href="email">${contacts[i].phone}</a>
-                        </div>         
-                    </div> 
-                </div>    
+        </div>         
+    </div> 
+    </div>    
     `;
 
 }
 
 function openNewContact() { 
     document.getElementById('contact-overlay').classList.remove('d-none');
+    document.getElementById("contact-overlay-body").style.opacity = "0.5";
+
 }
 
 function closeNewContact(){
     document.getElementById('contact-overlay').classList.add('d-none');
+    document.getElementById("contact-overlay-body").style.opacity = "1";
+    
 }
 
 

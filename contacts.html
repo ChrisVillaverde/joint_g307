@@ -15,10 +15,10 @@
 
 <body onload="init(), includeHTML()">
 
+<div id="contact-overlay-body">
 
     <!-- inclue Templates  -->
     <div w3-include-html="./assets/templates/desktop_template.html"></div>
-
 
 
     <div class="main-content">
@@ -54,11 +54,16 @@
             <div class="btn">
                 <button onclick="openNewContact()" >New contact <img  class="capa" src="/assets/img/Capa.png" alt=""></button>
             </div>
-        </div>            
+        </div> 
 
     </div>
 
-    <div id="contact-overlay" class="d-none" w3-include-html="./assets/templates/contact_overlay.html"></div> 
+
+    
+</div>
+
+
+<div id="contact-overlay" class="d-none" w3-include-html="./assets/templates/contact_overlay.html"></div> 
 
     
 </body>

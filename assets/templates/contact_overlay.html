@@ -26,31 +26,35 @@
             <div class="contacts">
                 <img class="contacts-img" src="/assets/img/profile-dummy.png" alt="">
 
-                
+                <form id="form"  onsubmit="newContact(); return false;">
                     <div class="input-content">
-
                         <div  class="input-name">
-                            <input id="newContact-name" placeholder="Name" class="input-name-child" type="name" required autocomplete="on">
+                            <input id="newContact-name" placeholder="Name" class="input-name-child" type="name">
                             <img  src="/assets/img/name.png" alt="">
                         </div>
 
                         <div class="input-email">
-                            <input id="newContact-email"  placeholder="E-mail" class="input-email-child" type="email" required autocomplete="on">
+                            <input id="newContact-email"  placeholder="E-mail" class="input-email-child" type="email">
                             <img src="/assets/img/umschlag.png" alt="">
                         </div>
 
                         <div class="input-phone">
-                            <input id="newContact-phone" placeholder="Phone" class="input-phone-child" type="tel" name="phone" required autocomplete="on">
+                            <input id="newContact-phone" placeholder="Phone" class="input-phone-child" type="tel" name="phone">
                             <img src="/assets/img/phone.png" alt="">
                         </div>
 
-                        <div class="buttons">
-                            <button onclick="closeNewContact()" class="btn-one">Cancel <img style="height: 12px;" src="/assets/img/closeX.png" alt=""> </button>
-                            <button onclick="newContact()" class="btn-two">Create contact <img style="height: 12px;" src="/assets/img/arrow.png" alt=""></button>
-                        </div>
+                       
                         
                     </div>
-             
+                </form> 
+                
+                <div class="buttons">
+                    <!-- <button class="btn-one">Cancel <img style="height: 12px;" src="/assets/img/closeX.png" alt=""> </button> -->
+                    <button onclick="closeNewContact()" value="submit" type="submit" class="btn-two">Create contact <img style="height: 12px;" src="/assets/img/arrow.png" alt=""></button>
+                    <button onclick="closeNewContact()" class="btn-one">Cancel <img style="height: 12px;" src="/assets/img/closeX.png" alt=""> </button>
+
+                </div>
+                
 
             </div>
 
