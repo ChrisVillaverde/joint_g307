@@ -44,8 +44,8 @@
             <!--Due Date-->
 
                 <span>Due date</span>
-                <div class="dueDate" onclick="showDate()"  >
-                <input id="dueDate"  type="text" required placeholder="dd/mm/yyyy">
+                <div class="dueDate" onkeydown="showDate()"  >
+                <input id="dueDate" minlength="10" maxlength="10" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}" type="text" required placeholder="dd/mm/yyyy">
                 <img src="assets/img/calendar-event.png">
             </div>
 
@@ -92,7 +92,7 @@
 
                 <Button type="reset" value="Reset" class="buttonClear">Clear</Button>
 
-                <Button onclick="taskAddedToBord()" type="submit" value="Submit" class="buttonCreateTask">Create Task</Button>
+                <Button  type="submit" value="Submit" class="buttonCreateTask">Create Task</Button>
 
         </div>
 
