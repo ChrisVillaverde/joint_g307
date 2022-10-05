@@ -7,6 +7,10 @@
     <title>Contact-Overlay</title>
     <link rel="stylesheet" href="../../assets/fonts.css">
     <link rel="stylesheet" href="../../assets/stylessheets/contact_overlay.css">
+    <script src="/js/scripte.js"></script>
+    <script src="/js/contacts.js"></script>
+    <script src="/js/mini_backend.js"></script>
+    
 </head>
 <body>
 
@@ -22,33 +26,38 @@
             <div class="contacts">
                 <img class="contacts-img" src="/assets/img/profile-dummy.png" alt="">
 
-                <form action="">
+                
                     <div class="input-content">
 
-                        <div class="input-name">
-                            <input placeholder="Name" class="input-name-child" type="name" required autocomplete="on">
+                        <div  class="input-name">
+                            <input id="newContact-name" placeholder="Name" class="input-name-child" type="name" required autocomplete="on">
                             <img  src="/assets/img/name.png" alt="">
                         </div>
 
                         <div class="input-email">
-                            <input placeholder="E-mail" class="input-email-child" type="email" required autocomplete="off">
+                            <input id="newContact-email"  placeholder="E-mail" class="input-email-child" type="email" required autocomplete="on">
                             <img src="/assets/img/umschlag.png" alt="">
                         </div>
 
                         <div class="input-phone">
-                            <input placeholder="Phone" class="input-phone-child" type="tel" name="phone" required autocomplete="off">
+                            <input id="newContact-phone" placeholder="Phone" class="input-phone-child" type="tel" name="phone" required autocomplete="on">
                             <img src="/assets/img/phone.png" alt="">
                         </div>
 
+                        <div class="buttons">
+                            <button onclick="closeNewContact()" class="btn-one">Cancel <img style="height: 12px;" src="/assets/img/closeX.png" alt=""> </button>
+                            <button onclick="newContact()" class="btn-two">Create contact <img style="height: 12px;" src="/assets/img/arrow.png" alt=""></button>
+                        </div>
+                        
                     </div>
-                </form>
+             
 
             </div>
 
-            <div class="buttons">
-                <button class="btn-one">Cancel <img style="height: 12px;" src="/assets/img/closeX.png" alt=""> </button>
+            <!-- <div class="buttons">
+                <button onclick="closeNewContact()" class="btn-one">Cancel <img style="height: 12px;" src="/assets/img/closeX.png" alt=""> </button>
                 <button class="btn-two">Create contact <img style="height: 12px;" src="/assets/img/arrow.png" alt=""></button>
-            </div>
+            </div> -->
 
         </div>
     </div>

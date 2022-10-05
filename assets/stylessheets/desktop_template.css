@@ -78,10 +78,22 @@ body {
 
 .legal-notice img {
     margin-right: 10px;
+   
 }
 .legal-notice{
     margin-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
 }
 .legal-notice:hover{
     background-color: #4589FF;
+}
+
+
+.flex-items{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
 }

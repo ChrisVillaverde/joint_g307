@@ -1,54 +1,60 @@
-let contacts = [{
-    
-    'name': 'Anton Mayer',
-    'Email': 'anton@gmail.com'
-},
-{
-    'name': 'Anja Schulz',
-    'Email': 'schulz@hotmail.com'
-},
-{
-    'name': 'Benedikt Ziegler',
-    'Email': 'benedikt@gmail.com'
-},
-{
-    'name': 'David Eisenberg',
-    'Email': 'davidberg@gmail.com'
-},
-{
-    'name': 'Eva Fischer',
-    'Email': 'eva@gmail.com'
-},
 
-{
-    'name': 'Emmanuel Mauer',
-    'Email': 'emmanuelMa@gmail.com'
-},
-
-{
-    'name': 'Marcel Bauer',
-    'Email': 'bauer@gmail.com'
-},
-
-{
-    'name': 'Tatjana Wolf',
-    'Email': 'wolf@gmail.com'
-},];
-
+let contacts = []; 
 
 
 
 async function init() {
     setURL('https://gruppe-307.developerakademie.net/smallest_backend_ever');
     await downloadFromServer();
-    contacts = JSON.parse(backend.getItem('contacts')) || [];
+    await loadContacts();
+    // contacts = JSON.parse(backend.getItem('contacts')) || [];
 }
 
 
+async function loadContacts() {
+   contacts = await backend.getItem('contacts')  || [];
+
+}
+
+async function newContact() {
+    let name = document.getElementById('newContact-name');
+    let email = document.getElementById('newContact-email');
+    let phone = document.getElementById('newContact-phone');
+    addNewContactToArray(name, email, phone)
 
 
+    // let contact =
+    //     {
+    //         'name': name.value,
+    //         'email': email.value,
+    //         'phone': phone.value,
+    //     };
+    //     contact.push(contacts)
+    //     console.log(contacts);
 
 
+    //    saveContacts();
+}
+
+
+async function addNewContactToArray(name, email, phone) {
+    let contact = { fullname: name.value, mail: email.value, phone: phone.value };
+    contacts.push(contact);
+    await backend.setItem('contacts', JSON.stringify(contacts));
+    clearNewContactInputfields(name, email, phone);
+}
+
+function clearNewContactInputfields(name, email, phone) {
+    name.value = '';
+    email.value = '';
+    phone.value = '';
+}
+
+
+// function saveContacts() {
+//     backend.setItem('contacts', JSON.stringify(contacts));
+    
+// }
 
 
 
@@ -58,7 +64,6 @@ function showContacts() {
   document.getElementById('contact-book').innerHTML = ``;
 
   for (let i = 0; i < contacts.length; i++) {
-    // const element = array[i];
     document.getElementById('contact-book').innerHTML += `
 
 
@@ -70,18 +75,23 @@ function showContacts() {
                 </div>
                 
                 <div class="contact-info">
-                    <span>${contacts[i]['name']}</span>
-                    <span>${contacts[i]['Email']}</span>
+                    <span>${contacts['name']}</span>
+                    <a href="email">${contacts['phone']}</a>
                 </div>         
             </div> 
         </div>    
     `;
     
   }
+
 }
 
 function openNewContact() { 
     document.getElementById('contact-overlay').classList.remove('d-none');
+}
+
+function closeNewContact(){
+    document.getElementById('contact-overlay').classList.add('d-none');
 }
 
 

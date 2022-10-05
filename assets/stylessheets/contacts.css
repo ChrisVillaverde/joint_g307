@@ -39,15 +39,22 @@ button {
 .content-left {
   display: flex;
   align-items: center;
-  padding: 15px;
+  margin: 30px;
+}
+
+.content-left:hover {
+  background: linear-gradient(180deg, #f5f3f3 0%, #cccaca 100%);
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 
 .contact-book {
-  height: 100vh;
+  /* height: 100vh; */
   padding: 40px;
   width: 360px;
   overflow-y: scroll;
+  overflow-x: hidden;
   background: #ffffff;
   box-shadow: 4px 0px 6px rgba(0, 0, 0, 0.08);
 }
@@ -59,14 +66,50 @@ button {
 
 .contact-img {
     border-radius: 100%;
+    height: 65px;
 }
 
 .contact-info {
   display: flex;
   flex-direction: column;
   margin-left: 20px;
+  font-size: 20px;
 }
 
 .contact-info span {
   color: black !important;
 }
+
+.contact-title {
+  display: flex;
+}
+
+
+
+
+
+.right-section {
+  position: absolute;
+  top: 10px;
+  left: 570px;
+  min-width: 40vw;
+  height: calc(100vh - 210px);
+}
+
+.contact-data {
+  margin-left: 24px;
+}
+
+.contact-data-big {
+  margin-left: 75px;
+}
+
+.contact-card-small {
+  padding: 16px;
+  width: 290px;
+}
+
+.contact-data-content {
+  margin-top: 50px;
+}
+
