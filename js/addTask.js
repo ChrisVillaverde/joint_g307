@@ -3,6 +3,7 @@ let tasks = [];
 let openContact;
 let users = [];
 let ids = [];
+let day="";
 
 
 
@@ -21,16 +22,17 @@ async function loadTask() {
 
 function showDate() {
 
-    let today = new Date();
-    let dd = String(today.getDate()).padStart(2, '0');
-    let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    let yyyy = today.getFullYear();
+    //let today = new Date();
+    //let dd = String(today.getDate()).padStart(2, '0');
+    //let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    //let yyyy = today.getFullYear();
 
-
-    today = dd + '/' + mm + '/' + yyyy;
-    document.getElementById("dueDate").value = today;
-
+    
+    day=document.getElementById("dueDate").value;
 }
+   
+
+
 
 
 
@@ -112,7 +114,7 @@ async function addTask(status) {
         {
             'title': title.value,
             'selectContacts': selectContacts,
-            'date': new Date().getTime(),
+            'date': day,
             'category': category.value,
             'priority': priority_button,
             'description': description.value,
@@ -122,6 +124,8 @@ async function addTask(status) {
         });
 
     await saveTask();
+
+    taskAddedToBord();
     
 
 }
