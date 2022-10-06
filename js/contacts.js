@@ -42,6 +42,9 @@ function clearNewContactInputfields(name, email, phone) {
 
 async function showContacts() {
 
+    let letter;
+    let letter2;
+
   document.getElementById('contact-book').innerHTML = ``;
 
   contacts.sort(function (a, b) {
@@ -56,7 +59,28 @@ async function showContacts() {
     return 0;
 });
 
-for (let i = 0; i < contacts.length; i++) document.getElementById('contact-book').innerHTML += renderContactTemplate(i);
+    for (let i = 0; i < contacts.length; i++){
+
+        letter=contacts[i].fullname.slice(0,1);
+
+            if(i!=contacts.length-1){
+                letter2=contacts[i+1].fullname.slice(0,1);
+            }
+
+            if (i==0){
+                document.getElementById('contact-book').innerHTML += `<div class="letter">${letter} <br></div> `;
+            }
+
+        document.getElementById('contact-book').innerHTML += renderContactTemplate(i);
+
+
+            if( (letter!=letter2)  ){
+
+                document.getElementById('contact-book').innerHTML += `<div class="letter">${letter2} <br></div> `;
+            }
+
+    }
+
 }
 
 
