@@ -8,7 +8,7 @@ let contacts = [];
 let selectNames=[];
 let selectNamesWithoutSpace=[];
 
-
+//
 
 async function init() {
     setURL('https://gruppe-307.developerakademie.net/smallest_backend_ever');
