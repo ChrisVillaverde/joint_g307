@@ -5,6 +5,8 @@ let users = [];
 let ids = [];
 let day = "";
 let contacts = [];
+let selectNames=[];
+let selectNamesWithoutSpace=[];
 
 
 
@@ -100,20 +102,17 @@ async function addTask(status) {
 
     let title = document.getElementById('title');
     let selectContacts = [];
-    if (document.getElementById('christian').checked) {
+    
+    for (let i=0;i<selectNames.length;i++){
 
-        selectContacts.push(document.getElementById('christian').value);
+        if (document.getElementById(selectNamesWithoutSpace[i]).checked) {
+
+            selectContacts.push(document.getElementById(selectNamesWithoutSpace[i]).value);
+        }
     }
+  
 
-    if (document.getElementById('russell').checked) {
-
-        selectContacts.push(document.getElementById('russell').value);
-    }
-
-    if (document.getElementById('manuel').checked) {
-
-        selectContacts.push(document.getElementById('manuel').value);
-    }
+ 
 
     let category = document.getElementById('category');
     let description = document.getElementById('description');
@@ -219,12 +218,14 @@ function showContact() {
 function allContacts(i) {
     let name = contacts[i].fullname;
     let nameWithoutSpace=name.replace(/\s/g,'');
+    selectNames.push(name);
+    selectNamesWithoutSpace.push(nameWithoutSpace);
     return `
     
                 <a href="#" class="selectName">
                  <label for="${nameWithoutSpace}">${name}</label>
                     <div>
-                <input   type="checkbox" id="${nameWithoutSpace}" name="${nameWithoutSpace}" value="${nameWithoutSpace}">
+                <input   type="checkbox" id="${nameWithoutSpace}" name="${nameWithoutSpace}" value="${name}">
                     </div>
                 </a>
 
