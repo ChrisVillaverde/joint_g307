@@ -215,7 +215,7 @@ function showContact() {
     }
 }
 
-//
+/////
 function allContacts(i) {
     let name = contacts[i].fullname;
     let nameWithoutSpace=name.replace(/\s/g,'');
