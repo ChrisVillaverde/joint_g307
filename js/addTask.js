@@ -3,7 +3,8 @@ let tasks = [];
 let openContact;
 let users = [];
 let ids = [];
-let day="";
+let day = "";
+let contacts = [];
 
 
 
@@ -11,7 +12,11 @@ async function init() {
     setURL('https://gruppe-307.developerakademie.net/smallest_backend_ever');
     await downloadFromServer();
     await loadTask();
+    await loadContacts();
+}
 
+async function loadContacts() {
+    contacts = await JSON.parse(backend.getItem('contacts')) || [];
 }
 
 async function loadTask() {
@@ -19,21 +24,21 @@ async function loadTask() {
     tasks = await backend.getItem('tasks') || [];
 
 }
-function showDateToday(){
+function showDateToday() {
     let today = new Date();
     let dd = String(today.getDate()).padStart(2, '0');
     let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
     let yyyy = today.getFullYear();
 
-  
+
     day = dd + '/' + mm + '/' + yyyy;
     document.getElementById("dueDate").value = day;
 
 }
 function showDate() {
-    day=document.getElementById("dueDate").value;
+    day = document.getElementById("dueDate").value;
 }
-   
+
 
 
 
@@ -57,7 +62,7 @@ function taskAddedToBord() {
 
 
 
-   resetForm();
+    resetForm();
 
 
 
@@ -89,7 +94,7 @@ async function addTask(status) {
 
 
     let id = Math.max(...onlyNumbers) + 1;
-    if (!id || id==-Infinity) {
+    if (!id || id == -Infinity) {
         id = 1;
     }
 
@@ -129,7 +134,7 @@ async function addTask(status) {
     await saveTask();
 
     taskAddedToBord();
-    
+
 
 }
 
@@ -190,30 +195,14 @@ function settingsPriorityLow() {
 
 function showContact() {
 
+
+
     if (!openContact) {
-        document.getElementById('selectAll').innerHTML = `
-    
-    <a href="#" class="selectName">
-        <label for="Russell">Russell</label>
-        <div>
-        <input   type="checkbox" id="russell" name="Russell" value="Russell">
-        </div>
-    </a>
 
-    <a href="#" class="selectName">
-        <label for="Christian">Christian</label>
-        <div>
-        <input  type="checkbox" id="christian" name="Christian" value="Christian">
-        </div>
-    </a>
+        for (let i = 0; i < contacts.length; i++) {
 
-    <a href="#" class="selectName">
-        <label for="Manuel">Manuel</label>
-        <div>
-        <input  type="checkbox" id="manuel" name="Manuel" value="Manuel">
-        </div>
-    </a>    
-    `;
+            document.getElementById('selectAll').innerHTML += allContacts(i);
+        }
         openContact = true;
     }
 
@@ -225,3 +214,23 @@ function showContact() {
 
     }
 }
+
+
+function allContacts(i) {
+    let name = contacts[i].fullname;
+    let nameWithoutSpace=name.replace(/\s/g,'');
+    return `
+    
+                <a href="#" class="selectName">
+                 <label for="${nameWithoutSpace}">${name}</label>
+                    <div>
+                <input   type="checkbox" id="${nameWithoutSpace}" name="${nameWithoutSpace}" value="${nameWithoutSpace}">
+                    </div>
+                </a>
+
+            `;
+
+}
+
+
+
