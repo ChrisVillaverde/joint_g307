@@ -68,7 +68,7 @@ async function showContacts() {
             }
 
             if (i==0){
-                document.getElementById('contact-book').innerHTML += `<div class="letter">${letter} <br></div> `;
+                document.getElementById('contact-book').innerHTML += `<div class="letter">${letter} <br></div> <div class="letter-child"></div> `;
             }
 
         document.getElementById('contact-book').innerHTML += renderContactTemplate(i);
@@ -76,7 +76,7 @@ async function showContacts() {
 
             if( (letter!=letter2)  ){
 
-                document.getElementById('contact-book').innerHTML += `<div class="letter">${letter2} <br></div> `;
+                document.getElementById('contact-book').innerHTML += `<div class="letter">${letter2} <br></div><div class="letter-child"></div> `;
             }
 
     }
