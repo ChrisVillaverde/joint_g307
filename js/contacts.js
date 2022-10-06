@@ -6,13 +6,12 @@ async function init() {
     await downloadFromServer();
     await loadContacts();
     await showContacts();
+    // await deleteUser();
 }
 
 
 async function loadContacts() {
     contacts = await JSON.parse(backend.getItem('contacts')) || [];
-
-
 }
 
 async function newContact() {
@@ -21,7 +20,6 @@ async function newContact() {
     let phone = document.getElementById('newContact-phone');
     addNewContactToArray(name, email, phone);
     showContacts();
-
 }
 
 
@@ -38,8 +36,6 @@ function clearNewContactInputfields(name, email, phone) {
     email.value = '';
     phone.value = '';
 }
-
-
 
 
 // Function shows Contact Book with Contacts //
@@ -64,8 +60,6 @@ for (let i = 0; i < contacts.length; i++) document.getElementById('contact-book'
 }
 
 
-
-
 // async function deleteUser(contacts) {
 //     await backend.deleteItem('contacts');
 //   }
@@ -84,7 +78,6 @@ function renderContactTemplate(i){
         <div class="contact-info">
             <span>${contacts[i].fullname}</span>
             <a href="email">${contacts[i].phone}</a>
-            
         </div>         
     </div> 
     </div>    
