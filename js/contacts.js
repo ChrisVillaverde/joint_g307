@@ -71,7 +71,7 @@ async function showContacts() {
                 document.getElementById('contact-book').innerHTML += `<div class="letter">${letter} <br></div> <div class="letter-child"></div> `;
             }
 
-        document.getElementById('contact-book').innerHTML += renderContactTemplate(i);
+        document.getElementById('contact-book').innerHTML += await renderContactTemplate(i);
 
 
             if( (letter!=letter2)  ){
@@ -88,11 +88,16 @@ async function showContacts() {
 //     await backend.deleteItem('contacts');
 //   }
 
-function renderContactTemplate(i){
+function showDetailsContact(i){
+    document.getElementById('contactOverview').innerHTML= `${contacts[i].fullname} `;
+    
+}
+
+async function renderContactTemplate(i){
  const indexSpace = contacts[i].fullname.indexOf(' ') ; 
  const ShortName = contacts[i].fullname.charAt(0) + contacts[i].fullname.charAt(indexSpace+1); 
 
-    return `   <div class="content-left"
+    return `   <div class="content-left" onclick="showDetailsContact(${i})">
     <div class="contact-box">
 
     <div class="short-name">
@@ -101,10 +106,11 @@ function renderContactTemplate(i){
 
         <div class="contact-info">
             <span>${contacts[i].fullname}</span>
+
             <a href="email">${contacts[i].phone}</a>
         </div>         
     </div> 
-    </div>    
+    </div> 
     `;
 
 }
