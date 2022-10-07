@@ -1,6 +1,7 @@
 let priority_button;
 let tasks = [];
 let openContact;
+let openCategory;
 let users = [];
 let ids = [];
 let day = "";
@@ -114,7 +115,7 @@ async function addTask(status) {
 
  
 
-    let category = document.getElementById('category');
+    let category = document.getElementById('categoryNew');
     let description = document.getElementById('description');
 
     tasks.push(
@@ -190,6 +191,37 @@ function settingsPriorityLow() {
     button_prio_low.style.background = '#7AE229';
     priority_button = "low";
 
+}
+
+function showCategory(){
+
+    
+
+    if (!openCategory){
+        
+        document.getElementById('categoryAll').innerHTML=`
+        
+        <a href="#" class="selectName" onclick="catchCategory('Backoffice')">Backoffice</a>
+        <a href="#" class="selectName" onclick="catchCategory('Design')">Design</a>
+        <a href="#" class="selectName" onclick="catchCategory('Software')">Software</a>
+        <a href="#" class="selectName" onclick="catchCategory('Hardware')">Hardware</a>
+        `;
+        openCategory=true;
+    }
+
+    else if (openCategory) {
+        document.getElementById('selectAll').innerHTML = '';
+        openCategory = false;
+
+
+    }
+}
+
+function catchCategory(i){
+
+    document.getElementById('categoryNew').value=i;
+    document.getElementById('categoryAll').innerHTML = '';
+    openCategory = false;
 }
 
 function showContact() {
