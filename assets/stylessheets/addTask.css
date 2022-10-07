@@ -79,29 +79,9 @@ form {
     flex-grow: 0;
 }
 
-.category {
 
-    width: 175px;
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 19px;
-    line-height: 120%;
-    color: #000000;
-    z-index: 0;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-    isolation: isolate;
-    width: 422px;
-    background: #FFFFFF;
-    border-bottom: 1px solid #D1D1D1;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-}
+
+
 
 
 .priority {
