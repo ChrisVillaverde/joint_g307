@@ -9,7 +9,6 @@ let contacts = [];
 let selectNames=[];
 let selectNamesWithoutSpace=[];
 
-//
 
 async function init() {
     setURL('https://gruppe-307.developerakademie.net/smallest_backend_ever');
@@ -18,41 +17,39 @@ async function init() {
     await loadContacts();
 }
 
+
 async function loadContacts() {
     contacts = await JSON.parse(backend.getItem('contacts')) || [];
 }
 
+
 async function loadTask() {
 
     tasks = await backend.getItem('tasks') || [];
-
 }
+
+
 function showDateToday() {
+
     let today = new Date();
     let dd = String(today.getDate()).padStart(2, '0');
     let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
     let yyyy = today.getFullYear();
 
-
     day = dd + '/' + mm + '/' + yyyy;
     document.getElementById("dueDate").value = day;
 
 }
+
+
 function showDate() {
     day = document.getElementById("dueDate").value;
 }
 
 
-
-
-
-
 function taskAddedToBord() {
 
-
     document.getElementById('showCreateTask').classList.remove('d-none');
-
-
 
     setTimeout(() => {
         document.getElementById('showCreateTask').classList.add('downShowCreateTask');
@@ -63,13 +60,9 @@ function taskAddedToBord() {
         document.getElementById('showCreateTask').classList.remove('downShowCreateTask');
     }, 2300)
 
-
-
     resetForm();
-
-
-
 }
+
 
 function resetForm() {
 
@@ -80,12 +73,10 @@ function resetForm() {
         
         form.reset();
     });
-
-
-
 }
 
-async function addTask(status) {
+
+function idlogic(){
 
     ids = tasks.map((number) => {
         return number.id
@@ -95,13 +86,22 @@ async function addTask(status) {
         element => typeof element === 'number'
     );
 
-
     let id = Math.max(...onlyNumbers) + 1;
     if (!id || id == -Infinity) {
         id = 1;
+        return id;
     }
+    return id;
+
+}
+
+
+async function addTask(status) {
+
+    let idNew = idlogic();
 
     let title = document.getElementById('title');
+
     let selectContacts = [];
     
     for (let i=0;i<selectNames.length;i++){
@@ -112,9 +112,6 @@ async function addTask(status) {
         }
     }
   
-
- 
-
     let category = document.getElementById('categoryNew');
     let description = document.getElementById('description');
 
@@ -126,7 +123,7 @@ async function addTask(status) {
             'category': category.value,
             'priority': priority_button,
             'description': description.value,
-            'id': id,
+            'id': idNew,
             'state': status
 
         });
@@ -134,7 +131,6 @@ async function addTask(status) {
     await saveTask();
 
     taskAddedToBord();
-
 
 }
 
@@ -145,6 +141,7 @@ async function saveTask() {
 
 }
 
+
 function clickPriority(priority) {
 
     let button_prio_high = document.getElementById('button_prio_high');
@@ -152,21 +149,19 @@ function clickPriority(priority) {
     let button_prio_low = document.getElementById('button_prio_low');
 
     if (priority == "high") {
-
         settingsPriorityHigh();
     }
 
-    if (priority == "middle") {
-
+        if (priority == "middle") {
         settingsPriorityMiddle();
-    }
+        }
 
-    if (priority == "low") {
-
-        settingsPriorityLow();
-    }
+            if (priority == "low") {
+            settingsPriorityLow();
+            }
 
 }
+
 
 function settingsDefault() {
     
@@ -205,19 +200,12 @@ function settingsPriorityLow() {
 
 }
 
-function showCategory(){
 
-    
+function showCategory(){
 
     if (!openCategory){
         
-        document.getElementById('categoryAll').innerHTML=`
-        
-        <a href="#" class="selectName" onclick="catchCategory('Backoffice')">Backoffice</a>
-        <a href="#" class="selectName" onclick="catchCategory('Design')">Design</a>
-        <a href="#" class="selectName" onclick="catchCategory('Software')">Software</a>
-        <a href="#" class="selectName" onclick="catchCategory('Hardware')">Hardware</a>
-        `;
+        document.getElementById('categoryAll').innerHTML=eachCategoryHardCoded();
         openCategory=true;
     }
 
@@ -229,6 +217,17 @@ function showCategory(){
     }
 }
 
+function eachCategoryHardCoded() {
+
+    return `     
+    <a href="#" class="selectName" onclick="catchCategory('Backoffice')">Backoffice</a>
+    <a href="#" class="selectName" onclick="catchCategory('Design')">Design</a>
+    <a href="#" class="selectName" onclick="catchCategory('Software')">Software</a>
+    <a href="#" class="selectName" onclick="catchCategory('Hardware')">Hardware</a>
+    `;
+}
+
+
 function catchCategory(i){
 
     document.getElementById('categoryNew').value=i;
@@ -236,9 +235,8 @@ function catchCategory(i){
     openCategory = false;
 }
 
+
 function showContact() {
-
-
 
     if (!openContact) {
 
@@ -249,7 +247,6 @@ function showContact() {
         openContact = true;
     }
 
-
     else if (openContact) {
 
         document.getElementById('selectAll').innerHTML = '';
@@ -258,7 +255,7 @@ function showContact() {
     }
 }
 
-/////
+
 function allContacts(i) {
     let name = contacts[i].fullname;
     let nameWithoutSpace=name.replace(/\s/g,'');
@@ -274,7 +271,6 @@ function allContacts(i) {
                 </a>
 
             `;
-
 }
 
 
