@@ -77,7 +77,7 @@ function resetForm() {
 
     form.addEventListener('submit', function handleSubmit(event) {
         event.preventDefault();
-
+        
         form.reset();
     });
 
@@ -165,6 +165,18 @@ function clickPriority(priority) {
 
         settingsPriorityLow();
     }
+
+}
+
+function settingsDefault() {
+    
+    button_prio_high.style.background = 'white';
+    button_prio_middle.style.background = 'white';
+    button_prio_low.style.background = 'white';
+    priority_button = ""; 
+    selectNames=[];
+    selectNamesWithoutSpace=[];
+    showContact();
 
 }
 
