@@ -49,18 +49,22 @@
                 <img src="assets/img/calendar-event.png" onclick="showDateToday()">
             </div>
 
-            <!--Category-->
             
-                <span>Category</span>
-
-                <select required id="category" class="category" >
-                    <option value="" disabled selected hidden>Select Task category</option>
-                 <!--   <option value="">New category</option> -->
-                    <option value="Sales">Sales <img src="" alt=""></option>
-                    <option value="Backoffice">Backoffice</option>
-                    <option value="Design">Design</option>
-                </select>
-
+            
+           
+        
+            <!--CategoryNew-->
+            <span class="margin-top">Category</span>
+            <div class="selectContacts"   >
+                <div class="input_select_contacts">
+                    <input id="categoryNew"  type="text" readonly="readonly" required placeholder="Select Task category" >
+                    <img src="assets/img/dropdown_arrow.png" onclick="showCategory()">
+                </div>
+        
+                <div id="categoryAll" class="selectAll"> </div> 
+        
+                   
+            </div>
             
             <!--Priority-->
 
