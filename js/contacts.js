@@ -107,7 +107,7 @@ async function renderContactTemplate(i){
         <div class="contact-info">
             <span>${contacts[i].fullname}</span>
 
-            <a href="email">${contacts[i].phone}</a>
+            <a href="email">${contacts[i].mail}</a>
         </div>         
     </div> 
     </div> 

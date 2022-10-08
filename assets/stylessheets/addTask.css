@@ -1,3 +1,10 @@
+
+:root {
+    --primary: #4589ff;
+  }
+
+
+
 .addTask {
     display: flex;
     flex-direction: column;
@@ -260,48 +267,31 @@ form {
 }
 
 .buttonClear {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 18px 10px;
-    gap: 10px;
     background: #FFFFFF;
+    color: black;
     border: 1px solid #647188;
     border-radius: 10px;
-    height: 28px;
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 23px;
-    line-height: 120%;
-    color: #647188;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
+    width: 100px;
+    height: 42px;
+    font-family: 'open-sans';
+    font-size: 18px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
 
 }
 
 .buttonCreateTask {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 18px 10px;
-    gap: 10px;
-    background: #4589FF;
     border-radius: 10px;
-    height: 28px;
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 23px;
-    line-height: 120%;
-    color: #FFFFFF;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
+    background-color: var(--primary);
+    color: white;
+    border: unset;
+    width: 140px;
+    height: 42px;
+    font-family: 'open-sans';
+    font-size: 20px;
+    cursor: pointer;
 }
 
 .right-box {

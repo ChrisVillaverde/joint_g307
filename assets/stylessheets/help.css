@@ -1,0 +1,14 @@
+:root {
+    --primary: #4589ff;
+}
+
+.help-content {
+   
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-left: 100px;
+        padding-right: 100px; 
+}

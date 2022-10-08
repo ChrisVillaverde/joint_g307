@@ -13,14 +13,49 @@ body {
 
 .main-content {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
 
-.btn {
+.contacts {
+  height: 125px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 120%;
+  color: #000000;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  border-right: 3px solid #29ABE2;
+
+}
+
+.team-text {
+  width: 335px;
+  height: 59px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 37px;
+  line-height: 120%;
+  color: #2A3647;
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+  margin-top: 102.5px;
+}
+
+
+
+
+
+
+/* .btn {
   margin-top: 20px;
   margin-left: 20px;
-}
+} */
 
 button {
   border-radius: 10px;
@@ -60,7 +95,7 @@ button {
 
 
 .contact-book {
-  /* height: 100vh; */
+  height: 100vh;
   padding: 40px;
   width: 450px;
   overflow-y: scroll;
