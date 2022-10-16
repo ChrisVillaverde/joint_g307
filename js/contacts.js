@@ -89,7 +89,39 @@ async function showContacts() {
 //   }
 
 function showDetailsContact(i){
-    document.getElementById('contactOverview').innerHTML= `${contacts[i].fullname} `;
+    const indexSpace = contacts[i].fullname.indexOf(' ') ; 
+    const ShortName = contacts[i].fullname.charAt(0) + contacts[i].fullname.charAt(indexSpace+1);
+    document.getElementById('contactOverview').innerHTML= 
+    
+
+    `<div class="contact-card">
+        <div class="contact-header">
+            <div class="contact-short-name">
+                ${ShortName.toUpperCase()}
+            </div>
+            <div class="contact-header-child">
+                <div class="contact-name">${contacts[i].fullname}</div>
+                <div class="add-task">
+                    <img src="./assets/img/edit_stift.png" alt="">
+                    <a href="">  Add Task</a>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Contact Information</h2>
+        </div>
+        <div>
+            <div class="contact-email">E Mail</div>
+            <a href="">${contacts[i].mail}</a>
+            <div class="contact-phone">Mobil</div>
+            <div>${contacts[i].phone}</div>
+        </div>
+    </div>
+    
+    
+    
+    
+    `;
     
 }
 
@@ -108,7 +140,7 @@ async function renderContactTemplate(i){
             <span>${contacts[i].fullname}</span>
 
             <a href="email">${contacts[i].mail}</a>
-        </div>         
+        </div>        
     </div> 
     </div> 
     `;

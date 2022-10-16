@@ -2,7 +2,7 @@
     --primary: #4589ff;
 }
 
-h1 {
+h1, h2, h3 {
     color: var(--primary);
 }
 
@@ -26,3 +26,5 @@ h1 {
     padding-left: 100px;
     padding-right: 100px; 
 }
+
+

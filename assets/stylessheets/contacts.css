@@ -19,6 +19,7 @@ body {
 
 .contacts {
   height: 125px;
+  padding: 20px;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
@@ -44,7 +45,7 @@ body {
   flex: none;
   order: 2;
   flex-grow: 0;
-  margin-top: 102.5px;
+  margin-top: 50px;
 }
 
 
@@ -67,6 +68,10 @@ button {
   font-family: "open-sans";
   font-size: 20px;
   cursor: pointer;
+  display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
 }
 
 .capa {
@@ -79,14 +84,9 @@ button {
   margin: 30px;
 }
 
-.content-left:hover {
-  background: linear-gradient(180deg, #f5f3f3 0%, #cccaca 100%);
-  border-radius: 10px;
-  cursor: pointer;
-}
-
 .contact-overview {
   width: 85%;
+  height: 89vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -94,19 +94,26 @@ button {
 }
 
 
-.contact-book {
-  height: 100vh;
+.scrollableContainer {
+  height: 89vh;
   padding: 40px;
-  width: 450px;
+  /* width: 450px; */
   overflow-y: scroll;
   overflow-x: hidden;
   background: #ffffff;
   box-shadow: 4px 0px 6px rgba(0, 0, 0, 0.08);
 }
 
+
 .contact-box {
   display: flex;
   padding: 20px;
+}
+
+.contact-box:hover{
+  background-color: #4589ff5c;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 .short-name {
@@ -124,11 +131,23 @@ button {
     height: 65px;
 }
 
-.contact-info {
+.contact-info { 
   display: flex;
   flex-direction: column;
+  justify-content: center;
   margin-left: 20px;
   font-size: 20px;
+}
+
+.contact-info a {
+  text-decoration: none;
+  color: #005DFF;
+}
+
+.contact-information {
+  display: flex;
+    flex-direction: column;
+    align-items: inherit;   
 }
 
 .contact-info span {
@@ -139,6 +158,69 @@ button {
   display: flex;
 }
 
+ /* ShowContacts in Detail */
+
+.contact-card {
+  font-family: 'open-sans' sans-serif;
+  padding: 90px;
+  width: 85%;
+}
+ .contact-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+
+ }
+
+ .contact-header-child {
+  margin-left: 40px;
+ }
+
+ .contact-short-name {
+  height: 70px;
+  width: 70px;
+  background: blue;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ .contact-name {
+  font-size: 48px;
+ }
+
+ .contact-email {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  margin-top: 20px;
+ }
+
+ .contact-card a {
+  text-decoration: none;
+  color: #005DFF;
+ }
+
+ .contact-phone {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  margin-top: 20px;
+ }
+
+ .add-task {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+ }
+
+ .add-task img {
+  height: 20px;
+  margin-right: 5px;
+ }
+
+ 
 
 
 
@@ -178,6 +260,6 @@ button {
 
 .letter-child {
   border-bottom: 1px solid #D1D1D1;
-  width: 450px;
+  /* width: 450px; */
 }
 

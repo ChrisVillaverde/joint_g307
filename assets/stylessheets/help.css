@@ -2,6 +2,10 @@
     --primary: #4589ff;
 }
 
+h1, h2, h3 {
+    color: var(--primary);
+}
+
 .help-content {
    
         text-align: center;
@@ -12,3 +16,8 @@
         padding-left: 100px;
         padding-right: 100px; 
 }
+
+li::marker {
+    color: var(--primary); 
+  }
+

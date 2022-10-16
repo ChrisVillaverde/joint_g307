@@ -73,7 +73,7 @@ body {
 }
 
 .icons-style:hover, .flex-items:hover{
-    background-color: #d2e3ff;
+  background-color: #4589ff5c;
     border-radius: 8px;
     cursor: pointer;
 }
