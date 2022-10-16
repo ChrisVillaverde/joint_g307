@@ -1,4 +1,5 @@
 let contacts = []; 
+let color;
 
 
 async function init() {
@@ -6,8 +7,12 @@ async function init() {
     await downloadFromServer();
     await loadContacts();
     await showContacts();
-    // await deleteUser();
+    // await deleteUser();  
 }
+
+// async function deleteUser(contacts) {
+//     await backend.deleteItem('contacts');
+//   }
 
 
 async function loadContacts() {
@@ -18,13 +23,14 @@ async function newContact() {
     let name = document.getElementById('newContact-name');
     let email = document.getElementById('newContact-email');
     let phone = document.getElementById('newContact-phone');
-    addNewContactToArray(name, email, phone);
+    color = Math.floor(Math.random()*16777215).toString(16);
+    addNewContactToArray(name, email, phone, color);
     showContacts();
 }
 
 
-async function addNewContactToArray(name, email, phone) {
-    let contact = { fullname: name.value, mail: email.value, phone: phone.value };
+async function addNewContactToArray(name, email, phone, color) {
+    let contact = { fullname: name.value, mail: email.value, phone: phone.value, color: color };
     contacts.push(contact);
     await backend.setItem('contacts', JSON.stringify(contacts));
     clearNewContactInputfields(name, email, phone);
@@ -83,10 +89,6 @@ async function showContacts() {
 
 }
 
-
-// async function deleteUser(contacts) {
-//     await backend.deleteItem('contacts');
-//   }
 
 function showDetailsContact(i){
     const indexSpace = contacts[i].fullname.indexOf(' ') ; 
