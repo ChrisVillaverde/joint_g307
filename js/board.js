@@ -6,6 +6,7 @@ let feedbackTasksNumber =0;
 let progressTasksNumber =0;
 let urgentTasksNumber =0;
 let loggedUserName = [];
+let filteredTasks = [];
 
 async function init_board() {
     setURL('https://gruppe-307.developerakademie.net/smallest_backend_ever');
@@ -13,6 +14,7 @@ async function init_board() {
     await loadUser();
     await loadTask(); 
     await loadContacts();
+    filteredTasks = tasks;
     updateHTML();
 }
 
@@ -83,9 +85,23 @@ function moveTo(state){
     
   }
 
+  function handlerFilteredTasks(){
+    let search = document.getElementById('inputTask').value;
+    search = search.toLowerCase();
+    if(search.length == 0){
+        filteredTasks = tasks;
+    }
+        
+    else{
+        filteredTasks = tasks.filter( t => String(t.title).toLowerCase().startsWith(search) );
+        console.log(filteredTasks);
+    }
+    updateHTML();
+        
+  }
 
   function updateTodoHTML(){
-    let todos = tasks.filter(t => t['state'] == 'todo');
+    let todos = filteredTasks.filter(t => t['state'] == 'todo');
     document.getElementById('alltasks_todo').innerHTML = '';
     for (let index = 0; index < todos.length; index++) {
         const element = todos[index];
@@ -100,7 +116,7 @@ function moveTo(state){
 }
 
   function updateProgressHTML(){
-    let progresses = tasks.filter(t => t['state'] == 'progress');
+    let progresses = filteredTasks.filter(t => t['state'] == 'progress');
     document.getElementById('alltasks_progress').innerHTML = '';
     for (let index = 0; index < progresses.length; index++) {
         const element = progresses[index];
@@ -114,7 +130,7 @@ function moveTo(state){
 }
 
 function updateFeedbackHTML(){
-    let feedbacks = tasks.filter(t => t['state'] == 'feedback');
+    let feedbacks = filteredTasks.filter(t => t['state'] == 'feedback');
     document.getElementById('alltasks_feedback').innerHTML = '';
     for (let index = 0; index < feedbacks.length; index++) {
         const element = feedbacks[index];
@@ -127,7 +143,7 @@ function updateFeedbackHTML(){
 }
 
 function updateDoneHTML(){
-    let dones = tasks.filter(t => t['state'] == 'done');
+    let dones = filteredTasks.filter(t => t['state'] == 'done');
     document.getElementById('alltasks_done').innerHTML = '';
     for (let index = 0; index < dones.length; index++) {
         const element = dones[index];
@@ -541,6 +557,45 @@ function taskAddedToBord_board() {
 
 async function addTask_board(status) {
 
+    let idNew = idlogic();
+
+    let title = document.getElementById('title');
+
+    let selectContacts = [];
+    
+    for (let i=0;i<selectNames.length;i++){
+
+        if (document.getElementById(selectNamesWithoutSpace[i]).checked) {
+
+            selectContacts.push(document.getElementById(selectNamesWithoutSpace[i]).value);
+        }
+    }
+  
+    let category = document.getElementById('categoryNew');
+    let description = document.getElementById('description');
+
+    tasks.push(
+        {
+            'title': title.value,
+            'selectContacts': selectContacts,
+            'date': day,
+            'category': category.value,
+            'priority': priority_button,
+            'description': description.value,
+            'id': idNew,
+            'state': status
+
+        });
+
+    await saveTask();
+
+    taskAddedToBord_board();
+    updateHTML();
+    
+}
+
+function idlogic(){
+
     ids = tasks.map((number) => {
         return number.id
     })
@@ -549,50 +604,29 @@ async function addTask_board(status) {
         element => typeof element === 'number'
     );
 
-
     let id = Math.max(...onlyNumbers) + 1;
-    if (!id || id==-Infinity) {
+    if (!id || id == -Infinity) {
         id = 1;
+        return id;
     }
-
-    let title = document.getElementById('title');
-    let selectContacts = [];
-    if (document.getElementById('christian').checked) {
-
-        selectContacts.push(document.getElementById('christian').value);
-    }
-
-    if (document.getElementById('russell').checked) {
-
-        selectContacts.push(document.getElementById('russell').value);
-    }
-
-    if (document.getElementById('manuel').checked) {
-
-        selectContacts.push(document.getElementById('manuel').value);
-    }
-
-    let category = document.getElementById('category');
-    let description = document.getElementById('description');
-
-    tasks.push(
-        {
-            'title': title.value,
-            'selectContacts': selectContacts,
-            'date': new Date().getTime(),
-            'category': category.value,
-            'priority': priority_button,
-            'description': description.value,
-            'id': id,
-            'state': status
-
-        });
-
-    await saveTask();
-    updateHTML();
-    
+    return id;
 
 }
+
+/* function taskAddedToBord_board() {
+
+    document.getElementById('showCreateTask').classList.remove('d-none');
+
+    setTimeout(() => {
+        document.getElementById('showCreateTask').classList.add('downShowCreateTask');
+    }, 2000)
+
+    setTimeout(() => {
+        document.getElementById('showCreateTask').classList.add('d-none');
+        document.getElementById('showCreateTask').classList.remove('downShowCreateTask');
+    }, 2300)
+
+} */
 
 function popCardOver(id){
     let names 

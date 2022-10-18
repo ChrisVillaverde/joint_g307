@@ -275,7 +275,7 @@ body{
 
 .assignedUserNameText{
     display: flex;/* selber hinzugefügt*/
-    width: 161px;
+    width: 300px;
     height: 25px;
     /* Version 2/t6 */
     font-family: 'Inter';
