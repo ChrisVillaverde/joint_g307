@@ -16,6 +16,7 @@ body{
     align-items: flex-start;
     padding: 50px;
     gap: 25px;
+    overflow-y: scroll;
     isolation: isolate;
     position: relative;
     width: 623px;
@@ -38,7 +39,7 @@ body{
     align-items: center;
     padding: 4px 36.5px;
     gap: 10px;
-    width: 129px;
+    width: 170px;
     height: 36px;
     background: #FC71FF;
     border-radius: 8px;
@@ -50,7 +51,7 @@ body{
 }
 
 #taskCardName-child{
-    width: 56px;
+    width: 155px;
     height: 28px;
     /* Version 2/t5 */
     font-family: 'Open Sans';
@@ -149,6 +150,10 @@ body{
     flex: none;
     order: 1;
     flex-grow: 0;
+}
+
+#taskPrioritycontent-child{
+    display: flex;
 }
 
 .taskFixText{
@@ -413,37 +418,65 @@ flex-grow: 0;
     cursor: pointer;
   }
 
-  #edit-btn{
+  .edit-btn{
     cursor: pointer;
-/* edit button v1 */
+    /* edit button v1 */
 
 
-/* Auto layout */
+    /* Auto layout */
 
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-padding: 0px;
-gap: 6px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 6px;
 
-position: absolute;
-width: 57px;
-height: 57px;
-left: 637.31px;
-top: 800px;
+    position: absolute;
+    width: 57px;
+    height: 57px;
+    left: 637.31px;
+    top: 800px;
 
-/* Version 2/main color */
+    /* Version 2/main color */
 
-background: #4589FF;
-border-radius: 10px;
+    background: #4589FF;
+    border-radius: 10px;
 
-/* Inside auto layout */
+    /* Inside auto layout */
 
-flex: none;
-order: 10;
-flex-grow: 0;
-z-index: 10;
+    flex: none;
+    order: 10;
+    flex-grow: 0;
+    z-index: 10;
+  }
+
+  .saveEdit-btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 6px;
+
+    position: absolute;
+    width: 138px;
+    height: 51px;
+    left: 510.31px;
+    top: 800px;
+
+    /* Version 2/main color */
+
+    background: #4589FF;
+    border-radius: 10px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 10;
+    flex-grow: 0;
+    z-index: 10;
+
   }
   
 /*   .modal-header {

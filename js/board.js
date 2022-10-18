@@ -5,8 +5,11 @@ let doneTasksNumber =0;
 let feedbackTasksNumber =0;
 let progressTasksNumber =0;
 let urgentTasksNumber =0;
+let priority_selected = "";
 let loggedUserName = [];
 let filteredTasks = [];
+/* let selectNames=[]; */
+/* let selectNamesWithoutSpace=[]; */
 
 async function init_board() {
     setURL('https://gruppe-307.developerakademie.net/smallest_backend_ever');
@@ -434,7 +437,7 @@ async function generateOverlay(state){
     
                 <!--Select Contacts-->
                   
-                <div class="selectContacts"   >
+                <div class="selectContacts">
                     <div class="input_select_contacts">
                         <input id="selectContacts"  type="text" readonly="readonly" required placeholder="Select contacts to assign" >
                         <img src="assets/img/dropdown_arrow.png" onclick="showContact()">
@@ -646,8 +649,7 @@ function popCardOver(id){
         
     }
     var modal = document.getElementById("task-content");
-    
-   
+      
     document.getElementById('taskCardName-child').innerHTML = `${selectedTaskCard['category']}`;
     document.getElementById('taskCardDescription').innerHTML = `${selectedTaskCard['title']}`;
     document.getElementById('taskCardText').innerHTML = `${selectedTaskCard['description']}`;
@@ -666,9 +668,13 @@ function popCardOver(id){
         <button id="button_prio_high" type="button"  class="b1 high-color">Urgent <img src="assets/img/red_arrow.png"></button>
         `;
     }
-    /* document.getElementById('taskPrioritycontent-child').innerHTML = `${selectedTaskCard['priority']}`; */
     document.getElementById('taskDatecontent-child').innerHTML = `${selectedTaskCard['date']}`;
-    /* document.getElementById('').innerHTML = `${selectedTaskCard['selectContacts']}`; */
+    
+    document.getElementById('editCardBtn').innerHTML = `
+        <div class="edit-img" onclick="cardEdit(${id})">
+        <img class="edit-btn" src="/assets/img/edit_button.png" alt="">
+        </div>
+    `;
     
     assignedUserPopUpCard(names);
     modal.style.display = "flex";   
@@ -711,9 +717,139 @@ function assignedUserPopUpCard(names){
 
 function popCardOverClose(){
     var modal = document.getElementById("task-content");
+    document.getElementById('taskCardDescription').contentEditable = false;
+    document.getElementById('taskCardText').contentEditable = false;
+    document.getElementById('taskDatecontent-child').contentEditable = false;
+    document.getElementById('taskCardName-child').contentEditable = false;
     document.getElementById('assignedUser').innerHTML=``;
     modal.style.display = "none";
     document.getElementById("board-body").style.opacity = "1";
     document.getElementById("board-body").style.pointerEvents = 'auto';
 
 }
+
+function cardEdit(id){
+    document.getElementById('taskCardDescription').contentEditable = true;
+    document.getElementById('taskCardText').contentEditable = true;
+    document.getElementById('taskDatecontent-child').contentEditable = true;
+    document.getElementById('taskCardName-child').contentEditable = true;
+    document.getElementById('taskPrioritycontent-child').innerHTML = `
+    <button id="button_prio_high1" onclick="clickPriority_board ('high')" value="high" type="button"  class="b1">Urgent <img src="assets/img/red_arrow.png"></button> 
+    
+    <button id="button_prio_middle1" onclick="clickPriority_board ('middle')" value="middle" type="button" class="b2">Medium <img src="assets/img/medium.png"></button>
+
+    <button id="button_prio_low1" onclick="clickPriority_board ('low') " value="low" type="button"  class="b3">Low <img src="assets/img/green_arrow.png"></button>
+    
+    `;
+
+    document.getElementById('assignedUser').innerHTML = `
+        <div class="input_select_contacts">
+            <input id="selectContacts1"  type="text" readonly="readonly" required placeholder="Select contacts to assign" >
+            <img src="assets/img/dropdown_arrow.png" onclick="showContact_board()">
+        </div>
+        <div id="selectAll1" class="selectAll"> </div> 
+    `;
+
+    document.getElementById('editCardBtn').innerHTML = `
+    <button class="saveEdit-btn" onclick="saveCard(${id})" > <span class="addTask-btn-text">Save</span>  </button>
+`;
+    
+
+}
+
+function showContact_board() {
+
+    if (!openContact) {
+
+        for (let i = 0; i < contacts.length; i++) {
+
+            document.getElementById('selectAll1').innerHTML += allContacts_board(i);
+        }
+        openContact = true;
+    }
+
+    else if (openContact) {
+
+        document.getElementById('selectAll1').innerHTML = '';
+        openContact = false;
+
+    }
+}
+
+
+function allContacts_board(i) {
+    let name = contacts[i].fullname;
+    let nameWithoutSpace=name.replace(/\s/g,'');
+    selectNames.push(name);
+    selectNamesWithoutSpace.push(nameWithoutSpace);
+    return `
+    
+                <a href="#" class="selectName">
+                 <label for="${nameWithoutSpace}">${name}</label>
+                    <div>
+                <input   type="checkbox" id="${nameWithoutSpace}" name="${nameWithoutSpace}" value="${name}">
+                    </div>
+                </a>
+
+            `;
+}
+
+function clickPriority_board(priority) {
+
+    let button_prio_high = document.getElementById('button_prio_high1');
+    let button_prio_middle = document.getElementById('button_prio_middle1');
+    let button_prio_low = document.getElementById('button_prio_low1');
+
+    if (priority == "high") {
+        button_prio_high.style.background = '#FF3D00';
+        priority_selected = "high";
+    }
+
+    if (priority == "middle") {
+        priority_selected = "middle";
+        button_prio_middle.style.background = '#FFA800';
+    }
+
+    if (priority == "low") {
+        priority_selected = "low";
+        button_prio_low.style.background = '#7AE229';
+    }
+
+}
+
+async function saveCard(id){
+
+    let selectContacts = [];
+    
+    for (let i=0;i<selectNames.length;i++){
+
+        if (document.getElementById(selectNamesWithoutSpace[i]).checked) {
+
+            selectContacts.push(document.getElementById(selectNamesWithoutSpace[i]).value);
+        }
+    }
+    for (let index = 0; index < tasks.length; index++) {
+        const element = tasks[index]['id'];
+        
+        if (id == element) {
+            
+            tasks[index]['title'] =  document.getElementById('taskCardDescription').innerHTML;
+            tasks[index]['description'] =  document.getElementById('taskCardText').innerHTML;
+            tasks[index]['category'] =  document.getElementById('taskCardName-child').innerHTML;
+            tasks[index]['date'] =  document.getElementById('taskDatecontent-child').innerHTML;
+            tasks[index]['priority'] =  priority_selected;
+            tasks[index]['selectContacts'] =  selectContacts;
+            /* selectedTaskCard = tasks[index]; */
+            break;           
+        }
+        
+    }
+
+    
+    await saveTask();
+
+    popCardOverClose();
+    updateHTML();
+
+}
+
