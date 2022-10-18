@@ -12,6 +12,7 @@ async function init_board() {
     await downloadFromServer();
     await loadUser();
     await loadTask(); 
+    await loadContacts();
     updateHTML();
 }
 
@@ -27,6 +28,10 @@ async function init_summary() {
 async function loadUser(){
     users = await JSON.parse(backend.getItem('users')) || [];
     guests = await JSON.parse(backend.getItem('guests')) || [];    
+}
+
+async function loadContacts() {
+    contacts = await JSON.parse(backend.getItem('contacts')) || [];
 }
 
 function openNav() {
@@ -423,21 +428,31 @@ async function generateOverlay(state){
     
                     <span>Due date</span>
                     <div class="dueDate" onclick="showDate()"  >
-                    <input id="dueDate"  type="text" required placeholder="dd/mm/yyyy">
-                    <img src="assets/img/calendar-event.png">
+                    <input id="dueDate" minlength="10" maxlength="10" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}" type="text" required placeholder="dd/mm/yyyy">
+                    <img src="assets/img/calendar-event.png" onclick="showDateToday()">
                 </div>
     
                 <!--Category-->
                 
                     <span>Category</span>
+                    <div class="selectContacts"   >
+                        <div class="input_select_contacts">
+                            <input id="categoryNew"  type="text" readonly="readonly" required placeholder="Select Task category" >
+                            <img src="assets/img/dropdown_arrow.png" onclick="showCategory()">
+                        </div>
+                
+                        <div id="categoryAll" class="selectAll"> </div> 
+                
+                        
+                    </div>
     
-                    <select required id="category" class="category" >
+                    <!-- <select required id="category" class="category" >
                         <option value="" disabled selected hidden>Select Task category</option>
-                     <!--   <option value="">New category</option> -->
+                        <option value="">New category</option> 
                         <option value="Sales">Sales <img src="" alt=""></option>
                         <option value="Backoffice">Backoffice</option>
                         <option value="Design">Design</option>
-                    </select>
+                    </select> -->
     
                 
                 <!--Priority-->
@@ -591,7 +606,7 @@ function popCardOver(id){
         
     }
     var modal = document.getElementById("task-content");
-    let dateString = new Date(selectedTaskCard['date']);
+    
    
     document.getElementById('taskCardName-child').innerHTML = `${selectedTaskCard['category']}`;
     document.getElementById('taskCardDescription').innerHTML = `${selectedTaskCard['title']}`;
@@ -612,7 +627,7 @@ function popCardOver(id){
         `;
     }
     /* document.getElementById('taskPrioritycontent-child').innerHTML = `${selectedTaskCard['priority']}`; */
-    document.getElementById('taskDatecontent-child').innerHTML = `${dateString.toDateString()}`;
+    document.getElementById('taskDatecontent-child').innerHTML = `${selectedTaskCard['date']}`;
     /* document.getElementById('').innerHTML = `${selectedTaskCard['selectContacts']}`; */
     
     assignedUserPopUpCard(names);

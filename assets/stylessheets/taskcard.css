@@ -35,7 +35,7 @@ body{
 #taskCardName{
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     padding: 4px 36.5px;
     gap: 10px;
     width: 129px;
