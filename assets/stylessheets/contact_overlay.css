@@ -14,7 +14,7 @@ h1 {
 }
 
 .overlay {
-    height: 100vh;
+    height: 90vh;
     width: 430px;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.16);
     border-radius: 0px 30px 30px 30px;
@@ -121,6 +121,7 @@ span {
     border-radius: 10px;
     width: 100px;
     height: 42px;
+    margin: 20px;
     font-family: 'open-sans';
     font-size: 18px;
     display: flex;
@@ -135,6 +136,7 @@ span {
     color: white;
     border: unset;
     width: 143px;
+    margin: 20px;
     font-family: 'open-sans';
     font-size: 18px;
     display: flex;

@@ -6,6 +6,12 @@ h1, h2, h3 {
     color: var(--primary);
 }
 
+
+.legal-notice-content {
+    overflow-y: scroll;
+    height: 89vh;
+}
+
 .legal-notice-headline {
     display: flex;
     align-items: center;

@@ -1017,6 +1017,7 @@ z-index: 6;
     /* overflow-x: hidden; */
     transition: 0.5s;
     overflow-y: scroll;
+    overflow: hidden;
   }
   
   .overlay-content {

@@ -98,7 +98,7 @@ function showDetailsContact(i){
 
     `<div class="contact-card">
         <div class="contact-header">
-            <div class="contact-short-name">
+            <div style="background: #${contacts[i].color}" class="contact-short-name">
                 ${ShortName.toUpperCase()}
             </div>
             <div class="contact-header-child">
@@ -110,13 +110,17 @@ function showDetailsContact(i){
             </div>
         </div>
         <div>
-            <h2>Contact Information</h2>
+            <div class="contact-headline">Contact Information</div>
         </div>
         <div>
             <div class="contact-email">E Mail</div>
             <a href="">${contacts[i].mail}</a>
             <div class="contact-phone">Mobil</div>
-            <div>${contacts[i].phone}</div>
+            <div class"phone-number">${contacts[i].phone}</div>
+        </div>
+
+        <div class="btn-flex">
+            <button class="button-contact" onclick="openNewContact()" >New contact <img  class="capa" src="/assets/img/Capa.png" alt=""></button>
         </div>
     </div>
     
@@ -134,7 +138,7 @@ async function renderContactTemplate(i){
     return `   <div class="content-left" onclick="showDetailsContact(${i})">
     <div class="contact-box">
 
-    <div class="short-name">
+    <div style="background: #${contacts[i].color}" class="short-name">
     ${ShortName.toUpperCase()}
     </div>
 
