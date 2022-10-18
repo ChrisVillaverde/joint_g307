@@ -32,11 +32,13 @@ async function loadUser(){
 function openNav() {
     document.getElementById("myNav").style.width = "30%";
     document.getElementById("board-body").style.opacity = "0.5";
+    document.getElementById("board-body").style.pointerEvents = 'none';
 }
   
 function closeNav() {
     document.getElementById("myNav").style.width = "0%";
     document.getElementById("board-body").style.opacity = "1";
+    document.getElementById("board-body").style.pointerEvents = 'auto';
 }
 
 async function loadTask() {
@@ -616,6 +618,7 @@ function popCardOver(id){
     assignedUserPopUpCard(names);
     modal.style.display = "flex";   
     document.getElementById("board-body").style.opacity = "0.5";
+    document.getElementById("board-body").style.pointerEvents = 'none';
 
 }
 
@@ -651,5 +654,6 @@ function popCardOverClose(){
     document.getElementById('assignedUser').innerHTML=``;
     modal.style.display = "none";
     document.getElementById("board-body").style.opacity = "1";
+    document.getElementById("board-body").style.pointerEvents = 'auto';
 
 }
