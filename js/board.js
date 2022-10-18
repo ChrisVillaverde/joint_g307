@@ -220,11 +220,17 @@ function assignedUserHTML(element){
     const id = element[index]['id'];
       
         let assignedUser = names;
+        let ShortName ;
         for (let j = 0; j < assignedUser.length; j++) {
             const userFullName = assignedUser[j];
-            //const indexSpace = userFullName.indexOf(' ') ; 
-            /* const ShortName = userFullName.charAt(0) + userFullName.charAt(indexSpace+1); */
-            const ShortName = userFullName.charAt(0) + userFullName.slice(-1);       
+            const indexSpace = userFullName.indexOf(' ') ; 
+            if (indexSpace == -1) {
+                 ShortName = userFullName.charAt(0) + userFullName.slice(-1);
+                
+            }else {
+                 ShortName = userFullName.charAt(0) + userFullName.charAt(indexSpace+1); 
+            }
+                   
             document.getElementById('user-id_'+ id).innerHTML += /*html*/`
             <div class="user-id-child_1" > <span class="userName" >${ShortName.toUpperCase()}</span> </div>
         
@@ -673,6 +679,7 @@ function popCardOver(id){
 
 function assignedUserPopUpCard(names){
     let assignedUser = names;
+    let ShortName;
     for (let i = 0; i < assignedUser.length; i++) {
         document.getElementById('assignedUser').innerHTML +=`
         <div id="assignedUser_${i}" class="assignedUser-child"></div>
@@ -682,9 +689,13 @@ function assignedUserPopUpCard(names){
          
          for (let j = 0; j < assignedUser.length; j++) {
              const userFullName = assignedUser[j];
-             //const indexSpace = userFullName.indexOf(' ') ; 
-             /* const ShortName = userFullName.charAt(0) + userFullName.charAt(indexSpace+1); */
-             const ShortName = userFullName.charAt(0) + userFullName.slice(-1);                    
+             const indexSpace = userFullName.indexOf(' ') ; 
+             if (indexSpace == -1) {
+                  ShortName = userFullName.charAt(0) + userFullName.slice(-1);
+                 
+             }else {
+                  ShortName = userFullName.charAt(0) + userFullName.charAt(indexSpace+1); 
+             }                   
              document.getElementById('assignedUser_'+ j).innerHTML += /*html*/`
              <div class="assignedUserName"> 
                 <span class="assignedUserName-child" >${ShortName.toUpperCase()}</span>
