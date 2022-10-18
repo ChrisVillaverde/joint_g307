@@ -114,7 +114,7 @@ function showDetailsContact(i){
         </div>
         <div>
             <div class="contact-email">E Mail</div>
-            <a href="">${contacts[i].mail}</a>
+            <a href="mailto:${contacts[i].mail}">${contacts[i].mail}</a>
             <div class="contact-phone">Mobil</div>
             <div class"phone-number">${contacts[i].phone}</div>
         </div>
@@ -145,7 +145,7 @@ async function renderContactTemplate(i){
         <div class="contact-info">
             <span>${contacts[i].fullname}</span>
 
-            <a href="email">${contacts[i].mail}</a>
+            <a href="mailto:${contacts[i].mail}">${contacts[i].mail}</a>
         </div>        
     </div> 
     </div> 

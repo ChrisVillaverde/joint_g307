@@ -1,0 +1,25 @@
+:root {
+    --primary: #4589ff;
+}
+
+h1 {
+    color: var(--primary)
+}
+.imprint-content{
+    display: flex;
+    flex-direction: column;
+    padding: 100px;
+}
+
+.imprint-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.imprint-headline {
+    color: var(--primary);
+    font-size: 62px;
+    font-weight: 600;
+}

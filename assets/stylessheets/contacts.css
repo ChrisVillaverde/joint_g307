@@ -101,7 +101,7 @@ body {
 
 
 .scrollableContainer {
-  /* height: 89vh; */
+  height: 80vh;
   padding: 40px;
   /* width: 450px; */
   overflow-y: scroll;
