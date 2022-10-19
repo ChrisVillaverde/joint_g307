@@ -311,7 +311,7 @@ body{
     flex-grow: 0;
 }
 
-#todosTaskCard-name{
+.todosTaskCard-name{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -455,7 +455,7 @@ body{
     flex-grow: 0;
 }
 
-#inProgressTaskCard-name{
+.inProgressTaskCard-name{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -576,7 +576,7 @@ body{
     flex-grow: 0;
 }
 
-#feedbackTaskCard-name{
+.feedbackTaskCard-name{
     display: flex;
     flex-direction: column;
     align-items: flex-start;

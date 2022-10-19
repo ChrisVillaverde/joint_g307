@@ -104,11 +104,12 @@ function moveTo(state){
   }
 
   function updateTodoHTML(){
+    let status = 'todo';
     let todos = filteredTasks.filter(t => t['state'] == 'todo');
     document.getElementById('alltasks_todo').innerHTML = '';
     for (let index = 0; index < todos.length; index++) {
         const element = todos[index];
-        document.getElementById('alltasks_todo').innerHTML += generateTasksHTML(element);
+        document.getElementById('alltasks_todo').innerHTML += generateTasksHTML(element, status);
         progressBarHTML(element);
            
     }
@@ -119,11 +120,12 @@ function moveTo(state){
 }
 
   function updateProgressHTML(){
+    let status = 'progress';
     let progresses = filteredTasks.filter(t => t['state'] == 'progress');
     document.getElementById('alltasks_progress').innerHTML = '';
     for (let index = 0; index < progresses.length; index++) {
         const element = progresses[index];
-        document.getElementById('alltasks_progress').innerHTML += generateTasksHTML(element);
+        document.getElementById('alltasks_progress').innerHTML += generateTasksHTML(element, status);
        
         
     }
@@ -133,11 +135,12 @@ function moveTo(state){
 }
 
 function updateFeedbackHTML(){
+    let status = 'feedback';
     let feedbacks = filteredTasks.filter(t => t['state'] == 'feedback');
     document.getElementById('alltasks_feedback').innerHTML = '';
     for (let index = 0; index < feedbacks.length; index++) {
         const element = feedbacks[index];
-        document.getElementById('alltasks_feedback').innerHTML += generateTasksHTML(element);
+        document.getElementById('alltasks_feedback').innerHTML += generateTasksHTML(element, status);
         
         
     }
@@ -146,11 +149,12 @@ function updateFeedbackHTML(){
 }
 
 function updateDoneHTML(){
+    let status = 'done';
     let dones = filteredTasks.filter(t => t['state'] == 'done');
     document.getElementById('alltasks_done').innerHTML = '';
     for (let index = 0; index < dones.length; index++) {
         const element = dones[index];
-        document.getElementById('alltasks_done').innerHTML += generateTasksHTML(element);
+        document.getElementById('alltasks_done').innerHTML += generateTasksHTML(element, status );
         progressBarHTML(element);
         
     }
@@ -169,8 +173,9 @@ function startDragging(id){
     
 }
 
-function generateTasksHTML(element){
+function generateTasksHTML(element, status ){
     let urlImg;
+    let className;
     if(element['priority']=='low'){
         urlImg = "./assets/img/green_arrow.png";
     }
@@ -181,11 +186,24 @@ function generateTasksHTML(element){
         urlImg = "./assets/img/medium.png";
     }
 
+    if (status == 'feedback'){
+        className = "feedbackTaskCard-name";
+    }
+    if (status == 'done'){
+        className = "doneTaskCard-name";
+    }
+    if (status == 'todo'){
+        className = "todosTaskCard-name";
+    }
+    if (status == 'progress'){
+        className = "inProgressTaskCard-name";
+    }
+
     return /*html*/ `
     <div class="doneTask_1" onclick="popCardOver(${element['id']})" draggable="true" ondragstart="startDragging(${element['id']})">
                 <div class="doneTaskCard-child">
                     <div class="doneTaskCard">
-                        <div class="doneTaskCard-name"><span class="doneTaskCard-text">${element['category']}</span></div>
+                        <div class=${className}><span class="doneTaskCard-text">${element['category']}</span></div>
                         <div class="taskCard-title">
                             <div class="taskCard-description">
                                 <span class="taskCard-description-title">${element['title']}</span>
