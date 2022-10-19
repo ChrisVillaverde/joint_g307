@@ -33,7 +33,7 @@ body{
    
 }
 
-#taskCardName{
+.taskCardName{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -49,6 +49,24 @@ body{
     flex-grow: 0;
     z-index: 0;
 }
+
+.taskCardName{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 4px 36.5px;
+    gap: 10px;
+    width: 170px;
+    height: 36px;
+    background: #957796;
+    border-radius: 8px;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    z-index: 0;
+}
+
 
 #taskCardName-child{
     width: 155px;
