@@ -124,11 +124,7 @@ function showDetailsContact(i){
         </div>
     </div>
     
-    
-    
-    
     `;
-    
 }
 
 async function renderContactTemplate(i){

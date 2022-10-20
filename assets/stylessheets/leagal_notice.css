@@ -1,37 +1,37 @@
 :root {
-    --primary: #4589ff;
+  --primary: #4589ff;
 }
 
-h1, h2, h3 {
-    color: var(--primary);
+h1,
+h2,
+h3 {
+  color: var(--primary);
 }
-
 
 .legal-notice-content {
-    overflow-y: scroll;
-    height: 89vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 89vh;
 }
 
 .legal-notice-headline {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .legal-notice-headline img {
-    height: 20px;
+  height: 20px;
 }
 
 .legal-notice {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-left: 100px;
-    padding-right: 100px; 
-    margin-top: 60px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 100px;
+  padding-right: 100px;
+  margin-top: 60px;
 }
-
-

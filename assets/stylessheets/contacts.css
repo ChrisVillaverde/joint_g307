@@ -19,7 +19,7 @@ body {
 .contacts {
   height: 125px;
   padding: 20px;
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 700;
   font-size: 80px;
@@ -28,20 +28,19 @@ body {
   flex: none;
   order: 0;
   flex-grow: 0;
-  border-right: 3px solid #29ABE2;
-
+  border-right: 3px solid #29abe2;
 }
 
 .team-text {
   width: 335px;
   height: 59px;
   padding: 20px;
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 37px;
   line-height: 120%;
-  color: #2A3647;
+  color: #2a3647;
   flex: none;
   order: 2;
   flex-grow: 0;
@@ -79,18 +78,18 @@ body {
 }
 
 .contact-overview {
-  width: 85%;
-  height: 50vh;
+  /* width: 85%; */
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-
 .scrollableContainer {
   height: 80vh;
   padding: 40px;
+  width: 25%;
   overflow-y: scroll;
   overflow-x: hidden;
   background: #ffffff;
@@ -106,17 +105,16 @@ body {
 }
 
 .scrollableContainer::-webkit-scrollbar-thumb {
-  background: #A8A8A8;
+  background: #a8a8a8;
   border-radius: 10px;
 }
-
 
 .contact-box {
   display: flex;
   padding: 20px;
 }
 
-.contact-box:hover{
+.contact-box:hover {
   background-color: #4589ff5c;
   border-radius: 10px;
   cursor: pointer;
@@ -127,7 +125,7 @@ body {
   width: 50px;
   background: blue;
   border-radius: 100%;
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -136,15 +134,15 @@ body {
   align-items: center;
   text-align: center;
   justify-content: center;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .contact-img {
-    border-radius: 100%;
-    height: 65px;
+  border-radius: 100%;
+  height: 65px;
 }
 
-.contact-info { 
+.contact-info {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -154,12 +152,12 @@ body {
 
 .contact-info a {
   text-decoration: none;
-  color: #005DFF;
+  color: #005dff;
 }
 
 .contact-information {
   display: flex;
-  align-items: center;   
+  align-items: center;
 }
 
 .contact-info span {
@@ -170,10 +168,10 @@ body {
   display: flex;
 }
 
- /* ShowContacts in Detail */
+/* ShowContacts in Detail */
 
 .contact-card {
-  font-family: 'open-sans' sans-serif;
+  font-family: "open-sans" sans-serif;
   width: 85%;
 }
 
@@ -188,21 +186,20 @@ body {
   display: flex;
   justify-content: end;
 }
- .contact-header {
+.contact-header {
   display: flex;
   align-items: center;
   margin-bottom: 40px;
+}
 
- }
-
- .contact-header-child {
+.contact-header-child {
   margin-left: 40px;
- }
+}
 
- .contact-headline {
+.contact-headline {
   width: 235px;
   height: 28px;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: 700;
   font-size: 23px;
@@ -213,17 +210,16 @@ body {
   flex: none;
   order: 0;
   flex-grow: 0;
- }
+}
 
-
- .contact-short-name {
+.contact-short-name {
   width: 120px;
   height: 120px;
   background: blue;
   border-radius: 100%;
-  border: 3px solid #FFFFFF;
+  border: 3px solid #ffffff;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.16);
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 500;
   font-size: 47px;
@@ -232,48 +228,48 @@ body {
   align-items: center;
   text-align: center;
   justify-content: center;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
- .contact-name {
+.contact-name {
   font-size: 48px;
- }
+}
 
- .contact-email {
+.contact-email {
   font-size: 20px;
   font-weight: 700;
   margin-bottom: 20px;
   margin-top: 20px;
- }
+}
 
- .contact-card a {
+.contact-card a {
   font-size: 18px;
   text-decoration: none;
-  color: #005DFF;
- }
+  color: #005dff;
+}
 
- .contact-phone {
+.contact-phone {
   font-size: 20px;
   font-weight: 700;
   margin-bottom: 20px;
   margin-top: 20px;
- }
+}
 
- .phone-number {
+.phone-number {
   font-size: 18px;
- }
+}
 
- .add-task {
+.add-task {
   display: flex;
   align-items: center;
   font-size: 16px;
   margin-top: 20px;
- }
+}
 
- .add-task img {
+.add-task img {
   height: 20px;
   margin-right: 5px;
- }
+}
 
 .right-section {
   position: absolute;
@@ -300,15 +296,15 @@ body {
   margin-top: 50px;
 }
 
-.letter{
+.letter {
   font-size: 20px;
   font-weight: bold;
   width: 450px;
   margin-bottom: 20px;
-
 }
 
 .letter-child {
-  border-bottom: 1px solid #D1D1D1;
+  border-bottom: 1px solid #d1d1d1;
 }
 
+/*  */
