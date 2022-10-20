@@ -310,7 +310,9 @@ function generateTasksStatusHTML(element){
 
 function dashboard(){
     
-    if(loggedUserName[0]){
+    if(loggedUserName[0]=='guest'){
+        document.getElementById('greeting-child').innerHTML =`Good morning`;
+    }else{
         document.getElementById('greeting-child').innerHTML =`Good morning <b id="greet"> ${loggedUserName} </b> `;
     }
     
@@ -426,7 +428,13 @@ function generateDashboardHTML(){
  function loadUserName(){
     let loggedUserNameAsText = localStorage.getItem('Name');
     /* let test=localStorage.getItem('Mail'); */
-     loggedUserName = JSON.parse(loggedUserNameAsText);
+    if(loggedUserNameAsText){
+        loggedUserName = JSON.parse(loggedUserNameAsText);
+    }else{
+        loggedUserName[0] = 'guest';
+
+    }
+     
 
 }
 
