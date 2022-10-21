@@ -11,7 +11,13 @@ async function init() {
     setURL('https://gruppe-307.developerakademie.net/smallest_backend_ever') ;
     await downloadFromServer();
     await loadUser();
-   
+    setTimeout(addClassList, 1000, 'login-overlay', 'd-none');   
+}
+
+// Function to add classlist via id
+
+function addClassList(id, classList) {
+    document.getElementById(id).classList.add(classList);
 }
 
 /**

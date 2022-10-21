@@ -5,6 +5,7 @@ body {
   align-items: center;
   margin: 0;
   overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 #login-content {
@@ -26,8 +27,8 @@ body {
   position: absolute;
   width: 315px;
   height: 48px;
-  left: 1242px;
-  top: 80px;
+  left: 1035px;
+  top: 50px;
   z-index: 1;
 }
 
@@ -87,14 +88,14 @@ body {
 
 #join-logo {
   position: absolute;
-  width: 100.03px;
-  height: 121.97px;
+  width: 79.03px;
+  height: 97.97px;
   left: 5.35%;
   right: 87.71%;
   top: 5.81%;
   bottom: 80.28%;
-  z-index: 1;
-  animation: Smart 100ms ease-in-out;
+  /* z-index: 1;
+  animation: Smart 100ms ease-in-out; */
 }
 
 /* #login-body{
@@ -113,7 +114,7 @@ body {
   width: 652px;
   height: 457px;
   left: 394px;
-  top: 274px;
+  top: 186px;
   /* white */
   background: #ffffff;
   /* shadoe backlog box */
@@ -485,4 +486,46 @@ body {
   flex: none;
   order: 5;
   flex-grow: 0;
+}
+
+.d-none {
+  display: none;
+}
+
+/* from here start animation  */
+
+.login-overlay {
+  position: absolute;
+  background-color: #f6f7f8;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9;
+  animation: fadeOpacityOut 2s ease 0s 1 normal;
+}
+
+.join-logo-animation {
+  z-index: 1000;
+  animation: joinlogo 2s;
+}
+
+@keyframes fadeOpacityOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes joinlogo {
+  0% {
+    transform: scale(1.6) translate(400%, 150%);
+  }
+
+  100% {
+    transform: scale(1) translate(0);
+  }
 }
