@@ -502,12 +502,12 @@ body {
   left: 0;
   right: 0;
   z-index: 9;
-  animation: fadeOpacityOut 2s ease 0s 1 normal;
+  animation: fadeOpacityOut 2s ease 0s 1 normal forwards;
 }
 
 .join-logo-animation {
   z-index: 1000;
-  animation: joinlogo 2s;
+  animation: joinlogo 2s ease 0s 1 normal forwards;
 }
 
 @keyframes fadeOpacityOut {
