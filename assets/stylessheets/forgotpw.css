@@ -4,7 +4,8 @@ body{
     justify-content: center;
     align-items: center;
     margin: 0;   
-    animation: 2s ease-in-out 0s 1 FadeIn;
+    /* animation: 2s ease-in-out 0s 1 FadeIn; */
+    overflow-y: hidden;
 }
 @keyframes FadeIn {
     0% {
@@ -17,11 +18,13 @@ body{
 
 #login-content-fo{
     position: relative;
-    width: 1440px;
-    height: 1024px;
-    /* white */
+    width: 100%;
+    height: 93vh;
     background: #4589FF;
     padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
     
 }
@@ -29,12 +32,12 @@ body{
 #join-logo-fo{
 
     position: absolute;
-    width: 100.03px;
-    height: 121.97px;
+    width: 79.03px;
+    height: 97.97px;
     left: 5.35%;
-    right: 87.71%;
-    top: 7.81%;
-    bottom: 80.28%;
+    /* right: 87.71%; */
+    top: 50px;
+/*     bottom: 80.28%; */
     z-index: 1;
     animation: Smart 100ms ease-in-out;
 }
@@ -45,9 +48,9 @@ body{
     align-items: center;
     padding: 55px 86px;
     gap: 35px;
-    position: absolute;
-    width: 761px;
-    height: 450px;
+    /* position: absolute; */
+    width: 600px;
+    height: 400px;
     left: 340px;
     top: 277px;
     /* white */
@@ -59,11 +62,11 @@ body{
 
 #retour{
     cursor: pointer;
-    position: absolute;
+    /* position: absolute; */
     width: 37px;
     height: 37px;
-    left: 37px;
-    top: 66px;  
+    right: 66%;
+    top: 32%;  
     /* Inside auto layout */   
     flex: none;
     order: 4;
@@ -73,11 +76,12 @@ body{
 
 #login-title-fo{
     display: flex;
-    flex-direction: column;
+    flex-direction: row-reverse;
+    justify-content: space-between;
     align-items: center;
     padding: 0px;
     gap: 24px;
-    width: 315px;
+    /* width: 315px; */
     height: 82px;
     /* Inside auto layout */
     flex: none;
@@ -88,7 +92,9 @@ body{
 
 #login-title-text-fo{
     width: 506px;
-    height: 58px;
+    /* height: 58px; */
+    border-bottom: solid 2px #4589ff;
+    border-width: 3px;
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 700;
@@ -104,6 +110,7 @@ body{
 }
 
 #login-title-img-fo{
+    display: none;
     width: 0px;
     height: 150px;
     border: 3px solid #4589FF;
@@ -226,6 +233,7 @@ body{
     /* Version 2/main color */
     background: #4589FF;
     border-radius: 8px;
+    border: solid 0px;
     /* Inside auto layout */
     flex: none;
     order: 0;
@@ -263,3 +271,197 @@ body{
     min-width: 100%;
     /* height: calc(100vh - 251px - 115px); */
 }
+
+.hidden {
+    display: none;
+    justify-content: center;
+    width: 100%;
+    height: 58px;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    padding-top: 0;
+    line-height: 120%;
+    text-align: center;
+    color: #000000;
+    flex: none;
+    order: 5;
+    flex-grow: 0;
+  }
+
+
+@media screen and (max-width: 900px) {
+    #login-content-fo {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: unset;
+    }
+
+    #join-logo-fo {
+        position: absolute;
+        /* height: 121.97px; */
+        top: 50px;
+        width: 79.03px;
+        height: 97.97px;
+        left: 5.35%;
+    }
+
+    #login-form-fo {
+        position: absolute;
+        width: 450px;
+        height: 350px;
+        left: unset;
+        top: 200px;
+        padding: 15px 30px;
+        
+    }
+
+    #retour {
+        width: 37px;
+        height: 37px;
+        left: 40px;
+        top: 50px;   
+    }
+
+    #login-title-text-fo {
+        width: unset;
+        height: 42px;
+        font-size: 28px;
+    }
+
+    #forgot-text {
+        width: unset;
+        font-size: 18px;
+    }
+
+    .input-content-su {
+        width: unset;
+    }
+
+    #fo-content3 {
+        width: unset;
+    }
+
+    #fo-btn{
+        width: unset;
+    }
+
+}
+
+@media screen and (max-width: 542px) {
+
+    #login-title-text-fo {
+        width: 78%;
+        height: 4px;
+        font-size: 25px;
+        padding-bottom: 30px;
+    }
+
+    #retour {
+        width: 28px;
+        height: 28px;
+        left: 10px;
+        top: 50px;
+    }
+
+    #login-form-fo {
+        /* position: absolute; */
+        width: 350px;
+        /* height: 350px;
+        width: 100%;
+        left: 0px;
+        right: 0px; */
+    }
+
+    #login-content-fo {
+        width: 100%;
+    }
+
+    #login-title-fo {
+        width: 100%;
+
+    }
+
+    #inputEmail-su {
+        width: unset;
+    }
+
+    #inputEmail-child-su {
+        width: unset;
+    }
+
+/*     #join-logo-fo {
+        left: unset;
+        right: unset;
+    } */
+
+    #fo-btn-text {
+        width: unset;
+    }
+
+    #fo-btn{
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 440px) {
+
+    #login-form-fo {
+        /* position: absolute; */
+        width: 250px;
+        /* height: 350px;
+        width: 100%;
+        left: 0px;
+        right: 0px; */
+    }
+
+    #login-title-text-fo {
+
+        height: 0px;
+    font-size: 18px;
+    }
+}
+
+
+@media screen and (max-width: 340px) {
+
+    #login-form-fo {
+        /* position: absolute; */
+        width: 150px;
+        
+    }
+
+    #login-title-text-fo {
+
+        height: 0px;
+    font-size: 11px;
+    }
+
+    #forgot-text {
+        font-size: 12px;
+    }
+
+    #inputEmail-su {
+        padding: 0 0;
+    }
+
+    #fo-btn-text {
+       font-size: 18px;
+    }
+}
+
+
+
+/* @media screen and (max-width: 279px) {
+
+    #login-title-text-fo {
+
+        height: 75px;
+    }
+} */

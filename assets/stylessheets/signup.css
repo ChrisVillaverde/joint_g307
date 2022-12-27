@@ -1,31 +1,39 @@
 body{
-    background: #4589FF;
+    background: #4589FF !important;
     display: flex; 
     justify-content: center;
     align-items: center;
-    margin: 0;   
+    margin: 0;  
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+
+    /* position:relative; */
 }
 
 #login-content-su{
     position: relative;
-    width: 1440px;
-    height: 1024px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 92vh;
+/*     width: 1440px;
+    height: 1024px; */
     /* white */
-    background: #4589FF;
-    padding: 40px;
-    
-    
+    /* background: #4589FF; */
+    padding: 40px;  
 }
 
 #join-logo-su{
 
     position: absolute;
-    width: 100.03px;
-    height: 121.97px;
+    width: 79.03px;
+    height: 97.97px;
     left: 5.35%;
-    right: 87.71%;
-    top: 7.81%;
-    bottom: 80.28%;
+    /* right: 87.71%; */
+    top: 50px;
+/*     bottom: 80.28%; */
     z-index: 1;
     animation: Smart 100ms ease-in-out;
 }
@@ -38,9 +46,9 @@ body{
     gap: 35px;
     position: absolute;
     width: 652px;
-    height: 457px;
-    left: 394px;
-    top: 274px;
+    height: 400px;
+    /*left: 394px;*/
+    /* top: 274px;  */
     /* white */
     background: #FFFFFF;
     /* shadoe backlog box */
@@ -78,9 +86,11 @@ body{
 }
 
 #login-title-text-su{
-    width: 315px;
-    height: 58px;
-    font-family: 'Open Sans';
+    /* width: 315px;
+    height: 58px; */
+    border-bottom: solid 2px #4589ff;
+    border-width: 4px;
+    font-family: 'inter';
     font-style: normal;
     font-weight: 700;
     font-size: 48px;
@@ -95,6 +105,7 @@ body{
 }
 
 #login-title-img-su{
+    display: none;
     width: 0px;
     height: 150px;
     border: 3px solid #4589FF;
@@ -112,7 +123,7 @@ body{
     align-items: center;
     padding: 0px;
     gap: 29px;
-    width: 422px;
+    /* width: 422px; */
     height: 208px;
     /* Inside auto layout */
     flex: none;
@@ -273,7 +284,7 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     padding: 0px;
     gap: 35px;
     width: 367px;
@@ -294,6 +305,7 @@ body{
     gap: 10px;
     width: 106px;
     height: 43px;
+    border: unset;
     /* Version 2/main color */
     background: #4589FF;
     border-radius: 8px;
@@ -338,3 +350,140 @@ body{
     order: 5;
     flex-grow: 0;
 }
+
+#wrapper{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    /* padding-right: 30px;
+    padding-left: 30px; */
+    width: 100%;
+    /* min-width: calc(100% - 60px); */
+
+
+    
+}
+
+@media screen and (max-width: 700px) {
+
+   /*  #wrapper{
+        display: flex;
+        padding-right: 10px;
+        padding-left: 10px;
+        max-width: calc(100% - 20px);
+        justify-content: center;
+        padding-bottom: 150px;
+        
+    } */
+
+    #login-form-su {
+        width: unset;
+        height: 450px;
+        margin: 0 32px;
+        /* left: 28px; */
+        /*top: 130px; */
+    }
+
+    #retour {
+        position: absolute;
+        left: 9.67%;
+        right: 16.67%;
+        top: 8.59%;
+        bottom: 17.59%;
+        height: 27px;
+        width: 27px;
+    }
+
+    #login-title-text-su {
+        width: unset;
+        height: 56px;
+        font-weight: 700;
+        font-size: 36px;    
+    }
+
+    .input-content-su {
+        align-items: flex-start;
+        /* width: 100%; */
+        height: 241px;
+    }
+
+    #inputName-su {
+        width: 100%;
+        height: 41px;
+    }
+
+    #inputName-child-su {
+        width: 100%;
+        height: 25px;
+    }
+
+    #inputEmail-su {
+        width: 100%;
+        height: 41px;
+    }
+
+    #inputEmail-child-su {
+        width: 100%;
+        height: 25px;
+    }
+
+    #inputPassword {
+        width: 100%;
+        height: 41px;
+    }
+
+    #inputPassword-child-su {
+        width: 100%;
+        height: 25px;
+    }
+
+    #join-logo-su{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 10px;
+        position: absolute;
+        width: 64px;
+        height: 78.03px;
+    }
+    #signUp-content3 {
+        width: 100%;
+    }
+
+
+    #signUp-btn {
+        width: 180px;
+        height: 51px;
+    }
+
+    .hidden {
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 372px) {
+    #login-form-su {
+        /* width: 100%; */
+        left: 0px;
+        right: 0px;
+    }
+
+    #login-content-su {
+        width: 100%;
+    }
+
+    #login-title-su {
+        width: 100%;
+    }
+
+    #login-title-text-su {
+        font-size: 25px;
+    }
+
+    #signUp-btn {
+        width: 130px;
+    }
+    }

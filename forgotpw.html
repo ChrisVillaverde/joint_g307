@@ -7,23 +7,25 @@
     <link rel="stylesheet" href="./assets/fonts.css">
     <link rel="stylesheet" href="./assets/stylessheets/forgotpw.css">
     <script src="js/login.js"></script>
-    <!-- <script src="js/mini_backend.js"> </script> -->
+    <script src="js/mini_backend.js"></script>
     <title>Forgot PW</title>
 </head>
-<body>
+<body onload="init()">
    
     
     <div id="login-content-fo">
-        <img id="join-logo-fo" src="./assets/img/join-logo-white.png" alt="">
+        <div><img id="join-logo-fo" src="./assets/img/join-logo-white.png" alt=""> </div>
         
         <div id="login-form-fo">
-                <img onclick="location.href='login.html'" id="retour" src="./assets/img/pfeile_links.png" alt="">
+                
                 <div id="login-title-fo">
+                    
                     <span id="login-title-text-fo"> I forgot my password</span>
+                    <img onclick="location.href='login.html'" id="retour" src="./assets/img/pfeile_links.png" alt="">
                     <img id="login-title-img-fo" src="./assets/img/underline.png" alt=""> 
                 </div>
                 <span id="forgot-text">Don't worry! We will send you an email with the instructions to reset your password.</span>
-                <form onclick="saveMail()" class="input-content-su" action="https://gruppe-307.developerakademie.net/joint_g307/send_mail.php"
+                <form onsubmit="return isMailExisting();"  id="input-content-res" class="input-content-su" action="https://russell-tchamba.developerakademie.net/send_mail.php"
                 method="POST">
                     <div class="input-content-su">                     
                             <div id="inputEmail-su">  
@@ -32,8 +34,9 @@
                             </div>
                     </div>            
                         <div id="fo-content3">
-                            <button type="submit" id="fo-btn" > <span id="fo-btn-text">Send me the email</span> </button>
+                            <button  type="submit" id="fo-btn" > <span id="fo-btn-text">Send me the email</span> </button>
                         </div>
+                        <div class="hidden" id="msgBoxResetPW"> <span>Email not found</span> </div>
                 </form>        
         </div>
         

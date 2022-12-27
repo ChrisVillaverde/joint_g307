@@ -8,7 +8,7 @@ h1 {
 .imprint-content{
     display: flex;
     flex-direction: column;
-    padding: 100px;
+    padding: 50px;
 }
 
 .imprint-box {
@@ -22,4 +22,28 @@ h1 {
     color: var(--primary);
     font-size: 62px;
     font-weight: 600;
+}
+
+#footerPrint{
+    display: none;
+}
+
+@media screen and (max-width: 872px) {
+  
+    #regionLeft{
+      display: none;
+    }
+
+    #footerPrint{
+        display: block;
+    }
+   
+}
+
+@media screen and (max-width: 370px) {
+  
+    .imprint-headline {
+        font-size: 30px;
+    }
+   
 }

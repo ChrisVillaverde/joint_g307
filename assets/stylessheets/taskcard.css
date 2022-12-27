@@ -4,7 +4,8 @@ body{
 
 #content{
     background: #FFFFFF;
-    min-height: 100vh;
+    /* min-height: 100vh; */
+    height: calc( 100vh - 130px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,15 +13,19 @@ body{
 
 #task-content{
     display: none;
+    overflow-x: hidden;
     flex-direction: column;
+    z-index: 5;
     align-items: flex-start;
-    padding: 50px;
-    gap: 25px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 15px;
+    gap: 23px;
     overflow-y: scroll;
     isolation: isolate;
     position: relative;
     width: 623px;
-    height: 818px;
+    height: 800px;
     background: #FFFFFF;
     /* nuevo */
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.16);
@@ -54,7 +59,7 @@ body{
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 4px 36.5px;
+    padding: 4px 4px;
     gap: 10px;
     width: 170px;
     height: 36px;
@@ -119,7 +124,7 @@ body{
 }
 
 #taskCardText{
-    width: 518px;
+    /* width: 518px; */
     height: 50px;
     /* Version 2/t6 */
     font-family: 'Inter';
@@ -131,6 +136,7 @@ body{
     /* black */
     color: #000000;
     /* Inside auto layout */
+    justify-content: flex-start;
     flex: none;
     order: 2;
     flex-grow: 0;
@@ -197,7 +203,7 @@ body{
     align-items: center;
     padding: 0px;
     gap: 25px;
-    width: 232px;
+    width: 99px;
     height: 31px;
     /* Inside auto layout */
     flex: none;
@@ -317,15 +323,22 @@ body{
 }
 
 .high-color{
-    background-color: rgb(247, 78, 78);
+    background-color: rgb(239, 174, 174);
+    height: 36px;
 }
 
 .middle-color{
-    background-color: rgb(246, 189, 83);
+    background-color: rgb(247, 214, 148);
+    height: 36px;
 }
 
 .low-color{
-    background-color: rgb(145, 246, 145);
+    background-color: rgb(203, 251, 203);
+    height: 36px;
+}
+
+.img-prio{
+    width: 15px;
 }
 
 /* #taskPrioritycontent-child{
@@ -412,12 +425,12 @@ flex-grow: 0;
   /* Add Animation */
   @-webkit-keyframes animatetop {
     from {top:-300px; opacity:0} 
-    to {top:0; opacity:1}
+    to {top:0px; opacity:1}
   }
   
   @keyframes animatetop {
     from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
+    to {top:0px; opacity:1}
   }
   
   /* The Close Button */
@@ -454,7 +467,7 @@ flex-grow: 0;
     width: 57px;
     height: 57px;
     left: 637.31px;
-    top: 800px;
+    top: 660px;
 
     /* Version 2/main color */
 
@@ -473,15 +486,17 @@ flex-grow: 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    text-align: center;
     align-items: center;
     padding: 0px;
     gap: 6px;
-
     position: absolute;
+    border: unset;
     width: 138px;
     height: 51px;
-    left: 510.31px;
-    top: 800px;
+    right: 40px;
+    /* left: 510.31px; */
+    top: 715px;
 
     /* Version 2/main color */
 
@@ -494,6 +509,187 @@ flex-grow: 0;
     order: 10;
     flex-grow: 0;
     z-index: 10;
+
+  }
+
+  @media screen and (max-width:738px) {
+   /*  #board-body{
+        display: none;
+    }
+    #footerBoard{
+        display: none;
+    } */
+
+    #editCardBtn{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+    }
+
+    .saveEdit-btn {
+        right: unset;
+    }
+
+    .taskFixText {
+        display: none;
+    }
+
+    #taskPrioritycontent {
+        width: 100%;
+    }
+
+    #taskPrioritycontent-child {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    #task-content {
+        width: 100%;
+        height: 71vh;
+        overflow-x: hidden;
+    }
+
+    .closebtn-modal {
+        right: 40px;
+        left: unset;
+    }
+
+    .edit-btn {
+        right: 40px;
+        left: unset;
+    }
+    .taskCardName {
+        width: unset;
+    }
+    #taskCardName-child {
+        width: unset;
+    }
+
+    #taskCardTitle {
+        width: unset;
+    }
+
+    #taskCardDescription {
+        padding-top: 15px;
+        width: 100% !important;
+        word-break: break-word;
+    }
+  }
+
+  @media screen and (max-width:515px) {
+    #taskCardDescription {
+        font-size: 40px;
+        line-height: unset;
+    }
+   
+
+    .b1 {
+        padding: 0px 0px; 
+        width: 30%;
+        height: 40px;
+    }
+    .b1 img{
+        width: 20px;
+        height: 20px;
+        padding-left: 10px;
+    }
+
+    .b2 {
+        padding: 0px 0px; 
+        width: 30%;
+        height: 40px;
+    }
+    .b2 img{
+        width: 20px;
+        height: 20px;
+        padding-left: 10px;
+    }
+
+    .b3 {
+        padding: 0px 0px; 
+        width: 30%;
+        height: 40px;
+    }
+    .b3 img{
+        width: 20px;
+        height: 20px;
+        padding-left: 10px;
+    }
+
+   /*  .b1 {
+        font-size: 14px;
+        width: 100% !important;
+        box-shadow: unset;
+        background-color: white;
+    }
+    .b1 img{
+        width: 20px;
+        height: 20px;
+        padding-left: 10px;
+    }
+
+    .b2 {
+        font-size: 14px;
+        width: 100% !important;
+        box-shadow: unset;
+        background-color: white;
+    }
+    .b2 img{
+        width: 20px;
+        height: 20px;
+        padding-left: 10px;
+    }
+
+    .b3 {
+        font-size: 14px;
+        width: 100% !important;
+        box-shadow: unset;
+        background-color: white;
+    }
+    .b3 img{
+        width: 20px;
+        height: 20px;
+        padding-left: 10px;
+    } */
+
+  }
+
+  @media screen and (max-width:310px) {
+    #taskDatecontent-child {
+        width: unset;
+        align-items: center;
+        font-size: 14px;
+    }
+
+    .assignedUserNameText {
+        width: unset; 
+        font-size: 15px;
+    }
+
+    #taskCardDescription {
+        font-size: 30px;
+    }
+
+    .taskFixText {
+        align-items: center;
+        font-size: 17px;
+    }
+
+    .taskAssignedText {
+        font-size: 17px;
+    }
+
+    #taskCardName-child {
+        font-size: 15px;
+        align-items: center;
+    }
+
+    .taskCardName {
+        width: 20%;
+        justify-content: center;
+    }
 
   }
   

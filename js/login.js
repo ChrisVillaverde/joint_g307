@@ -4,21 +4,17 @@ let mailOfForgottenPw =[];
 let signUpDone = false;
 let userNoFound = true;
 let loggedUserName =[] ;
+let contacts = [];
 /**
  * This function load the users from the server at the beginning and save it in the users-array
  */
 async function init() {
-    setURL('https://gruppe-307.developerakademie.net/smallest_backend_ever') ;
+    setURL('https://russell-tchamba.developerakademie.net/smallest_backend_ever');
     await downloadFromServer();
     await loadUser();
-    setTimeout(addClassList, 1000, 'login-overlay', 'd-none');   
+    await loadContacts();
 }
 
-// Function to add classlist via id
-
-function addClassList(id, classList) {
-    document.getElementById(id).classList.add(classList);
-}
 
 /**
  * This function load the users from the server
@@ -29,14 +25,19 @@ async function loadUser(){
 }
 
 /**
+ * This function load the contacts from server
+ */
+async function loadContacts() {
+    contacts = await JSON.parse(backend.getItem('contacts')) || [];
+}
+
+/**
  * This function check the Log In data of the user
  */
 
 function loginUser(){
     let userMail= document.getElementById('inputEmail-child');
     let userPassword= document.getElementById('inputPassword-child');
-    /* console.log(userMail);
-    console.log(userPassword); */
     for (let i = 0; i < users.length; i++) {
         const element = users[i];
         if(element.Mail == userMail.value && element.Password == userPassword.value){
@@ -57,7 +58,7 @@ function loginUser(){
 }
 
 function guest(){
-    window.open('summary.html');
+    window.open('summary.html', "_self");
 }
 
 /**
@@ -90,7 +91,7 @@ async function addUser() {
 async function deleteUser(name) {
     for (let i = 0; i < users.length; i++) {
         const element = users[i];
-        if(element.Name == 'name'){
+        if(element.Name == name){
             users.splice(i,1);
             await backend.deleteItem('users[i]');
             safeUser();
@@ -147,8 +148,7 @@ async function resetpw(){
                 await safeUser();
                 break;
             }     
-        }   
-        
+        }           
         window.open('./confirmation.html', "_self");
     }else{
         document.getElementById('msgBoxReset').innerHTML  = `<span> Password confirmation failed </span>`;
@@ -163,7 +163,6 @@ function saveMail(){
     mailOfForgottenPw[0]=eMail;
     let mailOfForgottenPwAsText = JSON.stringify(mailOfForgottenPw);
     localStorage.setItem('Mail', mailOfForgottenPwAsText);
-    console.log('after save Mail:', mailOfForgottenPwAsText);
 }
 
 /**
@@ -176,3 +175,26 @@ function loadEmail(){
 
 }
 
+/**
+ * This function check the exxistance of the mail-adresse
+ */
+function isMailExisting(){
+    let userMail= document.getElementById('inputEmail-child-su');
+    let mailNoFound = true;
+    for (let i = 0; i < users.length; i++) {
+        const element = users[i];
+        
+        if(element.Mail == userMail.value){           
+            mailNoFound = false;
+            document.getElementById('msgBoxResetPW').style.cssText ='display:none';
+            saveMail();
+            return true;
+        }     
+    }
+    if(mailNoFound){
+        document.getElementById('msgBoxResetPW').style.cssText ='display:flex';
+    }
+    userMail.value ='';
+    return false;
+
+}

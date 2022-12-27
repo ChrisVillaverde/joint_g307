@@ -5,32 +5,43 @@
 
 body {
     margin: 0;
+    overflow-y: hidden;
+    /* width: 100%; */
 }
 
 h1 {
     color: white;
-    font-family: 'open-sans';
-
+    font-family: 'inter';
+    text-align: center;
 }
 
 .overlay {
-    height: 90vh;
-    width: 430px;
+    height: 100vh;
+    width: 35%;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.16);
-    border-radius: 0px 30px 30px 30px;
-    position: absolute;
+    border-radius: 0px 30px 30px 0px;
+    position: fixed;
+    z-index: 2;
     top: 0;
     left: 0;
-    right: 0;
     background-color: white;
+    /* transition: 0.5s; */
+    animation: mymoveRight 500ms; 
+    overflow-y: scroll;
 }
+
+@keyframes mymoveRight {
+    from {width: 0px;}
+    to {width: 35%;}
+  }
 
 
 .content {
+    height: 155px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 0px 30px 0px 0px;
+    border-radius: 0px 0px 0px 0px;
     background: var(--primary);
     padding: 40px;
 }
@@ -57,7 +68,7 @@ h1 {
     align-items: center;
     padding: 0px;
     gap: 29px;
-    width: 292px;
+    /* width: 292px; */
     flex: none;
     order: 1;
     flex-grow: 0;
@@ -73,7 +84,7 @@ h1 {
     justify-content: center;
     padding: 13px 21px;
     gap: 10px;
-    width: 295px;
+    /* width: 295px; */
     height: 49px;
     background: #ffffff;
     border-bottom: 1px solid #d1d1d1;
@@ -104,6 +115,7 @@ h1 {
 span {
     font-family: 'inter';
     color: white;
+    text-align: left;
 }
 
 
@@ -122,8 +134,8 @@ span {
     width: 100px;
     height: 42px;
     margin: 20px;
-    font-family: 'open-sans';
-    font-size: 18px;
+    font-family: 'inter';
+    font-size: 15px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -137,13 +149,72 @@ span {
     border: unset;
     width: 143px;
     margin: 20px;
-    font-family: 'open-sans';
-    font-size: 18px;
+    font-family: 'inter';
+    font-size: 15px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     cursor: pointer;
 
 }
+
+#closeContact{
+    display: none;
+}
+
+
+
+@media screen and (max-width: 850px) {
+
+    .buttons {
+        padding: 0px;
+    }
+    .input-content {
+        width: unset;
+    }
+
+    .input-name, .input-email, .input-phone {
+        padding: 0px 0px; 
+        width: unset;
+
+    }
+
+  }
+
+  @media screen and (max-width: 950px) {
+    .overlay{
+        width: 50%;
+      }
+    }
+
+  @media screen and (max-width: 750px) {
+    .overlay{
+        width: 100%;
+      }
+    }
+
+  @media screen and (max-width: 320px) {
+
+    .input-name-child, .input-email-child, .input-phone-child {
+        width: unset;
+    }
+
+    .btn-one {
+        display: none;
+    }
+
+    .btn-two {
+        margin: 0px;
+        padding: 10px;
+    }
+
+    #closeContact{
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        height: 35px;
+    }
+
+  }
 
     

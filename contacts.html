@@ -5,11 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacts</title>
+    <link rel="icon" type="image/x-icon" href="./assets/img/join_logo.png">
     <link rel="stylesheet" href="./assets/fonts.css">
     <link rel="stylesheet" href="./assets/stylessheets/contacts.css">
+    <link rel="stylesheet" href="./assets/stylessheets/footer.css">
     <script src="js/scripte.js"></script>
     <script src="js/contacts.js"></script>
     <script src="js/mini_backend.js"> </script>
+    <script src="js/desktop_template.js"></script>
+    
 </head>
 
 
@@ -18,7 +22,13 @@
 <div id="contact-overlay-body">
 
     <!-- inclue Templates  -->
-    <div w3-include-html="./assets/templates/desktop_template.html"></div>
+    <div id="regionLeft"  w3-include-html="./assets/templates/desktop_template.html"></div>
+
+    <div class="kanban">
+        <span class="kanban-child"> Kanban Project Management </span>
+    </div>
+
+    <img id="retourContact" onclick='retourContacts()' class="retourContacts d-none" src="./assets/img/arrow-right.png" alt="">
 
 
     <div class="main-content">
@@ -42,13 +52,14 @@
         </div> 
 
     </div>
-
-
+    
     
 </div>
-
-
+<div id="myNav" class="overlay-Addtask">
+        
+</div>
 <div id="contact-overlay" class="d-none" w3-include-html="./assets/templates/contact_overlay.html"></div> 
+<div id="footerContact" w3-include-html="footer.html"></div>
 
     
 </body>

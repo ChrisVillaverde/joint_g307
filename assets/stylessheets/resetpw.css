@@ -1,30 +1,45 @@
 body{
-    background: #4589FF;
+    background-color: #4589FF !important;
     display: flex; 
     justify-content: center;
     align-items: center;
-    margin: 0;   
+    margin: 0;  
+    box-sizing: border-box; 
 }
 
-#login-content-re{
+/* #login-content-re{
     position: relative;
     width: 1440px;
     height: 1024px;
-    /* white */
+    /* white 
     background: #4589FF;
     padding: 40px;
-    
-    
-}
+} */
+    #login-content-re {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        /* min-height: 100vh; */
+        align-items: center;
+        /* right: 0px;
+        left: 0px;
+        top: 0px; */
+        /* background: #4589FF; */
+        /* padding: 40px; */
+    }  
+
 
 #join-logo-re{
 
     position: absolute;
-    width: 100.03px;
-    height: 121.97px;
+    /* width: 100.03px; */
+    /* height: 121.97px; */
+    width: 64px;
+    height: 78.03px;
+    top: 5.81%;
     left: 5.35%;
-    right: 87.71%;
-    top: 7.81%;
     bottom: 80.28%;
     z-index: 1;
     animation: Smart 100ms ease-in-out;
@@ -37,10 +52,10 @@ body{
     padding: 55px 86px;
     gap: 35px;
     position: absolute;
-    width: 761px;
-    height: 544px;
-    left: 339px;
-    top: 226px;
+    width: 600px;
+    height: 450px;
+    /* left: 339px; */
+    /* top: 226px; */
     /* white */
     background: #FFFFFF;
     /* shadoe backlog box */
@@ -79,9 +94,9 @@ body{
 }
 
 #login-title-text-re{
-    width: 499px;
+    
     height: 58px;
-    font-family: 'Open Sans';
+    font-family: 'inter';
     font-style: normal;
     font-weight: 700;
     font-size: 48px;
@@ -89,6 +104,7 @@ body{
     /* identical to box height, or 58px */
     text-align: center;
     color: #000000;
+    border-bottom: solid 2px #4589ff;
     /* Inside auto layout */
     flex: none;
     order: 0;
@@ -96,6 +112,7 @@ body{
 }
 
 #login-title-img-re{
+    display: none;
     width: 0px;
     height: 150px;
     border: 3px solid #4589FF;
@@ -111,7 +128,7 @@ body{
     width: 589px;
     height: 56px;  
     /* Version 2/t5 */   
-    font-family: 'Open Sans';
+    font-family: 'inter';
     font-style: normal;
     font-weight: 400;
     font-size: 23px;
@@ -198,7 +215,7 @@ body{
     align-items: center;
     padding: 0px;
     gap: 10px;
-    width: 285px;
+    /* width: 285px; */
     height: 23px;
     /* Inside auto layout */
     flex: none;
@@ -237,6 +254,7 @@ body{
     /* Version 2/main color */
     background: #4589FF;
     border-radius: 8px;
+    border: unset;
     /* Inside auto layout */
     flex: none;
     order: 0;
@@ -247,7 +265,7 @@ body{
     width: 98px;
     height: 28px;   
     /* Version 2/t5 */
-    font-family: 'Open Sans';
+    font-family: 'inter';
     font-style: normal;
     font-weight: 400;
     font-size: 23px;
@@ -259,3 +277,112 @@ body{
     order: 0;
     flex-grow: 0;
 }
+
+@media screen and (max-width: 950px) {
+
+    #login-form-re {
+        width: unset;
+        height: 543px;
+        margin: 0 32px;
+        /* left: 28px; */
+        top: 191px;
+        padding: 20px 20px;
+    }
+
+    #join-logo-re {
+        width: 64px;
+        height: 78.03px;
+    }
+
+    #login-title-re {
+        width: unset;
+    } 
+
+    #login-title-text-re  {
+        width: 80%;
+        height: 96px;
+        font-size: 40px;
+        line-height: 110%;
+    }
+
+    #reset-text {
+        width: unset;
+        height: 46px;
+        font-size: 16px;
+        padding-top: 20px;
+    }
+
+    #retour {
+        width: 20px;
+        height: 20px;
+        left: 28px;
+        top: 66px
+    }
+
+    .input-content-re {
+        width: 100%;
+        height: 151px;
+    }
+
+    #inputPassword-re-1 {
+        width: unset;
+        height: 41px;
+    }
+    #inputPassword-re-2 {
+        width: unset;
+        height: 41px;
+    }
+
+    .inputPassword-child {
+        width: 100%;
+        height: 41px;
+    }
+
+    #re-content3 {       
+        width: unset;        
+    }
+
+    #re-btn {
+        width: unset;
+    }
+
+    .hidden {
+        width: 260px;
+        height: 50px;
+        font-size: 16px;
+        line-height: 100%;        
+    }
+
+}
+
+@media screen and (max-width: 367px) {
+
+    #login-title-text-re {
+        font-size: 25px;
+        height: 60px;
+        width: 60%;
+    }
+
+
+    #login-form-re {
+        left: 0px;
+        right: 0px;
+    }
+
+    #login-content-re {
+        width: 100%;
+        
+    }
+}
+
+
+@media screen and (max-width: 323px) {
+
+    #login-title-text-re {
+        font-size: 16px;
+        height: 48px;
+        width: 60%;
+    }
+
+}
+

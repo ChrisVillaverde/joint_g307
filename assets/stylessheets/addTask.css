@@ -3,17 +3,19 @@
     --primary: #4589ff;
   }
 
-
+  body {
+    overflow-y: hidden;
+}
 
 .addTask {
     display: flex;
     flex-direction: column;
-
 }
 
 span {
-
-    width: 86px;
+    justify-content: flex-start;
+    display: flex;
+    width: 100%;
     height: 23px;
     font-family: 'Open Sans';
     font-style: normal;
@@ -38,7 +40,7 @@ form {
 }
 
 .title {
-    width: 215px;
+    /* width: 215px; */
     height: 48px;
     font-family: 'Open Sans';
     font-style: normal;
@@ -55,7 +57,7 @@ form {
     align-items: center;
     padding: 13px 21px;
     gap: 10px;
-    width: 422px;
+    width: 398px;
     height: 74px;
     background: #FFFFFF;
     border-bottom: 1px solid #D1D1D1;
@@ -86,6 +88,11 @@ form {
     flex-grow: 0;
 }
 
+
+::-webkit-calendar-picker-indicator {
+    content: url('../../assets/img/calendar-event.png');
+}
+
 .priority {
     display: flex;
     gap: 10px;
@@ -112,7 +119,7 @@ form {
     align-items: center;
     padding: 18px 10px;
     gap: 10px;
-    width: 136px;
+    width: 124px;
     height: 51px;
     background: #FFFFFF;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.16);
@@ -142,7 +149,7 @@ form {
     align-items: center;
     padding: 18px 10px;
     gap: 10px;
-    width: 136px;
+    width: 124px;
     height: 51px;
     background: #FFFFFF;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.16);
@@ -172,7 +179,7 @@ form {
     align-items: center;
     padding: 18px 10px;
     gap: 10px;
-    width: 136px;
+    width: 125px;
     height: 51px;
     background: #FFFFFF;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.16);
@@ -184,6 +191,7 @@ form {
 }
 
 .description {
+    resize: none;
     width: 170px;
     height: 23px;
     font-family: 'Open Sans';
@@ -202,7 +210,7 @@ form {
     padding: 18px 21px;
     gap: 10px;
     isolation: isolate;
-    width: 422px;
+    width: 398px;
     height: 103px;
     background: #FFFFFF;
     border: 1px solid #D1D1D1;
@@ -225,7 +233,7 @@ form {
     border-radius: 10px;
     width: 100px;
     height: 42px;
-    font-family: 'open-sans';
+    font-family: 'Inter';
     font-size: 18px;
     display: flex;
     justify-content: space-around;
@@ -241,8 +249,8 @@ form {
     border: unset;
     width: 140px;
     height: 42px;
-    font-family: 'open-sans';
-    font-size: 20px;
+    font-family: 'Inter';
+    font-size: 18px;
     cursor: pointer;
 }
 
@@ -317,16 +325,61 @@ select:active:focus {
     justify-content: space-between;
     align-items: center;
     padding: 4px 21px 18px 21px;
-    width: 400px;
+    width: 88%;
 
 }
 
 .input_select_contacts{
     display: flex;
     align-items: center;
-    width: 422px;
+    width: 398px;
     padding: 18px 0 0px;
     border-bottom: 1px solid #D1D1D1;
+}
+
+#newCatName{
+    opacity: 0.5;
+}
+#newUserName{
+    opacity: 0.5;
+}
+
+#categoryNew::placeholder{
+    opacity: 0.5;
+}
+
+#newContact{
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    width: 89%;
+}
+
+#newContact:hover{
+    background-color: #D2E3FF;
+}
+
+
+.styleImg{
+    width: 25px;
+    height: 25px;
+}
+
+.styleImgContact{
+    width: 20px;
+    height: 20px;
+}
+
+#categoryNewImg1, #categoryNewImg3{
+    cursor: pointer;
+}
+
+#userNewImg1, #userNewImg3{
+    cursor: pointer;
+}
+
+#userNew::placeholder{
+    opacity: 0.5;
 }
 
 .selectContacts{
@@ -396,3 +449,199 @@ select:active:focus {
     
 }
 
+#footerAddTask{
+    display: none;
+  }
+
+  .kanban{
+
+    display: none;
+}
+
+/* .scrollable{
+    height: calc(100vh + 200px);
+        overflow-y: scroll;
+} */
+
+  
+  @media screen and (max-width: 1090px) {
+  
+    .sidebar{
+        display: none !important;
+      }
+  
+    #footerAddTask{
+        display: block;
+    }
+   
+  }
+
+  @media screen and (max-width: 815px) {
+
+    #dueDate{
+        padding-right: 0;
+    }
+
+    .addTask {
+        padding-bottom: 125px;
+    }
+
+    span {
+        justify-content: flex-start;
+    }
+  
+   #form{
+        flex-direction: column;
+        gap: 20px;
+        margin-left: unset;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+   }
+
+   .right-box {
+        align-items: flex-end;
+        display: flex;
+        justify-content: center;
+        width: unset;
+        padding: 0;
+    }
+
+    .left-box {
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        left: unset;
+        width: 80%;
+        padding: 0;
+    }
+    .title{
+        width: 100%;
+    }
+
+    .selectContacts {
+        width: 100%;
+    }
+
+    .input_select_contacts {
+        width: 100%;
+    }
+
+    .selectAll {
+        width: 100%;
+    }
+
+    .dueDate {
+        width: 100%;
+        order: unset;
+    }
+
+    .description {
+        width: 100%;
+
+    }
+    
+   
+  }
+
+  @media screen and (max-width: 500px) {
+
+    .priority {
+        width: 100%;
+    }
+    .b1{
+        width: 33%;
+        font-size: 14px;
+        gap: 0px;
+        padding: 0px 0px;
+    }
+
+    .b2{
+        width: 33%;
+        font-size: 14px;
+        gap: 0px;
+        padding: 0px 0px;
+    }
+
+    .b3{
+        width: 33%;
+        font-size: 14px;
+        gap: 0px;
+        padding: 0px 0px;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+
+    .headline{
+        display: none;
+    }
+
+    .kanban{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+
+    .kanban-child{
+        font-size: 15px;
+        color: #4589FF;
+        width: 100%;
+        padding-top: 10px;
+        justify-content: center;
+    }
+
+    .buttonConfirm {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        gap: 0px;
+    }
+
+    .right-box {
+        align-items: center;
+        justify-content: space-between;
+        width: 80%;
+        padding: 0;
+        flex-direction: column;
+    }
+
+  }
+
+  @media screen and (max-width: 350px) {
+    input{
+        font-size: 12px;
+    }
+
+    span{
+        font-size: 16px;
+    }
+
+    .b1 img{
+        display: none;
+    }
+    .b2 img{
+        display: none;
+    }
+    .b3 img{
+        display: none;
+    }
+   
+  }
+
+  @media screen and (max-width:300px) {
+
+    .buttonClear {
+        display: none;
+
+    }
+
+    .buttonConfirm {
+        justify-content: center;
+
+    }
+    
+  }

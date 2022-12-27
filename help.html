@@ -7,8 +7,11 @@
     <title>Help</title>
     <link rel="stylesheet" href="./assets/fonts.css">
     <link rel="stylesheet" href="./assets/stylessheets/help.css">
+    <link rel="stylesheet" href="./assets/stylessheets/footer.css">
+    <link rel="icon" type="image/x-icon" href="./assets/img/join_logo.png">
     <title>Legal Notice</title>
     <script src="js/scripte.js"></script>
+    <script src="js/help.js"></script>
 </head>
 <body onload="includeHTML()">
 
@@ -16,7 +19,7 @@
     <div w3-include-html="./assets/templates/desktop_template.html"></div>
 
 
-    <div class="help-content">
+    <div id="wrapperHelp" class="help-content">
 
         <div>
             <h1>Help
@@ -58,6 +61,7 @@
                     depending on current working status. <br>
                     You can click on task to open an detail overview, which can be edited as well.
                     It's also possible to add new tasks from this page.<br>
+                    Move a task per Drag and Drop to the trash in order to delete it.
                 </p>
             </div>
             <div>
@@ -88,6 +92,8 @@
         </div>
 
     </div>
+
+    <div id="footerHelp" w3-include-html="footer.html"></div>
     
 </body>
 </html>

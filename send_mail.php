@@ -4,7 +4,7 @@
 
 /* $recipient = 'russell.tchamba@gmail.com'; */
 $redirect = 'success.html';
-$message = 'please click here to reset your password: https://gruppe-307.developerakademie.net/joint_g307/resetpw.html';
+$message = 'please click here to reset your password: https://russell-tchamba.developerakademie.net/resetpw.html';
 
 ########### CONFIG END ###########
 

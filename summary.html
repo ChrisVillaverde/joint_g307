@@ -5,15 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Summary</title>
+    <link rel="icon" type="image/x-icon" href="./assets/img/join_logo.png">
     <link rel="stylesheet" href="assets/stylessheets/summary.css">
     <link rel="stylesheet" href="assets/fonts.css">
+    <link rel="stylesheet" href="./assets/stylessheets/footer.css">
     <script src="js/scripte.js"></script>
     <script src="js/board.js"></script>
+    <script src="js/desktop_template.js"></script>   
     <script src="js/mini_backend.js"> </script>
-   <!--  <script src="js/login.js"></script> -->
 </head>
 <body onload="includeHTML();init_summary() ">
-    
     <!-- include Templates  -->
     <div w3-include-html="./assets/templates/desktop_template.html"></div>
 
@@ -21,95 +22,17 @@
     <div id="greeting">
         <span id="greeting-child"> Good morning </span>
     </div>
-    <div id="dashboard">
-       <!--  <div id="dashboard-child1">
-            <div id="dashboard-child11">
-                <div id="urgent-dashboard">
-                   <div id="urgent-dashboard-child">
-                        <img id="urgent-img" src="./assets/img/urgent.png" alt="">
-                        <span id="urgentTasksNumber">1</span>
-                   </div> 
-                    
-                    <span id="urgent-text">Tasks Urgent</span>
 
-                </div>
-
-                <img src="./assets/img/strich_summary.png" alt="">
-
-                <div id="urgent-dashboard-child2">
-                    <span id="urgent-date">October 16, 2022</span>
-                    <span id="date-text">Upcoming Deadline</span> 
-
-                </div>
-
-            </div>
-            <div id="dashboard-child12">
-                <div id="todos-dashboard">
-                    <div id="todos-dashboard-child">
-                         <img id="todos-img" src="./assets/img/board.png" alt="">
-                         <span id="todosTasksNumber">1</span>
-                    </div> 
-                     
-                     <span id="todos-text">Tasks To-do</span>
- 
-                </div>
-
-            </div>
-
-        </div>
-
-        <div id="dashboard-child2">
-            <div id="dashboard-child21" >
-                <div class="dashboard-child2-all">
-                     <div id="board-dashboard-child" class="dashboard-child2x">
-                        <img id="board-img" src="./assets/img/board.png" alt="">
-                        <span id="boardTasksNumber" class="tasksNumber">5</span>
-                    </div> 
-                
-                    <span id="board-text">Tasks in Board</span>
-                </div>
-               
-
-            </div>
-            <div id="dashboard-child22">
-                <div class="dashboard-child2-all">
-                    <div id="progress-dashboard-child" class="dashboard-child2x">
-                        <img id="progress-img" src="./assets/img/progress.png" alt="">
-                        <span id="progressTasksNumber" class="tasksNumber">2</span>
-                    </div> 
-                    
-                    <span id="progress-text">Tasks in Progress</span>
-                </div>
-
-            </div>
-
-            <div id="dashboard-child23">
-                <div class="dashboard-child2-all">
-                    <div id="feedback-dashboard-child" class="dashboard-child2x">
-                        <img id="feedback-img" src="./assets/img/feedback.png" alt="">
-                        <span id="feedbackTasksNumber" class="tasksNumber">2</span>
-                    </div> 
-                    
-                    <span id="feedback-text">Awaiting Feedback</span>
-                </div>
-
-            </div>
-            <div id="dashboard-child24">
-                <div class="dashboard-child2-all">
-                    <div id="done-dashboard-child" class="dashboard-child2x">
-                        
-                        <img id="done-img" src="./assets/img/done.png" alt="">
-                        <span id="doneTasksNumber" class="tasksNumber">1</span>
-                    </div> 
-                    
-                    <span id="done-text">Tasks Done</span>
-                </div>
-
-            </div>
-
-        </div> -->
+    <div class="kanban">
+        <span class="kanban-child"> Kanban Project Management </span>
+    </div>
+    <div id="wrapper">
+        <div id="dashboard">
+       
+    </div>
     </div>
     
+    <div id="footerSummary" w3-include-html="footer.html"></div>
     
 </body>
 </html>

@@ -3,6 +3,10 @@ body{
     font-family: 'Open Sans';
 }
 
+.d-none{
+    display: none;
+}
+
 #search-content{
     display: flex;
     flex-direction: row;
@@ -79,6 +83,70 @@ body{
     flex-grow: 0;
 }
 
+#newCatName2{
+    opacity: 0.5;
+  }
+  
+  #categoryNew2::placeholder{
+    opacity: 0.5;
+  }
+  
+  
+  .styleImg{
+    width: 25px;
+    height: 25px;
+  }
+  
+  #categoryNewImg1B, #categoryNewImg3B{
+    cursor: pointer;
+  }
+
+
+  .styleImgContact{
+    width: 20px;
+    height: 20px;
+  }
+  
+  #userNewImg1T, #userNewImg3T{
+    cursor: pointer;
+  }
+  
+  #userNewT::placeholder{
+    opacity: 0.5;
+  }
+  
+  #newUserNameT{
+    opacity: 0.5;
+  }
+
+  #newContactT:hover{
+    background-color: #D2E3FF;
+    cursor: pointer;
+  }
+
+
+  #userNewImg1B, #userNewImg3B{
+    cursor: pointer;
+  }
+  
+  #selectContacts1::placeholder{
+    opacity: 0.5;
+  }
+  
+  #newUserNameB{
+    opacity: 0.5;
+  }
+
+  #newContactB:hover{
+    background-color: #D2E3FF;
+    cursor: pointer;
+  }
+
+
+
+
+
+
 #inputTask{
     border: none;
     padding: 10px!important;
@@ -106,6 +174,8 @@ body{
 }
 
 .addTask-btn-text{
+    display: block;
+    text-align: center;
     width: 93px;
     height: 28px;
     /* Version 2/t5 */
@@ -153,7 +223,7 @@ body{
     justify-content: space-between;
     align-items: center;
     padding: 0px;
-    gap: 35px;
+    gap: 23px;
     width: 230px;
     height: 30px;
     /* Inside auto layout */
@@ -359,6 +429,7 @@ body{
 
 .taskCard-description-title{
     width: 200px;/* 166px original */
+    justify-content: center;
     height: 19px;
     font-family: 'Open Sans';
     font-style: normal;
@@ -375,8 +446,9 @@ body{
 }
 
 .taskCard-description-text{
-    width: 207px;
+    width: 200px;
     height: 38px;
+    justify-content: center;
     /* Version 2/body */
     font-family: 'Inter';
     font-style: normal;
@@ -638,9 +710,13 @@ body{
     flex: none;
     order: 3;
     flex-grow: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
 
 }
 #alltasks_progress{
+    overflow-y: scroll;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -655,6 +731,8 @@ body{
 
 }
 #alltasks_feedback{
+    overflow-y: scroll;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -669,6 +747,8 @@ body{
 
 }
 #alltasks_done{
+    overflow-y: scroll;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -819,7 +899,7 @@ z-index: 6;
 }
 
 .progressBar{
-    display: flex;
+    display: none;
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -1015,7 +1095,7 @@ z-index: 6;
     border-radius: 30px 0px 30px 30px;
     /* background-color: rgb(0,0,0);
     background-color: rgba(0,0,0, 0.9); */
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
     transition: 0.5s;
     overflow-y: scroll;
   }
@@ -1044,7 +1124,6 @@ z-index: 6;
   .scroll-class{
     max-height: calc(100vh - 0px);
     overflow-y: scroll;
-
 }
   
 /*   .overlay a {
@@ -1079,7 +1158,8 @@ z-index: 6;
     position: absolute;
     width: 21.65px;
     height: 21.65px;
-    left: 481.31px;
+    /* left: 481.31px; */
+    right: 40px;
     top: 16px;
     /* transform: rotate(45deg); */
     z-index: 1;
@@ -1106,15 +1186,17 @@ z-index: 6;
     cursor: pointer;
     position: absolute;
     top: -106px;
-    left: 214px;
+    /* left: 214px; */
+    right: 0px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 18px 10px;
     gap: 10px;
-    width: 180px;
+    width: unset;
     height: 61px;
+    border: unset;
     /* Version 2/main color */
     background: #4589FF !important;
     border-radius: 10px;
@@ -1180,7 +1262,7 @@ align-items: center;
 padding: 13px 21px;
 gap: 10px;
 
-width: 422px;
+width: 398px;
 height: 74px;
 
 background: #FFFFFF;
@@ -1198,15 +1280,323 @@ flex-grow: 0;
 .addTask-board{
 
     display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px;
-gap: 25px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 25px;
+    position: absolute;
+    width: 428px;
+    height: 793px;
+    left: 36px;
+    top: 167px;
+}
 
-position: absolute;
-width: 428px;
-height: 793px;
-left: 36px;
-top: 167px;
+.trash-style{
+    cursor:alias;
+    display: flex;
+    align-items: center;
+    order: 4;
+}
+
+.trash-style img{
+    width: 18px;
+    height: 18px;
+}
+
+#stateEdit{
+    order: 6;
+    width: 147px;
+    border: solid 1px;
+    background: #4589FF;
+    border-radius: 10px;
+    padding: 12px 20px;
+    font-size: 15px;
+    font-family: 'Inter';
+    color: white;
+    margin: 0;;
+}
+
+
+
+#stateEdit option{
+    font-size: 15px;
+    font-family: 'Inter';
+}
+
+#description{
+    padding: 0 0!important;
+}
+
+#deleteTrash:hover{
+    background-color: red;
+}
+
+#footerBoard{
+    display: none;
+}
+
+.kanban{
+
+    display: none;
+}
+
+#catBoard{
+    justify-content: flex-start;
+}
+
+
+@media screen and (max-width: 1380px) {
+
+    body{
+        overflow-y: scroll!important;
+    }
+  
+    .sidebar{
+      display: none !important;
+    }
+
+    #footerBoard{
+        display: block;
+    }
+
+    #content {
+        left: 0;
+        padding-bottom: 150px;
+    }
+
+    #board-main {
+        left: unset;
+    }
+
+    #search-content {
+        left: unset;
+        justify-content: center;
+    }
+
+    #task-content {
+        padding-bottom: 100px !important;
+        overflow-y: scroll;
+    }
+   
+}
+
+@media screen and (max-width: 1079px) {
+    .overlay{
+        overflow-x: hidden;
+    }
+
+    #board-main {
+        flex-wrap: wrap;
+        width: unset; 
+        height: unset;
+        gap: 100px;
+        width: 100%;
+        padding-bottom: 190px;
+    }
+
+    #search-content {
+        justify-content: center;
+        width: 100%;
+    }
+    .left-box{
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        left: unset;
+        width: 80%;
+        padding: 0;
+
+    }
+
+    .title-board {
+        width: 100%;
+    }
+
+    .selectContacts {
+        width: 100%;
+    }
+
+    .input_select_contacts {
+        width: 100% !important;
+    }
+
+    .selectAll {
+        width: 100% !important;
+    }
+
+    .dueDate {
+        width: 100% !important;
+        order: unset !important;
+    }
+
+    .description {
+        width: 100% !important;
+
+    }
+
+    .addTask-text-overlay {
+        width: 100%;
+        font-size: 30px;
+        justify-content: flex-start;
+
+    }
+
+    .createTask-btn {
+        right: 40px;
+        width: unset;
+        height: 30px;
+    }
+
+    .createTask-btn-text {
+        width: unset;
+        height: 28px;
+    }
+
+    #alltasks_todo{
+        height: 461px;
+        gap: 20px;
+    
+    }
+    #alltasks_progress{
+        height: 461px;
+        gap: 20px;
+    
+    }
+    #alltasks_feedback{       
+        height: 461px;
+        gap: 20px;
+    
+    }
+    #alltasks_done{
+        height: 461px;
+        gap: 20px;
+    
+    }
+
+    #todosTasks{
+        height: 461px;
+    }
+
+    #feedbackTasks{
+        height: 461px;
+    }
+
+    #inProgressTasks{
+        height: 461px;
+    }
+
+    #doneTasks{
+        height: 461px;
+    }
+
+}
+
+@media screen and (max-width:738px){
+    #stateEdit{
+        margin-top: 40px;
+    }
+}
+
+@media screen and (max-width: 515px) {
+    input{
+        font-size: 16px !important;
+    }
+    .createTask-btn {
+        right: 120px; 
+    }
+
+    .priority {
+        width: 100% !important;
+    }
+    #button_prio_high{
+        width: 33% !important;
+        font-size: 14px !important;
+        gap: 0px !important;
+        padding: 0px 0px !important;
+    }
+
+    #button_prio_middle{
+        width: 33% !important;
+        font-size: 14px !important;
+        gap: 0px !important;
+        padding: 0px 0px !important;
+    }
+
+    #button_prio_low{
+        width: 33% !important;
+        font-size: 14px !important;
+        gap: 0px !important;
+        padding: 0px 0px !important;
+    }
+
+    #button_prio_high img{
+        display: none;
+    }
+    #button_prio_middle img{
+        display: none;
+    }
+    #button_prio_low img{
+        display: none;
+    }
+
+    .createTask-btn-img {
+        display: none;
+    }
+
+    .selectName {
+        width: 100% !important;
+    }
+} 
+
+@media screen and (max-width: 400px){
+.createTask-btn {
+    right: 267px;
+    top: 600px;
+}
+
+.addTask-board {
+    width: 100%;
+    height: 793px;
+    left: unset; 
+}
+
+}
+
+@media screen and (max-width: 426px) {
+
+
+    #addTask-btn {
+        display: none;
+    }
+
+    #search-child {
+        justify-content: center;
+        gap: 0px;
+        width: unset;
+    }
+
+    .headline {
+        display: none;
+    }
+
+    .kanban{
+
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        
+        /* padding-bottom: 20px;
+        padding-top: 20px; */
+    }
+
+    .kanban-child{
+        font-size: 15px;
+        color: #4589FF;
+        width: 100%;
+        padding-top: 10px;
+    }
+
 }
   

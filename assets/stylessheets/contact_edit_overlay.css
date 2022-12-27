@@ -44,6 +44,18 @@ h1 {
     margin-top: 20px;
   }
 
+  .closebtnEdit {
+    cursor: pointer;
+    position: absolute;
+    width: 21.65px;
+    height: 21.65px;
+    /* left: 481.31px; */
+    right: 40px;
+    top: 16px;
+    /* transform: rotate(45deg); */
+    z-index: 1;
+  } 
+
   
 .input-content {
   display: flex;
